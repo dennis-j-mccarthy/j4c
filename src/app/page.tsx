@@ -1,69 +1,85 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen flex-col">
+      <div className="bg-brand px-4 py-2 text-sm text-white">
+        <div className="mx-auto flex max-w-6xl justify-end gap-4">
+          <Link href="/login" className="hover:underline">
+            Login
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </div>
+
+      <header className="bg-white px-4 py-4 shadow-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <Link href="/">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/brand/logomail.png"
+              alt="JobsForCatholics.com"
+              width={332}
+              height={133}
+              className="h-16 w-auto"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </Link>
+          <nav className="hidden gap-6 font-medium text-ink sm:flex">
+            <Link href="/search" className="hover:text-brand-dark">
+              Job Search
+            </Link>
+            <Link href="/info" className="hover:text-brand-dark">
+              Job Seekers
+            </Link>
+            <Link href="/employer/info" className="hover:text-brand-dark">
+              Employers
+            </Link>
+          </nav>
         </div>
+      </header>
+
+      <main className="flex-1">
+        <section className="relative flex min-h-[420px] items-center justify-center overflow-hidden">
+          <Image
+            src="/brand/hero-church-windows.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative mx-auto max-w-3xl px-4 py-20 text-center text-white">
+            <h1 className="font-heading text-4xl font-bold sm:text-5xl">
+              Faith-filled work starts here
+            </h1>
+            <p className="mt-4 text-lg text-white/90">
+              Connecting Catholic job seekers with parishes, schools, and
+              mission-driven employers.
+            </p>
+            <div className="mt-8 flex justify-center gap-4">
+              <Link
+                href="/search"
+                className="rounded-sm bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-dark"
+              >
+                Find a Job
+              </Link>
+              <Link
+                href="/employer/register"
+                className="rounded-sm border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-ink"
+              >
+                Post a Job
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <footer className="bg-ink px-4 py-10 text-white">
+        <div className="mx-auto flex max-w-6xl items-center justify-between text-sm">
+          <p>&copy; {new Date().getFullYear()} JobsForCatholics.com</p>
+          <p className="text-white/70">Ora et labora</p>
+        </div>
+      </footer>
     </div>
   );
 }

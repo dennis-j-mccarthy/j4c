@@ -2,25 +2,26 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #272727;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* jobsforcatholics.com brand */
+  --color-brand: #29b8fb;
+  --color-brand-dark: #0085c8;
+  --color-ink: #25323f;
+  --color-muted: #868e96;
+  --color-accent: #ff9800;
+
+  --font-sans: var(--font-open-sans);
+  --font-heading: var(--font-roboto);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
 }

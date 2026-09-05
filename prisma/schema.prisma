@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  SEEKER
+  EMPLOYER
+  ADMIN
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  TEMPORARY
+  INTERNSHIP
+  VOLUNTEER
+}
+
+enum WorkMode {
+  ONSITE
+  HYBRID
+  REMOTE
+}
+
+enum JobStatus {
+  DRAFT
+  PUBLISHED
+  FILLED
+  CLOSED
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  REVIEWING
+  INTERVIEWING
+  OFFERED
+  HIRED
+  REJECTED
+  WITHDRAWN
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String
+  role         Role          @default(SEEKER)
+  passwordHash String?
+  company      Company?      @relation(fields: [companyId], references: [id])
+  companyId    String?
+  applications Application[]
+  savedJobs    SavedJob[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([companyId])
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  website   String?
+  logoUrl   String?
+  location  String?
+  about     String?
+  members   User[]
+  jobs      Job[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id           String        @id @default(cuid())
+  slug         String        @unique
+  title        String
+  description  String
+  company      Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId    String
+  location     String?
+  workMode     WorkMode      @default(ONSITE)
+  type         JobType       @default(FULL_TIME)
+  category     String?
+  salaryMin    Int?
+  salaryMax    Int?
+  currency     String        @default("USD")
+  featured     Boolean       @default(false)
+  status       JobStatus     @default(DRAFT)
+  postedAt     DateTime?
+  expiresAt    DateTime?
+  applyUrl     String?
+  applyEmail   String?
+  applications Application[]
+  savedBy      SavedJob[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([status, postedAt(sort: Desc)])
+  @@index([companyId])
+}
+
+model Application {
+  id          String            @id @default(cuid())
+  job         Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId       String
+  user        User?             @relation(fields: [userId], references: [id])
+  userId      String?
+  name        String
+  email       String
+  phone       String?
+  resumeUrl   String?
+  coverLetter String?
+  status      ApplicationStatus @default(SUBMITTED)
+  notes       String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@unique([jobId, email])
+  @@index([status])
+  @@index([userId])
+}
+
+model SavedJob {
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  jobId     String
+  createdAt DateTime @default(now())
+
+  @@id([userId, jobId])
+}
