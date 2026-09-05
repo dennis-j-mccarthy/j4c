@@ -66,7 +66,7 @@ const icons = {
   ),
 };
 
-const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { title: string; copy: string; href: string; cta: string } }> = {
+const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { title: string; copy: string; href: string; cta: string; image: string } }> = {
   work: {
     label: "Find Work",
     links: [
@@ -100,6 +100,7 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
       copy: "Find a role where your faith isn't left at the door.",
       href: "/registerseeker",
       cta: "Start your profile",
+      image: "/brand/candidate.jpg",
     },
   },
   employers: {
@@ -135,6 +136,7 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
       copy: "Your next great hire already shares your mission.",
       href: "/employer/register",
       cta: "Post your first job",
+      image: "/brand/handshake.jpg",
     },
   },
 };
@@ -147,7 +149,7 @@ export default function Header() {
     <div className="sticky top-0 z-50" onMouseLeave={() => setOpen(null)}>
       <div className="bg-brand px-4 py-1.5 text-sm text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <p className="hidden font-medium tracking-wide sm:block">
+          <p className="hidden font-heading font-medium tracking-wide italic sm:block">
             Helping build the Body of Christ — one great hire at a time
           </p>
           <Link href="/login" className="ml-auto font-semibold hover:underline">
@@ -169,14 +171,14 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-1 font-medium text-ink lg:flex">
+          <nav className="hidden items-center gap-1 text-[13px] font-semibold tracking-[0.12em] text-ink uppercase lg:flex">
             {(Object.keys(menus) as MenuKey[]).map((key) => (
               <button
                 key={key}
                 type="button"
                 onMouseEnter={() => setOpen(key)}
                 onClick={() => setOpen(open === key ? null : key)}
-                className={`flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors ${
+                className={`flex items-center gap-1.5 rounded-full px-4 py-2 uppercase transition-colors ${
                   open === key ? "bg-brand-tint text-brand-dark" : "hover:bg-brand-tint hover:text-brand-dark"
                 }`}
               >
@@ -266,7 +268,7 @@ export default function Header() {
                 </div>
                 <div className="relative overflow-hidden rounded-2xl">
                   <Image
-                    src="/brand/hero-church-windows.jpg"
+                    src={menu.featured.image}
                     alt=""
                     fill
                     className="object-cover"
@@ -295,7 +297,7 @@ export default function Header() {
             mobileOpen ? "max-h-[480px]" : "max-h-0 border-t-0"
           }`}
         >
-          <nav className="flex flex-col gap-1 px-4 py-4 font-medium text-ink">
+          <nav className="flex flex-col gap-1 px-4 py-4 text-sm font-semibold tracking-[0.12em] text-ink uppercase">
             {[
               { href: "/search", label: "Find Work" },
               { href: "/employer/info", label: "For Employers" },

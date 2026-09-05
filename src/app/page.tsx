@@ -8,22 +8,19 @@ import StatCounter from "@/components/StatCounter";
 /* ---------- placeholder content (swap for DB queries) ---------- */
 
 const employers = [
-  { initials: "DV", name: "Diocese of Venice", tint: "bg-sky-100 text-sky-700" },
-  { initials: "SJ", name: "St. Joseph Classical Academy", tint: "bg-amber-100 text-amber-700" },
-  { initials: "AM", name: "Ave Maria Parish", tint: "bg-emerald-100 text-emerald-700" },
-  { initials: "HF", name: "Holy Family Health", tint: "bg-rose-100 text-rose-700" },
-  { initials: "SH", name: "Sacred Heart Academy", tint: "bg-violet-100 text-violet-700" },
-  { initials: "CC", name: "Catholic Charities", tint: "bg-cyan-100 text-cyan-700" },
-  { initials: "SA", name: "St. Augustine Institute", tint: "bg-orange-100 text-orange-700" },
-  { initials: "GS", name: "Good Shepherd Media", tint: "bg-teal-100 text-teal-700" },
+  { logo: "/brand/employers/qlv9.png", name: "St. Clare of Assisi Catholic School" },
+  { logo: "/brand/employers/felq.jpg", name: "Franciscan University of Steubenville" },
+  { logo: "/brand/employers/wt86.webp", name: "Regina Coeli Parish" },
+  { logo: "/brand/employers/8enr.png", name: "Legacy of Life Foundation" },
+  { logo: "/brand/employers/klqe.webp", name: "Sól Recruiting" },
+  { logo: "/brand/employers/fz9n.webp", name: "Holy Land Wood & Stone" },
 ];
 
 const featuredJobs = [
   {
     title: "High School Theology Teacher",
-    org: "St. Joseph Classical Academy",
-    initials: "SJ",
-    tint: "bg-amber-100 text-amber-700",
+    org: "St. Clare of Assisi Catholic School",
+    logo: "/brand/employers/qlv9.png",
     location: "Naples, FL",
     type: "Full-time",
     salary: "$48k – $62k",
@@ -31,58 +28,53 @@ const featuredJobs = [
     featured: true,
   },
   {
-    title: "Director of Communications",
-    org: "Diocese of Venice",
-    initials: "DV",
-    tint: "bg-sky-100 text-sky-700",
-    location: "Venice, FL",
+    title: "Admissions Counselor",
+    org: "Franciscan University of Steubenville",
+    logo: "/brand/employers/felq.jpg",
+    location: "Steubenville, OH",
     type: "Full-time",
-    salary: "$70k – $90k",
-    tags: ["Communications", "Hybrid"],
+    salary: "$52k – $64k",
+    tags: ["Higher Ed", "On-site"],
     featured: true,
   },
   {
     title: "Youth Minister",
-    org: "Ave Maria Parish",
-    initials: "AM",
-    tint: "bg-emerald-100 text-emerald-700",
-    location: "Ave Maria, FL",
+    org: "Regina Coeli Parish",
+    logo: "/brand/employers/wt86.webp",
+    location: "Abilene, TX",
     type: "Part-time",
     salary: "$24 – $30/hr",
     tags: ["Ministry", "On-site"],
     featured: false,
   },
   {
-    title: "Registered Nurse — Hospice",
-    org: "Holy Family Health",
-    initials: "HF",
-    tint: "bg-rose-100 text-rose-700",
-    location: "Cincinnati, OH",
-    type: "Full-time",
-    salary: "$68k – $84k",
-    tags: ["Healthcare", "On-site"],
-    featured: false,
-  },
-  {
     title: "Development Director",
-    org: "Catholic Charities",
-    initials: "CC",
-    tint: "bg-cyan-100 text-cyan-700",
-    location: "Denver, CO",
+    org: "Legacy of Life Foundation",
+    logo: "/brand/employers/8enr.png",
+    location: "Philadelphia, PA",
     type: "Full-time",
     salary: "$85k – $105k",
     tags: ["Nonprofit", "Hybrid"],
     featured: false,
   },
   {
-    title: "Liturgical Music Director",
-    org: "Sacred Heart Academy",
-    initials: "SH",
-    tint: "bg-violet-100 text-violet-700",
-    location: "Remote / Travel",
+    title: "Executive Recruiter",
+    org: "Sól Recruiting",
+    logo: "/brand/employers/klqe.webp",
+    location: "Remote",
+    type: "Contract",
+    salary: "$60 – $85/hr",
+    tags: ["Recruiting", "Remote"],
+    featured: false,
+  },
+  {
+    title: "E-Commerce Manager",
+    org: "Holy Land Wood & Stone",
+    logo: "/brand/employers/fz9n.webp",
+    location: "Remote",
     type: "Freelance",
     salary: "$400 – $900/wk",
-    tags: ["Music", "Freelance"],
+    tags: ["Marketing", "Freelance"],
     featured: false,
   },
 ];
@@ -106,6 +98,8 @@ const pins = [
 const tracks = [
   {
     name: "Candidates",
+    image: "/brand/candidate.jpg",
+    imagePosition: "object-[center_28%]",
     tagline: "Find a role worthy of your calling",
     copy: "Build a profile, follow employers you love, and get matched with jobs where your faith is an asset — not an afterthought.",
     bullets: ["Free forever", "One-click applications", "Faith-aligned matches"],
@@ -121,6 +115,7 @@ const tracks = [
   },
   {
     name: "Employers",
+    image: "/brand/employer.jpg",
     tagline: "Hire people who share your mission",
     copy: "Parishes, schools, apostolates, and Catholic-owned businesses reach thousands of candidates who lead with faith.",
     bullets: ["Post jobs in minutes", "Search candidate profiles", "Plans for every budget"],
@@ -136,6 +131,7 @@ const tracks = [
   },
   {
     name: "Freelancers",
+    image: "/brand/working-laptop.jpg",
     tagline: "Offer your gifts to the Church",
     copy: "Musicians, designers, writers, developers — put your talents at the service of parishes and apostolates nationwide.",
     bullets: ["Showcase your portfolio", "Set your own rates", "Serve from anywhere"],
@@ -255,16 +251,18 @@ export default function Home() {
             </p>
             <div className="marquee-mask mt-6 overflow-hidden">
               <div className="animate-marquee flex w-max gap-4">
-                {[...employers, ...employers].map((e, i) => (
+                {[...employers, ...employers, ...employers].map((e, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 rounded-full border border-black/5 bg-white py-2 pr-6 pl-2 shadow-sm"
+                    className="flex items-center gap-3 rounded-full border border-black/5 bg-white py-2 pr-6 pl-2.5 shadow-sm"
                   >
-                    <span
-                      className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold ${e.tint}`}
-                    >
-                      {e.initials}
-                    </span>
+                    <Image
+                      src={e.logo}
+                      alt={`${e.name} logo`}
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 rounded-full object-contain"
+                    />
                     <span className="whitespace-nowrap font-medium text-ink">
                       {e.name}
                     </span>
@@ -296,21 +294,31 @@ export default function Home() {
               {tracks.map((t, i) => (
                 <Reveal key={t.name} delay={i * 120} className="h-full">
                   <div
-                    className={`relative flex h-full flex-col rounded-2xl bg-white p-8 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
+                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl bg-white transition duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
                       t.highlight
                         ? "shadow-lg ring-2 ring-brand"
                         : "shadow-sm ring-1 ring-black/5"
                     }`}
                   >
-                    {t.highlight && (
-                      <span className="absolute -top-3 left-8 rounded-full bg-brand px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
-                        Most active
+                    <div className="relative h-64">
+                      <Image
+                        src={t.image}
+                        alt=""
+                        fill
+                        className={`object-cover ${"imagePosition" in t ? t.imagePosition : ""}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+                      {t.highlight && (
+                        <span className="absolute top-4 right-4 rounded-full bg-brand px-3 py-1 text-xs font-bold tracking-wide text-white uppercase shadow-md">
+                          Most active
+                        </span>
+                      )}
+                      <span className="absolute bottom-4 left-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/95 text-brand-dark shadow-lg">
+                        {t.icon}
                       </span>
-                    )}
-                    <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-tint text-brand-dark">
-                      {t.icon}
-                    </span>
-                    <h3 className="mt-5 font-heading text-2xl font-bold text-ink">
+                    </div>
+                    <div className="flex flex-1 flex-col p-8 pt-6">
+                    <h3 className="font-heading text-2xl font-bold text-ink">
                       {t.name}
                     </h3>
                     <p className="mt-1 font-medium text-brand-dark">{t.tagline}</p>
@@ -335,6 +343,7 @@ export default function Home() {
                     >
                       {t.cta}
                     </Link>
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -371,11 +380,13 @@ export default function Home() {
                     className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-brand/40"
                   >
                     <div className="flex items-start justify-between">
-                      <span
-                        className={`flex h-12 w-12 items-center justify-center rounded-xl text-base font-bold ${job.tint}`}
-                      >
-                        {job.initials}
-                      </span>
+                      <Image
+                        src={job.logo}
+                        alt={`${job.org} logo`}
+                        width={48}
+                        height={48}
+                        className="h-12 w-12 rounded-xl object-contain ring-1 ring-black/5"
+                      />
                       {job.featured && (
                         <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-bold text-accent">
                           Featured
@@ -477,8 +488,14 @@ export default function Home() {
         </section>
 
         {/* ---------- stats band ---------- */}
-        <section className="bg-gradient-to-r from-ink to-brand-dark py-16">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-10 px-4 lg:grid-cols-4">
+        <section className="relative overflow-hidden bg-gradient-to-r from-ink to-brand-dark py-16">
+          <Image
+            src="/brand/job-seeker.jpg"
+            alt=""
+            fill
+            className="object-cover opacity-15 mix-blend-overlay"
+          />
+          <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-10 px-4 lg:grid-cols-4">
             <StatCounter value={1400} suffix="+" label="Open positions" />
             <StatCounter value={380} suffix="+" label="Catholic employers" />
             <StatCounter value={176} label="Dioceses reached" />
