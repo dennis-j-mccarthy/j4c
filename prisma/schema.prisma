@@ -126,6 +126,23 @@ model Application {
   @@index([userId])
 }
 
+model PunchItem {
+  id        String         @id
+  done      Boolean        @default(false)
+  updatedAt DateTime       @updatedAt
+  comments  PunchComment[]
+}
+
+model PunchComment {
+  id        String    @id @default(cuid())
+  item      PunchItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  itemId    String
+  text      String
+  createdAt DateTime  @default(now())
+
+  @@index([itemId])
+}
+
 model SavedJob {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String

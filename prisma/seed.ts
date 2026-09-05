@@ -98,6 +98,16 @@ async function main() {
     });
   }
 
+  // punch-list items already shipped before the DB existed
+  const shipped = ["f1", "f2", "f3", "f4", "f5", "f6", "f7"];
+  for (const id of shipped) {
+    await prisma.punchItem.upsert({
+      where: { id },
+      update: { done: true },
+      create: { id, done: true },
+    });
+  }
+
   console.log("Seeded", companies.length, "companies and", jobs.length, "jobs");
 }
 
