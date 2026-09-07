@@ -201,7 +201,7 @@ export default function PunchList() {
       <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
         Migration plan
       </p>
-      <h1 className="mt-3 font-heading text-4xl font-bold tracking-tight text-ink">
+      <h1 className="mt-3 font-heading text-4xl font-medium tracking-tight text-ink">
         Punch list
       </h1>
       <p className="mt-3 text-muted">
@@ -230,7 +230,7 @@ export default function PunchList() {
           return (
             <section key={phase.name}>
               <div className="flex items-baseline justify-between">
-                <h2 className="font-heading text-2xl font-bold text-ink">
+                <h2 className="font-heading text-2xl font-medium text-ink">
                   {phase.name}
                 </h2>
                 <span className="text-sm font-medium text-muted">

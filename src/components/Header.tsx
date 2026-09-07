@@ -275,7 +275,7 @@ export default function Header() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/20" />
                   <div className="relative flex h-full min-h-[200px] flex-col justify-end p-6 text-white">
-                    <p className="font-heading text-xl font-bold">{menu.featured.title}</p>
+                    <p className="font-heading text-xl font-medium">{menu.featured.title}</p>
                     <p className="mt-1 text-sm text-white/85">{menu.featured.copy}</p>
                     <Link
                       href={menu.featured.href}

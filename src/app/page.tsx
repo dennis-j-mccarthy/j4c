@@ -226,7 +226,7 @@ export default function Home() {
               The Catholic Career Network
             </p>
             <h1
-              className="animate-hero mt-4 font-heading text-4xl font-bold tracking-tight sm:text-6xl"
+              className="animate-hero mt-4 font-heading text-4xl font-medium tracking-tight sm:text-6xl"
               style={{ animationDelay: "120ms" }}
             >
               Where Faith Meets Work.
@@ -305,7 +305,7 @@ export default function Home() {
               <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                 Why Jobs for Catholics
               </p>
-              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                 More Than a Job Board
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
@@ -322,7 +322,7 @@ export default function Home() {
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-tint text-brand-dark">
                       {col.icon}
                     </span>
-                    <h3 className="mt-5 font-heading text-xl font-bold text-ink">
+                    <h3 className="mt-5 font-heading text-xl font-medium text-ink">
                       {col.heading}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -354,7 +354,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                   For Job Seekers
                 </p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                   Your Next Step Starts Here
                 </h2>
                 <p className="mt-3 text-lg text-muted">
@@ -405,7 +405,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                   For Employers
                 </p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                   Hire the Talent That Shares Your Mission
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted">
@@ -464,7 +464,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                   For Freelancers
                 </p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                   Offer Your Gifts to the Church
                 </h2>
                 <p className="mt-4 leading-relaxed text-muted">
@@ -503,7 +503,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                   Featured Jobs
                 </p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                   New This Week
                 </h2>
               </div>
@@ -537,7 +537,7 @@ export default function Home() {
                         </span>
                       )}
                     </div>
-                    <h3 className="mt-4 font-heading text-lg font-bold text-ink group-hover:text-brand-dark">
+                    <h3 className="mt-4 font-heading text-lg font-medium text-ink group-hover:text-brand-dark">
                       {job.title}
                     </h3>
                     <p className="mt-0.5 text-sm font-medium text-muted">{job.org}</p>
@@ -578,7 +578,7 @@ export default function Home() {
                 <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
                   Coast to coast
                 </p>
-                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                   One Church.
                   <br />
                   Every diocese.
@@ -666,12 +666,12 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={150}>
-              <h2 className="mt-16 text-center font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-16 text-center font-heading text-3xl font-medium tracking-tight text-ink sm:text-4xl">
                 Ready to Get Started?
               </h2>
               <div className="mt-10 grid gap-6 lg:grid-cols-3">
                 <div className="flex flex-col rounded-2xl bg-slate-50 p-8 text-center ring-1 ring-black/5">
-                  <p className="font-heading text-lg font-bold text-ink">
+                  <p className="font-heading text-lg font-medium text-ink">
                     Job Seekers
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -696,7 +696,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex flex-col rounded-2xl bg-ink p-8 text-center">
-                  <p className="font-heading text-lg font-bold text-white">
+                  <p className="font-heading text-lg font-medium text-white">
                     Employers
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-white/75">
@@ -720,7 +720,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex flex-col rounded-2xl bg-brand-tint p-8 text-center ring-1 ring-brand/20">
-                  <p className="font-heading text-lg font-bold text-ink">
+                  <p className="font-heading text-lg font-medium text-ink">
                     Freelancers
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-ink/70">
