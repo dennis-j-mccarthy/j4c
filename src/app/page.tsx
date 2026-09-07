@@ -218,7 +218,7 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/60 to-brand-dark/50" />
-          <div className="relative mx-auto max-w-4xl px-4 pt-24 pb-40 text-center text-white">
+          <div className="relative mx-auto max-w-4xl px-4 py-24 text-center text-white">
             <p
               className="animate-hero text-xs font-semibold tracking-[0.3em] text-brand uppercase"
               style={{ animationDelay: "0ms" }}
@@ -264,63 +264,6 @@ export default function Home() {
                 Search
               </button>
             </form>
-          </div>
-        </section>
-
-        {/* ---------- candidate / employer boxes ---------- */}
-        <section className="relative z-10 -mt-24 px-4 pb-4">
-          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-            <Reveal className="h-full">
-              <div className="flex h-full flex-col rounded-2xl bg-white p-8 shadow-xl shadow-ink/10 ring-1 ring-black/5">
-                <h2 className="font-heading text-2xl font-bold text-ink">
-                  Find Work That Matches Your Values
-                </h2>
-                <p className="mt-3 leading-relaxed text-muted">
-                  Search openings at Catholic schools, dioceses, nonprofits,
-                  healthcare systems, and faith-driven businesses across the
-                  country.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3 pt-2">
-                  <Link
-                    href="/search"
-                    className="rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-dark"
-                  >
-                    Search Jobs
-                  </Link>
-                  <Link
-                    href="/registerseeker"
-                    className="rounded-full border border-brand px-6 py-3 font-semibold text-brand-dark transition hover:bg-brand hover:text-white"
-                  >
-                    Create Free Account
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={120} className="h-full">
-              <div className="flex h-full flex-col rounded-2xl bg-ink p-8 text-white shadow-xl shadow-ink/20">
-                <h2 className="font-heading text-2xl font-bold">
-                  Hire Candidates Who Share Your Mission
-                </h2>
-                <p className="mt-3 leading-relaxed text-white/80">
-                  Reach qualified, faith-aligned professionals actively looking
-                  for work at organizations like yours.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3 pt-2">
-                  <Link
-                    href="/employer/post"
-                    className="rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-dark"
-                  >
-                    Post a Job
-                  </Link>
-                  <Link
-                    href="/employer/pricing"
-                    className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-ink"
-                  >
-                    See Pricing
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -502,6 +445,56 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------- freelancer conversion ---------- */}
+        <section className="overflow-hidden bg-white py-20">
+          <div className="mx-auto max-w-7xl px-4">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <Reveal>
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl">
+                  <Image
+                    src="/brand/working-laptop.jpg"
+                    alt="A freelancer working remotely"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
+                </div>
+              </Reveal>
+              <Reveal delay={120}>
+                <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
+                  For Freelancers
+                </p>
+                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                  Offer Your Gifts to the Church
+                </h2>
+                <p className="mt-4 leading-relaxed text-muted">
+                  Musicians, designers, writers, developers — put your talents
+                  at the service of parishes, schools, and apostolates
+                  nationwide.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "Showcase your portfolio",
+                    "Set your own rates",
+                    "Serve from anywhere",
+                  ].map((b) => (
+                    <li key={b} className="flex items-center gap-2.5 text-sm text-ink">
+                      <CheckIcon />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/freelance"
+                  className="mt-8 inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+                >
+                  Join the Marketplace
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
         {/* ---------- featured jobs ---------- */}
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4">
@@ -676,35 +669,72 @@ export default function Home() {
               <h2 className="mt-16 text-center font-heading text-3xl font-bold tracking-tight text-ink sm:text-4xl">
                 Ready to Get Started?
               </h2>
-              <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                <div className="rounded-2xl bg-slate-50 p-8 text-center ring-1 ring-black/5">
+              <div className="mt-10 grid gap-6 lg:grid-cols-3">
+                <div className="flex flex-col rounded-2xl bg-slate-50 p-8 text-center ring-1 ring-black/5">
                   <p className="font-heading text-lg font-bold text-ink">
                     Job Seekers
                   </p>
-                  <p className="mt-2 text-sm text-muted">
-                    Create your free account and start applying today.
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    Find work that matches your values at Catholic schools,
+                    dioceses, nonprofits, healthcare systems, and faith-driven
+                    businesses. Create your free account and start applying
+                    today.
                   </p>
-                  <Link
-                    href="/registerseeker"
-                    className="mt-5 inline-block rounded-full bg-brand px-7 py-3 font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
-                  >
-                    Sign Up Free
-                  </Link>
+                  <div className="mt-5 flex flex-wrap justify-center gap-3 pt-1">
+                    <Link
+                      href="/registerseeker"
+                      className="rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+                    >
+                      Sign Up Free
+                    </Link>
+                    <Link
+                      href="/search"
+                      className="rounded-full border border-brand px-6 py-3 font-semibold text-brand-dark transition hover:bg-brand hover:text-white"
+                    >
+                      Search Jobs
+                    </Link>
+                  </div>
                 </div>
-                <div className="rounded-2xl bg-ink p-8 text-center">
+                <div className="flex flex-col rounded-2xl bg-ink p-8 text-center">
                   <p className="font-heading text-lg font-bold text-white">
                     Employers
                   </p>
-                  <p className="mt-2 text-sm text-white/75">
-                    Post your first job and start reaching mission-aligned
-                    candidates.
+                  <p className="mt-2 text-sm leading-relaxed text-white/75">
+                    Hire candidates who share your mission — qualified,
+                    faith-aligned professionals actively looking for work at
+                    organizations like yours.
                   </p>
-                  <Link
-                    href="/employer/post"
-                    className="mt-5 inline-block rounded-full bg-brand px-7 py-3 font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
-                  >
-                    Post a Job
-                  </Link>
+                  <div className="mt-5 flex flex-wrap justify-center gap-3 pt-1">
+                    <Link
+                      href="/employer/post"
+                      className="rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+                    >
+                      Post a Job
+                    </Link>
+                    <Link
+                      href="/employer/pricing"
+                      className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-ink"
+                    >
+                      See Pricing
+                    </Link>
+                  </div>
+                </div>
+                <div className="flex flex-col rounded-2xl bg-brand-tint p-8 text-center ring-1 ring-brand/20">
+                  <p className="font-heading text-lg font-bold text-ink">
+                    Freelancers
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink/70">
+                    Offer your talents to parishes, schools, and apostolates
+                    nationwide — on your terms, from anywhere.
+                  </p>
+                  <div className="mt-5 flex justify-center pt-1">
+                    <Link
+                      href="/freelance"
+                      className="rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+                    >
+                      Join the Marketplace
+                    </Link>
+                  </div>
                 </div>
               </div>
             </Reveal>
