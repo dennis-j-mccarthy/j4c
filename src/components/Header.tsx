@@ -100,7 +100,7 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
       copy: "Find a role where your faith isn't left at the door.",
       href: "/registerseeker",
       cta: "Start your profile",
-      image: "/brand/candidate.jpg",
+      image: "/brand/candidate-2.jpg",
     },
   },
   employers: {

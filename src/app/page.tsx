@@ -342,7 +342,7 @@ export default function Home() {
               <Reveal>
                 <div className="relative aspect-[4/5] max-h-[520px] w-full overflow-hidden rounded-3xl">
                   <Image
-                    src="/brand/candidate.jpg"
+                    src="/brand/candidate-2.jpg"
                     alt="A candidate ready for her next opportunity"
                     fill
                     className="object-cover object-[center_28%]"
@@ -393,7 +393,7 @@ export default function Home() {
               <Reveal className="lg:order-2">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
                   <Image
-                    src="/brand/employer.jpg"
+                    src="/brand/employer-2.jpg"
                     alt="An employer connecting with candidates"
                     fill
                     className="object-cover"
