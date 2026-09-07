@@ -42,7 +42,10 @@ export default function Footer() {
             height={133}
             className="h-12 w-auto rounded bg-white/95 p-1.5"
           />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+          <p className="mt-3 font-heading font-medium text-white/90 italic">
+            Serving the Catholic Community since 2010.
+          </p>
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
             Helping build the Body of Christ, one great hire at a time.
             Connecting faithful candidates, freelancers, and mission-driven
             employers across the country.
