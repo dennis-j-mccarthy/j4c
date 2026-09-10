@@ -190,6 +190,16 @@ export default async function JobPage({
                     </li>
                   ))}
                 </ul>
+                <p className="mt-4 border-t border-black/5 pt-3 text-xs text-muted">
+                  Score seem off?{" "}
+                  <Link
+                    href="/registerseeker"
+                    className="font-semibold text-brand-dark hover:underline"
+                  >
+                    Update your profile
+                  </Link>{" "}
+                  — scores follow your roles, categories, and location.
+                </p>
               </div>
             )}
             <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">

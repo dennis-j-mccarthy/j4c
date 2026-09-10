@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FitPill from "@/components/FitPill";
+import FitSlider from "@/components/FitSlider";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
 import { scoreJobFit, type FitResult } from "@/lib/fitScore";
@@ -32,7 +33,10 @@ export default async function SearchPage({
   const category = typeof params.category === "string" ? params.category : "";
   const type = typeof params.type === "string" ? params.type : "";
   const mode = typeof params.mode === "string" ? params.mode : "";
-  const fitFilter = typeof params.fit === "string" ? params.fit : "";
+  const minFit = Math.min(
+    100,
+    Math.max(0, Number(typeof params.minfit === "string" ? params.minfit : 0) || 0),
+  );
 
   const cookieStore = await cookies();
   const candidateId = cookieStore.get("jfc_candidate")?.value;
@@ -77,16 +81,11 @@ export default async function SearchPage({
     }));
 
   const jobs =
-    profile && (fitFilter === "great" || fitFilter === "possible")
-      ? scored.filter(
-          ({ fit }) =>
-            fit &&
-            (fit.verdict === "great" ||
-              (fitFilter === "possible" && fit.verdict === "possible")),
-        )
+    profile && minFit > 0
+      ? scored.filter(({ fit }) => fit && fit.score >= minFit)
       : scored;
 
-  const hasFilters = !!(q || loc || category || type || mode || fitFilter);
+  const hasFilters = !!(q || loc || category || type || mode || minFit);
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
@@ -150,13 +149,7 @@ export default async function SearchPage({
                   </option>
                 ))}
               </select>
-              {profile && (
-                <select name="fit" defaultValue={fitFilter} className={selectCls}>
-                  <option value="">Any fit</option>
-                  <option value="great">Great fit only</option>
-                  <option value="possible">Possible fit & up</option>
-                </select>
-              )}
+              {profile && <FitSlider defaultValue={minFit} />}
               <button
                 type="submit"
                 className="rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand-dark transition hover:bg-brand hover:text-white"
@@ -183,13 +176,23 @@ export default async function SearchPage({
               {jobs.length} {jobs.length === 1 ? "opening" : "openings"}
               {hasFilters && " match your search"}
             </p>
-            {!profile && (
+            {!profile ? (
               <Link
                 href="/registerseeker"
                 className="text-sm font-semibold text-brand-dark hover:underline"
               >
                 Create a free profile to see your fit scores →
               </Link>
+            ) : (
+              <p className="text-xs text-muted">
+                Fit scores seem off?{" "}
+                <Link
+                  href="/registerseeker"
+                  className="font-semibold text-brand-dark hover:underline"
+                >
+                  Update your profile
+                </Link>
+              </p>
             )}
           </div>
 
