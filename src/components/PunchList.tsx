@@ -86,6 +86,16 @@ const phases: Phase[] = [
     ],
   },
   {
+    name: "AI assist",
+    blurb: "The differentiators — all blocked on one API key.",
+    items: [
+      { id: "ai1", title: "Provision Anthropic API key", detail: "Client needs their own key from console.anthropic.com → ANTHROPIC_API_KEY in .env + Vercel. Sonnet pricing = pennies per generation" },
+      { id: "ai2", title: "AI resume maker", detail: "Profile + plain-English Q&A → drafted resume; 'Tailor to this job' + cover letter from any posting" },
+      { id: "ai3", title: "AI JD maker", detail: "Title + facts + mission → structured posting (or polish a pasted draft); fixes raw-pasted JDs at the source" },
+      { id: "ai4", title: "LLM fit scoring v2", detail: "Claude reads resume text vs full JD; upgrades the existing red/amber/green pills in place" },
+    ],
+  },
+  {
     name: "Content & pages",
     blurb: "Everything the nav already promises.",
     items: [
