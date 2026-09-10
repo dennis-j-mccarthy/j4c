@@ -188,7 +188,7 @@ export default function Header() {
                 alt="JobsForCatholics.com"
                 width={332}
                 height={133}
-                className={`w-auto transition-all duration-300 ${scrolled ? "h-12" : "h-[4.5rem]"}`}
+                className={`w-auto transition-all duration-300 ${scrolled ? "h-12" : "h-24"}`}
                 priority
               />
               {shine && (
