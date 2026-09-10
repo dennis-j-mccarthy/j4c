@@ -61,6 +61,7 @@ const phases: Phase[] = [
       { id: "s3", title: "Apply flow", detail: "Guest + logged-in; resume upload to blob storage; unique (jobId, email) already enforced" },
       { id: "s4", title: "Saved jobs" },
       { id: "s5", title: "Job alert emails", detail: "Saved-search digest; use Resend or SES" },
+      { id: "s6", title: "Candidate/JD fit scores", detail: "Heuristic red/amber/green + filters on search, job pages, and employer applicant view; LLM scoring later", done: true },
     ],
   },
   {

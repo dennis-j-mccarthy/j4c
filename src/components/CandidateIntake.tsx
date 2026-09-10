@@ -245,6 +245,11 @@ export default function CandidateIntake() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error ?? "Something went wrong. Please try again.");
       }
+      const data = await res.json().catch(() => ({}));
+      if (data.profileId) {
+        // identify this browser for fit scores until real auth lands
+        document.cookie = `jfc_candidate=${data.profileId}; path=/; max-age=31536000; SameSite=Lax`;
+      }
       localStorage.removeItem(DRAFT_KEY);
       setDone(true);
       topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });

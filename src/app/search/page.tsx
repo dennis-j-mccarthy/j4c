@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FitPill from "@/components/FitPill";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
+import { scoreJobFit, type FitResult } from "@/lib/fitScore";
 import type { Prisma } from "@/generated/prisma/client";
 
 export const dynamic = "force-dynamic";
@@ -29,6 +32,10 @@ export default async function SearchPage({
   const category = typeof params.category === "string" ? params.category : "";
   const type = typeof params.type === "string" ? params.type : "";
   const mode = typeof params.mode === "string" ? params.mode : "";
+  const fitFilter = typeof params.fit === "string" ? params.fit : "";
+
+  const cookieStore = await cookies();
+  const candidateId = cookieStore.get("jfc_candidate")?.value;
 
   const and: Prisma.JobWhereInput[] = [{ status: "PUBLISHED" }];
   if (q) {
@@ -45,7 +52,7 @@ export default async function SearchPage({
   if (type && type in TYPE_LABELS) and.push({ type: type as never });
   if (mode && mode in MODE_LABELS) and.push({ workMode: mode as never });
 
-  const [jobs, categories] = await Promise.all([
+  const [allJobs, categories, profile] = await Promise.all([
     prisma.job.findMany({
       where: { AND: and },
       include: { company: true },
@@ -58,9 +65,28 @@ export default async function SearchPage({
       distinct: ["category"],
       orderBy: { category: "asc" },
     }),
+    candidateId
+      ? prisma.candidateProfile.findUnique({ where: { id: candidateId } })
+      : Promise.resolve(null),
   ]);
 
-  const hasFilters = !!(q || loc || category || type || mode);
+  const scored: { job: (typeof allJobs)[number]; fit: FitResult | null }[] =
+    allJobs.map((job) => ({
+      job,
+      fit: profile ? scoreJobFit(profile, job) : null,
+    }));
+
+  const jobs =
+    profile && (fitFilter === "great" || fitFilter === "possible")
+      ? scored.filter(
+          ({ fit }) =>
+            fit &&
+            (fit.verdict === "great" ||
+              (fitFilter === "possible" && fit.verdict === "possible")),
+        )
+      : scored;
+
+  const hasFilters = !!(q || loc || category || type || mode || fitFilter);
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
@@ -124,6 +150,13 @@ export default async function SearchPage({
                   </option>
                 ))}
               </select>
+              {profile && (
+                <select name="fit" defaultValue={fitFilter} className={selectCls}>
+                  <option value="">Any fit</option>
+                  <option value="great">Great fit only</option>
+                  <option value="possible">Possible fit & up</option>
+                </select>
+              )}
               <button
                 type="submit"
                 className="rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand-dark transition hover:bg-brand hover:text-white"
@@ -145,10 +178,20 @@ export default async function SearchPage({
 
       <main className="flex-1 px-4 py-10">
         <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-medium text-muted">
-            {jobs.length} {jobs.length === 1 ? "opening" : "openings"}
-            {hasFilters && " match your search"}
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm font-medium text-muted">
+              {jobs.length} {jobs.length === 1 ? "opening" : "openings"}
+              {hasFilters && " match your search"}
+            </p>
+            {!profile && (
+              <Link
+                href="/registerseeker"
+                className="text-sm font-semibold text-brand-dark hover:underline"
+              >
+                Create a free profile to see your fit scores →
+              </Link>
+            )}
+          </div>
 
           {jobs.length === 0 ? (
             <div className="mt-10 rounded-2xl bg-white p-12 text-center ring-1 ring-black/5">
@@ -165,7 +208,7 @@ export default async function SearchPage({
             </div>
           ) : (
             <ul className="mt-4 space-y-3">
-              {jobs.map((job) => {
+              {jobs.map(({ job, fit }) => {
                 const salary = formatSalary(job.salaryMin, job.salaryMax);
                 return (
                   <li key={job.id}>
@@ -192,6 +235,7 @@ export default async function SearchPage({
                               Featured
                             </span>
                           )}
+                          {fit && <FitPill fit={fit} />}
                         </div>
                         <p className="mt-0.5 text-sm font-medium text-muted">
                           {job.company.name}

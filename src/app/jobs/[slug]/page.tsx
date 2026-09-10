@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ApplyForm from "@/components/ApplyForm";
+import FitPill from "@/components/FitPill";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
+import { scoreJobFit } from "@/lib/fitScore";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +42,13 @@ export default async function JobPage({
   const { slug } = await params;
   const job = await getJob(slug);
   if (!job) notFound();
+
+  const cookieStore = await cookies();
+  const candidateId = cookieStore.get("jfc_candidate")?.value;
+  const profile = candidateId
+    ? await prisma.candidateProfile.findUnique({ where: { id: candidateId } })
+    : null;
+  const fit = profile ? scoreJobFit(profile, job) : null;
 
   const salary = formatSalary(job.salaryMin, job.salaryMax);
   const annual = (job.salaryMin ?? 0) >= 10000;
@@ -164,6 +174,24 @@ export default async function JobPage({
           </article>
 
           <aside className="space-y-6">
+            {fit && (
+              <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+                <div className="flex items-center justify-between">
+                  <h2 className="font-heading text-lg font-medium text-ink">
+                    Your fit
+                  </h2>
+                  <FitPill fit={fit} />
+                </div>
+                <ul className="mt-3 space-y-1.5 text-sm text-muted">
+                  {fit.reasons.map((r) => (
+                    <li key={r} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                      {r}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
               <h2 className="font-heading text-lg font-medium text-ink">
                 About {job.company.name}
@@ -185,6 +213,14 @@ export default async function JobPage({
               </h2>
               <ApplyForm slug={job.slug} jobTitle={job.title} />
             </div>
+            <p className="text-center">
+              <Link
+                href={`/jobs/${job.slug}/applicants`}
+                className="text-xs font-medium text-muted hover:text-brand-dark"
+              >
+                Employer view: applicants →
+              </Link>
+            </p>
           </aside>
         </div>
       </main>

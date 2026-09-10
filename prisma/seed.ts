@@ -326,6 +326,115 @@ async function main() {
     });
   }
 
+  // demo applicants with profiles → exercises fit scoring on the applicants view
+  const demoApplicants = [
+    {
+      name: "Maria Alvarez",
+      email: "maria.alvarez@example.org",
+      profile: {
+        desiredTitles: ["Theology Teacher"],
+        categories: ["Education"],
+        jobTypes: ["FULL_TIME"],
+        workModes: ["ONSITE"],
+        city: "Naples",
+        state: "FL",
+        relocate: false,
+        headline: "Theology Teacher, 6 years in Catholic schools",
+      },
+      applyTo: ["high-school-theology-teacher-st-clare"],
+      note: "Currently teaching sophomore theology; St. Clare's classical model is exactly where I want to grow.",
+    },
+    {
+      name: "Daniel Murphy",
+      email: "daniel.murphy@example.org",
+      profile: {
+        desiredTitles: ["Youth Minister"],
+        categories: ["Ministry"],
+        jobTypes: ["PART_TIME"],
+        workModes: ["ONSITE"],
+        city: "Abilene",
+        state: "TX",
+        relocate: false,
+        headline: "Core team volunteer, 4 years",
+      },
+      applyTo: ["youth-minister-regina-coeli", "high-school-theology-teacher-st-clare"],
+      note: "Been serving on core team at my parish for four years and feel called to make it my work.",
+    },
+    {
+      name: "Grace Nakamura",
+      email: "grace.nakamura@example.org",
+      profile: {
+        desiredTitles: ["Music Director", "Organist"],
+        categories: ["Music & Liturgy"],
+        jobTypes: ["FULL_TIME"],
+        workModes: ["HYBRID"],
+        city: "Chicago",
+        state: "IL",
+        relocate: true,
+        headline: "Parish organist and choir director",
+      },
+      applyTo: ["high-school-theology-teacher-st-clare"],
+      note: "Primarily a musician, but open to teaching if there's a path to lead your music program too.",
+    },
+    {
+      name: "Peter Okafor",
+      email: "peter.okafor@example.org",
+      profile: {
+        desiredTitles: ["High School Teacher"],
+        categories: ["Education"],
+        jobTypes: ["FULL_TIME"],
+        workModes: ["ONSITE"],
+        city: "Miami",
+        state: "FL",
+        relocate: true,
+        headline: "History teacher, catechist",
+      },
+      applyTo: ["high-school-theology-teacher-st-clare"],
+      note: "History is my subject but theology is my love — happy to relocate to Naples.",
+    },
+  ];
+
+  for (const d of demoApplicants) {
+    const user = await prisma.user.upsert({
+      where: { email: d.email },
+      update: { name: d.name },
+      create: { email: d.email, name: d.name, role: "SEEKER" },
+    });
+    await prisma.candidateProfile.upsert({
+      where: { userId: user.id },
+      update: d.profile as never,
+      create: { userId: user.id, ...(d.profile as object) } as never,
+    });
+    for (const jobSlug of d.applyTo) {
+      const job = await prisma.job.findUnique({ where: { slug: jobSlug } });
+      if (!job) continue;
+      await prisma.application.upsert({
+        where: { jobId_email: { jobId: job.id, email: d.email } },
+        update: {},
+        create: { jobId: job.id, name: d.name, email: d.email, coverLetter: d.note },
+      });
+    }
+  }
+
+  // one guest applicant with no profile → shows the "No profile" state
+  const guestJob = await prisma.job.findUnique({
+    where: { slug: "high-school-theology-teacher-st-clare" },
+  });
+  if (guestJob) {
+    await prisma.application.upsert({
+      where: {
+        jobId_email: { jobId: guestJob.id, email: "sarah.klein@example.org" },
+      },
+      update: {},
+      create: {
+        jobId: guestJob.id,
+        name: "Sarah Klein",
+        email: "sarah.klein@example.org",
+        coverLetter: "Applying after seeing this shared in our parish bulletin.",
+      },
+    });
+  }
+
   // punch-list items already shipped before the DB existed
   const shipped = ["f1", "f2", "f3", "f4", "f5", "f6", "f7"];
   for (const id of shipped) {

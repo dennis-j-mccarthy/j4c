@@ -56,11 +56,11 @@ export async function POST(request: Request) {
     create: { email, name: `${firstName} ${lastName}`, role: "SEEKER" },
   });
 
-  await prisma.candidateProfile.upsert({
+  const profile = await prisma.candidateProfile.upsert({
     where: { userId: user.id },
     update: profileData,
     create: { userId: user.id, ...profileData },
   });
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, profileId: profile.id });
 }
