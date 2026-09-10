@@ -52,7 +52,7 @@ One more edge: file names and formatting survive the skim too. "Maria-Alvarez-Th
     slug: "perfect-resume-structure-catholic-school-teachers",
     title: "The Perfect Resume Structure for Catholic School Teachers",
     category: RESUMES,
-    image: "/blog/teacher-class.jpg",
+    image: "/blog/laptop-writing.jpg",
     daysAgo: 9,
     excerpt: "Certification, classroom results, and faith formation — in the order principals actually look for them.",
     body: `Principals reading teacher resumes look for three things fast: can you manage a classroom, do you know your subject, and will you strengthen the school's Catholic identity. Structure your resume in exactly that order of proof.
@@ -73,7 +73,7 @@ Two Catholic-school-specific tips. First, name your sacramental and liturgical i
     slug: "five-resume-mistakes-faithful-candidates",
     title: "Five Resume Mistakes That Keep Faithful Candidates Invisible",
     category: RESUMES,
-    image: "/blog/laptop-writing.jpg",
+    image: "/blog/notebook-pen.jpg",
     daysAgo: 15,
     excerpt: "Humility is a virtue. Vagueness is not.",
     body: `Candidates from ministry and mission-driven backgrounds tend to make the same five mistakes — usually out of humility. But a resume isn't boasting; it's stewardship of the gifts you've been given.
@@ -96,7 +96,7 @@ Practical fix for the vagueness habit: for every bullet, force yourself to answe
     slug: "youth-group-resume-bullet",
     title: 'How to Turn "I Ran the Youth Group" Into a Resume Bullet That Sells',
     category: RESUMES,
-    image: "/blog/notebook-pen.jpg",
+    image: "/blog/desk-01.jpg",
     daysAgo: 21,
     excerpt: "Ministry experience is management experience — if you write it that way.",
     body: `"Ran the parish youth group" is the most undersold line in Catholic resumes. Look at what it actually contains: recruiting, budgeting, event production, volunteer management, safeguarding compliance, and weekly public speaking.
@@ -117,7 +117,7 @@ If you're unsure whether you're overclaiming, apply the reference test: would th
     slug: "200-word-cover-letter",
     title: "Cover Letters Are Not Dead — Here's the 200-Word Version That Works",
     category: RESUMES,
-    image: "/blog/resume-desk.jpg",
+    image: "/blog/desk-02.jpg",
     daysAgo: 28,
     excerpt: "Nobody reads long cover letters. Almost everybody reads short ones.",
     body: `The cover letter isn't dead; the four-paragraph essay version is. What works now is 200 words that do three jobs.
@@ -138,7 +138,7 @@ Notice the anatomy: one specific compliment that proves attention, three numbers
     slug: "resume-when-ministry-was-your-job",
     title: "What to Put on a Resume When Ministry Was Your Full-Time Job",
     category: RESUMES,
-    image: "/blog/praying.jpg",
+    image: "/blog/desk-03.jpg",
     daysAgo: 36,
     excerpt: "Your years of service are professional experience. Present them that way.",
     body: `If you spent five years as a missionary, a DRE, or a stay-at-home parent running half the parish's volunteer life, you don't have a resume gap. You have experience that needs translating.
@@ -159,7 +159,7 @@ And convert the fundraising honestly: support-raising as a missionary is real de
     slug: "career-change-corporate-to-catholic",
     title: "The Career-Change Resume: Moving From Corporate to Catholic",
     category: RESUMES,
-    image: "/blog/laptop-writing.jpg",
+    image: "/blog/desk-04.jpg",
     daysAgo: 44,
     excerpt: "Your corporate skills are wanted. Your reasons matter more than you think.",
     body: `Catholic organizations need what corporate refugees bring: operations discipline, marketing craft, financial rigor. But the resume that got you promoted at a Fortune 500 needs two changes before it works here.
@@ -180,7 +180,7 @@ Finally, expect a longer, slower process than you're used to — approvals move 
     slug: "faith-on-resume-without-oversharing",
     title: "How to Talk About Your Faith on a Resume (Without Oversharing)",
     category: RESUMES,
-    image: "/blog/church-candles.jpg",
+    image: "/blog/desk-05.jpg",
     daysAgo: 52,
     excerpt: "Show the practice, not the testimony.",
     body: `On a Catholic job board, faith belongs on your resume — but there's a craft to it. The rule: show the practice, not the testimony.
@@ -201,7 +201,7 @@ One caution for the genuinely accomplished: resist listing every ministry you've
     slug: "references-that-actually-help",
     title: "References That Actually Help: Who to Ask and How",
     category: RESUMES,
-    image: "/blog/handshake-meet.jpg",
+    image: "/blog/desk-06.jpg",
     daysAgo: 60,
     excerpt: "A lukewarm reference from a big title loses to a specific one from a real witness.",
     body: `References are the most neglected part of the application — assembled in a panic, chosen for their titles instead of their testimony.
@@ -222,7 +222,7 @@ After the process ends — either way — close the loop. Tell your references w
     slug: "fifteen-minute-resume-tuneup",
     title: "The 15-Minute Resume Tune-Up Before Every Application",
     category: RESUMES,
-    image: "/blog/notebook-pen.jpg",
+    image: "/blog/desk-07.jpg",
     daysAgo: 68,
     excerpt: "Never send the same resume twice. Here's the fast version of tailoring.",
     body: `Full resume rewrites for every application aren't sustainable. But sending identical resumes everywhere is how good candidates stay invisible. The answer is a 15-minute tune-up ritual.
@@ -268,7 +268,7 @@ So before the next application, write your one-sentence mission and grade the ov
     slug: "culture-fit-vs-mission-fit",
     title: "Culture Fit vs. Mission Fit: Why One Fades and the Other Compounds",
     category: MISSION,
-    image: "/blog/interview-one.jpg",
+    image: "/blog/praying.jpg",
     daysAgo: 12,
     excerpt: "Culture is how it feels this year. Mission is why it exists at all.",
     body: `Culture fit answers "will I enjoy Tuesday?" Mission fit answers "will Tuesday matter?" Both are real, but they age differently.
@@ -289,7 +289,7 @@ There's an interview tactic hiding here too. Culture questions ("what's it like 
     slug: "tell-if-employer-lives-its-mission",
     title: "How to Tell if an Employer Really Lives Its Mission (Before You Sign)",
     category: MISSION,
-    image: "/brand/hero-church-windows.jpg",
+    image: "/blog/sunrise-cross.jpg",
     daysAgo: 19,
     excerpt: "Every organization has a mission statement. Not every organization has a mission.",
     body: `The mission statement tells you what an organization wants to believe about itself. To find out what's true, look at three things money, calendar, and exits can't hide.
@@ -312,7 +312,7 @@ Calibrate your expectations, though: no organization lives its mission perfectly
     slug: "interview-questions-reveal-mission-fit",
     title: "The Questions to Ask in an Interview That Reveal Mission Fit",
     category: MISSION,
-    image: "/blog/interview-two.jpg",
+    image: "/blog/three-crosses.jpg",
     daysAgo: 26,
     excerpt: "You're interviewing them too. These five questions do the work.",
     body: `The interview is your best chance to test fit before you commit years to it. These five questions reveal more than any tour:
@@ -335,7 +335,7 @@ Finally, reciprocate. When they ask why you want the role, give them the same sp
     slug: "qualified-but-not-called",
     title: "When You're Qualified but Not Called: Reading Your Own Fit Honestly",
     category: MISSION,
-    image: "/blog/praying.jpg",
+    image: "/blog/open-field.jpg",
     daysAgo: 33,
     excerpt: "The hardest job to turn down is the one you could do but shouldn't.",
     body: `The most dangerous opportunity is the one you're perfectly qualified for and quietly wrong for. You can do the work — that's not the question. The question is whether doing it will form you into someone you want to become.
@@ -356,7 +356,7 @@ And remember that "no" has a cost you're allowed to count. Turning down a good j
     slug: "red-flags-were-like-a-family",
     title: 'Red Flags: When "We\'re Like a Family" Isn\'t a Mission',
     category: MISSION,
-    image: "/blog/meeting-office.jpg",
+    image: "/blog/church-01.jpg",
     daysAgo: 41,
     excerpt: "Warmth is wonderful. Warmth as a substitute for clarity is a warning.",
     body: `"We're like a family here" can mean two very different things. Sometimes it means people genuinely care for each other. Sometimes it means boundaries are blurry, pay is low, and guilt is the management system.
@@ -377,7 +377,7 @@ None of this means warmth is a red flag. Plenty of parishes and schools are genu
     slug: "mission-fit-two-way-street",
     title: "Mission Fit Is a Two-Way Street: What You Owe Your Employer",
     category: MISSION,
-    image: "/blog/sunrise-cross.jpg",
+    image: "/blog/church-02.jpg",
     daysAgo: 49,
     excerpt: "Fit isn't just something you evaluate. It's something you keep.",
     body: `Candidates rightly scrutinize employers for authenticity. But mission fit is a covenant, not a consumer review — and it binds both directions.
@@ -400,7 +400,7 @@ Employers, the mirror image is yours: if you hired for mission, honor it — inv
     slug: "mission-fit-hires-stay-longer",
     title: "Why Mission-Fit Hires Stay Twice as Long",
     category: MISSION,
-    image: "/blog/three-crosses.jpg",
+    image: "/blog/church-03.jpg",
     daysAgo: 57,
     excerpt: "Retention isn't a perk problem. It's a purpose problem.",
     body: `Across the organizations on this board, one pattern repeats: hires made primarily for mission alignment outlast hires made primarily for credentials — often dramatically.
@@ -423,7 +423,7 @@ One caveat to keep the claim honest: mission fit predicts retention only when th
     slug: "how-matching-actually-works",
     title: "Connecting the Perfect Candidate to the Perfect Employer: How Matching Actually Works",
     category: MATCH,
-    image: "/blog/handshake-meet.jpg",
+    image: "/blog/interview-one.jpg",
     daysAgo: 4,
     excerpt: "Great matches aren't found. They're constructed from signals both sides can learn to send.",
     body: `The romance version of hiring says the perfect candidate and the perfect employer simply find each other. The truth is more encouraging: great matches are built from legible signals, and both sides can get better at sending them.
@@ -444,7 +444,7 @@ The platform's job — our job — is to make the signals legible: structured pr
     slug: "best-on-paper-not-right-hire",
     title: "Why the Best Candidate on Paper Isn't Always the Right Hire",
     category: MATCH,
-    image: "/blog/interview-one.jpg",
+    image: "/blog/interview-two.jpg",
     daysAgo: 11,
     excerpt: "Resumes measure the past. Hiring is a bet on a future.",
     body: `Every experienced hiring manager has a story about the immaculate resume that became a mediocre hire — and the modest resume that became indispensable. The paper measures the wrong decade.
@@ -488,7 +488,7 @@ Use the five signals as a literal checklist in your final interview or your fina
     slug: "how-fit-scores-work",
     title: "How Fit Scores Work — and How to Improve Yours",
     category: MATCH,
-    image: "/blog/laptop-writing.jpg",
+    image: "/blog/handshake-meet.jpg",
     daysAgo: 25,
     excerpt: "The pill next to every job is math about you. Here's the formula.",
     body: `Every job you see on Jobs For Catholics carries a colored fit pill — green, amber, or red — scored against your profile. It's not a mystery and it's not a judgment. It's overlap arithmetic.
@@ -509,7 +509,7 @@ Meanwhile, two habits get the most from the current system. Recheck your profile
     slug: "where-candidates-and-employers-miss",
     title: "Finding Each Other: Where Faithful Candidates and Employers Miss",
     category: MATCH,
-    image: "/blog/open-field.jpg",
+    image: "/blog/people-01.jpg",
     daysAgo: 32,
     excerpt: "The right people keep almost meeting. The gaps are fixable.",
     body: `Somewhere right now a parish needs exactly the coordinator who's praying for exactly that job — and they'll miss each other. The near-misses follow patterns.
@@ -532,7 +532,7 @@ The meta-fix for all of these is the same uncomfortable act: publishing more tru
     slug: "first-90-days-proving-the-match",
     title: "The First 90 Days: Proving the Match Was Right",
     category: MATCH,
-    image: "/blog/teacher-two.jpg",
+    image: "/blog/people-02.jpg",
     daysAgo: 39,
     excerpt: "The hire isn't finished at the signature. It's finished at Thanksgiving.",
     body: `A match isn't proven at the offer letter — it's proven in the first ninety days, and both sides carry the burden of proof.
@@ -553,7 +553,7 @@ Employers, one addition to the checklist: assign a peer guide who isn't the boss
     slug: "from-application-to-belonging",
     title: "From Application to Belonging: A Match Story Done Well",
     category: MATCH,
-    image: "/blog/handshake-meet.jpg",
+    image: "/blog/people-03.jpg",
     daysAgo: 47,
     excerpt: "What it looks like when every step of the process serves the fit.",
     body: `Consider a composite of matches we've watched succeed: a music director we'll call Anna, and a parish that did it right.
@@ -578,7 +578,7 @@ None of this required a big budget — a parish of any size can copy every step 
     slug: "importance-of-meaning-in-a-job",
     title: "The Importance of Meaning in a Job (It's Not a Luxury)",
     category: MEANING,
-    image: "/blog/sunrise-cross.jpg",
+    image: "/blog/church-04.jpg",
     daysAgo: 2,
     excerpt: "Meaning isn't a perk for people who can afford it. It's load-bearing.",
     body: `We talk about meaning at work as if it were a luxury item — something to consider after salary, commute, and dental. The evidence, and the tradition, say otherwise: meaning is load-bearing.
@@ -599,7 +599,7 @@ The repair can start small, this week: write one sentence connecting your work t
     slug: "work-as-vocation-colossians",
     title: "Work as Vocation: What Colossians 3:23 Asks of Your Career",
     category: MEANING,
-    image: "/blog/church-candles.jpg",
+    image: "/blog/church-05.jpg",
     daysAgo: 8,
     excerpt: "\"Work at it with all your heart, as working for the Lord\" — a job description for every job.",
     body: `"Whatever you do, work at it with all your heart, as working for the Lord, not for men." Paul wrote that to ordinary workers — most of them doing labor nobody would call a dream job.
@@ -622,7 +622,7 @@ Try the verse as a daily examen for a week. Each evening, one question: what par
     slug: "sunday-shouldnt-be-only-day",
     title: "Why Sunday Shouldn't Be the Only Day Your Work Makes Sense",
     category: MEANING,
-    image: "/brand/hero-church-windows.jpg",
+    image: "/blog/church-06.jpg",
     daysAgo: 16,
     excerpt: "The gap between what you worship and what you do all week is where fatigue lives.",
     body: `There's a particular tiredness that comes from living in two unconnected worlds: the Sunday world where everything means something, and the Monday world where nothing does. Sociologists call it compartmentalization. It just feels like exhaustion.
@@ -643,7 +643,7 @@ And when you evaluate your next role, add the integration question to your list 
     slug: "quiet-burnout-of-meaningless-work",
     title: "The Quiet Burnout of Meaningless Work — and the Way Out",
     category: MEANING,
-    image: "/blog/open-field.jpg",
+    image: "/blog/church-07.jpg",
     daysAgo: 23,
     excerpt: "You're not tired because you work too much. You're tired because it counts for too little.",
     body: `The loud kind of burnout — eighty-hour weeks, missed holidays — gets the articles. The quiet kind is more common: reasonable hours, decent pay, and a slow interior flattening, because nothing you do all day would be missed if it stopped.
@@ -664,7 +664,7 @@ And tell someone. Burnout of every volume isolates, and isolation ratifies its l
     slug: "ora-et-labora-benedictines",
     title: "Ora et Labora: What the Benedictines Knew About Careers",
     category: MEANING,
-    image: "/blog/praying.jpg",
+    image: "/blog/church-08.jpg",
     daysAgo: 31,
     excerpt: "Fifteen centuries of research on sustainable, meaningful work — hiding in a monastery.",
     body: `Fifteen hundred years before workplace wellness programs, St. Benedict built a rule of life around a radical claim: prayer and work are not rivals. Ora et labora — the two halves of one balanced day.
@@ -685,7 +685,7 @@ Even stability, the strangest vow to modern ears, has a portable core: commit so
     slug: "ordinary-job-calling",
     title: "Can an Ordinary Job Be a Calling? Yes — Here's How",
     category: MEANING,
-    image: "/blog/notebook-pen.jpg",
+    image: "/blog/church-09.jpg",
     daysAgo: 38,
     excerpt: "The bookkeeper and the missionary can both be exactly where God wants them.",
     body: `A subtle clericalism creeps into how we talk about calling — as if vocation belongs to missionaries and youth ministers, while everyone else just has a job. The tradition says otherwise.
@@ -706,7 +706,7 @@ A practical exercise for the unsure: for one month, keep a two-column log. Left:
     slug: "money-meaning-tradeoff-myth",
     title: "Money, Meaning, and the Trade-Off Myth",
     category: MEANING,
-    image: "/blog/resume-desk.jpg",
+    image: "/blog/church-10.jpg",
     daysAgo: 46,
     excerpt: "You've been told to pick one. The data — and prudence — say it's more complicated.",
     body: `The standard story says meaningful work pays badly and lucrative work means nothing, so choose your poison. Both halves are exaggerated — and the myth does damage in both directions.
@@ -727,7 +727,7 @@ The healthiest sentence either side can say in a negotiation: "the mission matte
     slug: "teaching-kids-what-work-is-for",
     title: "Teaching Your Kids What Work Is For (By How You Work)",
     category: MEANING,
-    image: "/blog/teacher-two.jpg",
+    image: "/blog/teacher-class.jpg",
     daysAgo: 54,
     excerpt: "Your children are learning a theology of work at the dinner table. What's the lesson?",
     body: `Long before your kids hold a job, they've absorbed a doctrine of work — from how you talk about Monday, what your face does when your phone buzzes at dinner, whether "work" in your house is a curse word or a calling.
@@ -750,7 +750,7 @@ And when they're older, the dinner table is where discernment gets modeled: talk
     slug: "what-employers-look-for-mission-fit",
     title: 'What Employers Actually Look For When They Say "Mission Fit"',
     category: EMPLOYERS,
-    image: "/brand/employer-2.jpg",
+    image: "/blog/people-04.jpg",
     daysAgo: 6,
     excerpt: "From the other side of the desk, fit has a surprisingly concrete checklist.",
     body: `Candidates imagine "mission fit" as a mysterious vibe check. Sit on the hiring side for a few searches and it resolves into something concrete. Employers are listening for four things:
@@ -772,7 +772,7 @@ If you're the candidate, don't game the checklist — inhabit it. Before the int
     slug: "spot-mission-driven-candidate-one-interview",
     title: "How Hiring Managers Spot a Mission-Driven Candidate in One Interview",
     category: EMPLOYERS,
-    image: "/blog/interview-two.jpg",
+    image: "/blog/people-05.jpg",
     daysAgo: 13,
     excerpt: "The tells are small, consistent, and nearly impossible to fake.",
     body: `Experienced mission-driven employers develop a radar, and it's remarkably consistent. The tells they trust:
@@ -797,7 +797,7 @@ Structure beats instinct in the end: put the four questions in every interview s
     slug: "skills-trainable-mission-isnt",
     title: "The Employer's View: Why Skills Are Trainable and Mission Isn't",
     category: EMPLOYERS,
-    image: "/blog/teacher-class.jpg",
+    image: "/blog/people-06.jpg",
     daysAgo: 20,
     excerpt: "The hiring principle that separates thriving Catholic organizations from churning ones.",
     body: `Ask leaders of thriving Catholic organizations their hiring secret and you'll hear a version of the same principle: hire for mission, train for skill — because only one of those is teachable.
@@ -818,7 +818,7 @@ There's a compounding effect on the roster, too. Every mission-first hire raises
     slug: "how-catholic-employers-read-resumes",
     title: "How Catholic Employers Read Your Resume Differently",
     category: EMPLOYERS,
-    image: "/blog/resume-desk.jpg",
+    image: "/blog/people-07.jpg",
     daysAgo: 27,
     excerpt: "Same document, different eyes. Know what they're scanning for.",
     body: `A resume that lands at a diocese, Catholic school, or apostolate is read with a second lens laid over the standard one — and knowing it helps both sides.
@@ -841,7 +841,7 @@ One more difference: the cover letter survives here. In corporate pipelines it's
     slug: "parish-business-manager-wishes",
     title: "What a Parish Business Manager Wishes Candidates Knew",
     category: EMPLOYERS,
-    image: "/blog/meeting-office.jpg",
+    image: "/blog/people-08.jpg",
     daysAgo: 34,
     excerpt: "Notes from the desk where parish hiring actually happens.",
     body: `Talk to the people who actually run parish hiring — often a business manager wearing five other hats — and a consistent wish list emerges.
@@ -864,7 +864,7 @@ The meta-wish underneath all of it: that both sides would treat parish hiring as
     slug: "hiring-for-mission-legally",
     title: "Hiring for Mission Without Discriminating: What Employers Can and Can't Ask",
     category: EMPLOYERS,
-    image: "/brand/tech.jpg",
+    image: "/blog/people-09.jpg",
     daysAgo: 42,
     excerpt: "Religious organizations have real latitude — and real limits. A plain-English orientation.",
     body: `Mission-driven hiring lives inside a legal framework that many small Catholic employers navigate by folklore. A plain-English orientation (not legal advice — confirm specifics with counsel):
@@ -887,7 +887,7 @@ And treat candidates' religious information with the gravity it deserves: it's s
     slug: "why-employers-pay-more-for-mission",
     title: "Why Employers Pay More for Candidates Who Get the Mission",
     category: EMPLOYERS,
-    image: "/blog/handshake-meet.jpg",
+    image: "/blog/people-10.jpg",
     daysAgo: 50,
     excerpt: "Mission fit isn't charity pricing. It's the best ROI line in the hiring budget.",
     body: `There's a persistent myth that mission-driven employers can pay less because meaning subsidizes wages. The sharpest ones have learned the opposite: mission-fit candidates are worth paying up for, on straight arithmetic.
@@ -912,7 +912,7 @@ None of this argues for reckless generosity; small-organization budgets are real
     slug: "catholic-jobs-near-me",
     title: "Catholic Jobs Near Me: How to Find Faith-Based Work in Your Area",
     category: "Catholic Jobs Guide",
-    image: "/blog/open-field.jpg",
+    image: "/blog/teacher-two.jpg",
     daysAgo: 1,
     excerpt: "Every diocese is an employment network hiding in plain sight. Here's how to search yours.",
     body: `Searching "Catholic jobs near me" returns a strange mix — because Catholic employment is scattered across parish websites, diocesan HR pages, school systems, and general job boards that don't understand the category. The work exists; the indexing doesn't. Here's how to actually search your area.
@@ -929,7 +929,7 @@ And of course, use a board built for exactly this. Jobs For Catholics aggregates
     slug: "what-counts-as-a-catholic-job",
     title: "What Counts as a Catholic Job? A Complete Guide to Faith-Based Careers",
     category: "Catholic Jobs Guide",
-    image: "/brand/hero-church-windows.jpg",
+    image: "/blog/serve-01.jpg",
     daysAgo: 3,
     excerpt: "It's a bigger category than parish work — and smaller than 'any job a Catholic holds.'",
     body: `"Catholic job" gets used to mean everything from ordained ministry to any desk a Catholic happens to occupy. For a job search, a working taxonomy helps — because each tier hires differently.
@@ -948,7 +948,7 @@ Practical takeaway for your search: decide which tiers fit your gifts and creden
     slug: "catholic-church-jobs-parish-roles",
     title: "Catholic Church Jobs: Every Role a Parish Actually Hires For",
     category: "Catholic Jobs Guide",
-    image: "/blog/church-candles.jpg",
+    image: "/blog/serve-02.jpg",
     daysAgo: 6,
     excerpt: "A working parish is a small enterprise. Here's the full org chart most job seekers never see.",
     body: `Ask someone what jobs exist at a Catholic parish and they'll name the priest and maybe "the secretary." A functioning parish is actually a small enterprise — often the size of a mid-sized business — and it hires across a surprising range.
@@ -965,7 +965,7 @@ If parish work calls to you, build your candidate profile with every title you'd
     slug: "catholic-school-jobs-hiring-timeline",
     title: "Catholic School Jobs: The Complete Hiring Timeline (and When to Apply)",
     category: "Catholic Jobs Guide",
-    image: "/blog/teacher-class.jpg",
+    image: "/blog/serve-03.jpg",
     daysAgo: 9,
     excerpt: "Catholic schools hire on a calendar. Miss it and you wait a year; learn it and you're early.",
     body: `Catholic school hiring runs on an academic clock, and knowing it is half the search. Here's the year as principals actually live it.
@@ -986,7 +986,7 @@ Administrative searches (principals, presidents) run earlier — often the fall 
     slug: "remote-catholic-jobs",
     title: "Remote Catholic Jobs: Working for the Church From Anywhere",
     category: "Catholic Jobs Guide",
-    image: "/brand/working-laptop.jpg",
+    image: "/blog/serve-04.jpg",
     daysAgo: 12,
     excerpt: "The Church went remote too. Here's where the real work-from-home Catholic jobs are.",
     body: `"Remote Catholic jobs" used to be a nearly empty search. Not anymore. Catholic organizations discovered distributed work along with everyone else, and a real remote job market now exists for candidates whose location and vocation don't line up.
@@ -1003,7 +1003,7 @@ On our board, filter any search by Remote work setting — or set your profile's
     slug: "catholic-jobs-no-theology-degree",
     title: "Catholic Jobs That Don't Require a Theology Degree",
     category: "Catholic Jobs Guide",
-    image: "/blog/meeting-office.jpg",
+    image: "/blog/serve-05.jpg",
     daysAgo: 16,
     excerpt: "Most Catholic jobs aren't theology jobs. Your existing skills are probably already wanted.",
     body: `The most common misconception about Catholic employment: that it's for theology graduates. Walk through any diocese's payroll and the opposite appears — the majority of Catholic jobs run on skills learned everywhere else.
@@ -1020,7 +1020,7 @@ The move: search by your existing skill category — Administration, Communicati
     slug: "entry-level-catholic-jobs",
     title: "Entry-Level Catholic Jobs: Where to Start a Faith-Based Career",
     category: "Catholic Jobs Guide",
-    image: "/blog/laptop-writing.jpg",
+    image: "/blog/serve-06.jpg",
     daysAgo: 20,
     excerpt: "No experience, real faith, ready to work? Here's the actual on-ramp map.",
     body: `Every field has its on-ramps, and Catholic employment is no different — though nobody hands you the map. Here it is.
@@ -1039,7 +1039,7 @@ On the board, filter by Internship, Part-time, and Volunteer job types to surfac
     slug: "how-much-do-catholic-jobs-pay",
     title: "How Much Do Catholic Jobs Pay? An Honest Salary Guide by Role",
     category: "Catholic Jobs Guide",
-    image: "/blog/notebook-pen.jpg",
+    image: "/blog/desk-08.jpg",
     daysAgo: 25,
     excerpt: "Real ranges, real trade-offs, and how to negotiate without guilt.",
     body: `Nobody publishes an honest salary guide for Catholic work, so rumors fill the gap — either "it pays nothing" or uncomfortable silence. Here are real ranges as of this writing, with the caveats that region, diocese, and organization size move every number.
@@ -1054,7 +1054,7 @@ Now the negotiation permission slip: mission-driven employers need sustainable e
     slug: "catholic-nonprofit-jobs",
     title: "Catholic Nonprofit Jobs: From Apostolates to Charities",
     category: "Catholic Jobs Guide",
-    image: "/blog/praying.jpg",
+    image: "/blog/desk-09.jpg",
     daysAgo: 30,
     excerpt: "The Church's works of mercy have payrolls. Here's the landscape beyond parish walls.",
     body: `Between the parish and the purely secular nonprofit lies a vast Catholic middle: organizations doing corporal and spiritual works of mercy at professional scale. If your calling is service more than sanctuary, this is your job market.
@@ -1071,7 +1071,7 @@ Search the Nonprofit category on the board, and note which employers publish the
     slug: "catholic-jobs-for-career-changers",
     title: "Catholic Jobs for Career Changers: Bringing Your Skills to the Church",
     category: "Catholic Jobs Guide",
-    image: "/brand/employer-2.jpg",
+    image: "/blog/desk-10.jpg",
     daysAgo: 35,
     excerpt: "Mid-career and mission-hungry: the Church needs exactly what you already know how to do.",
     body: `Somewhere in year twelve of a perfectly fine career, a certain kind of Catholic starts doing math at Mass: how many working years remain, and what are they for? If that's you, here's the encouraging truth — the career-changer is Catholic employment's most valuable import, because institutions rich in mission are frequently poor in exactly the professional disciplines you've spent a decade mastering.

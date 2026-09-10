@@ -70,7 +70,10 @@ export default async function SearchPage({
       orderBy: { category: "asc" },
     }),
     candidateId
-      ? prisma.candidateProfile.findUnique({ where: { id: candidateId } })
+      ? prisma.candidateProfile.findUnique({
+          where: { id: candidateId },
+          include: { user: true },
+        })
       : Promise.resolve(null),
   ]);
 
@@ -184,14 +187,28 @@ export default async function SearchPage({
                 Create a free profile to see your fit scores →
               </Link>
             ) : (
-              <p className="text-xs text-muted">
-                Fit scores seem off?{" "}
-                <Link
-                  href="/registerseeker"
-                  className="font-semibold text-brand-dark hover:underline"
-                >
-                  Update your profile
-                </Link>
+              <p className="flex items-center gap-2 text-xs text-muted">
+                <span>
+                  Fit scores for{" "}
+                  <span className="font-semibold text-ink">
+                    {profile.user.name}
+                  </span>
+                  {" · "}
+                  <Link
+                    href="/registerseeker"
+                    className="font-semibold text-brand-dark hover:underline"
+                  >
+                    Update profile
+                  </Link>
+                </span>
+                <form action="/api/auth/logout" method="post">
+                  <button
+                    type="submit"
+                    className="font-semibold text-muted underline-offset-2 hover:text-ink hover:underline"
+                  >
+                    Sign out
+                  </button>
+                </form>
               </p>
             )}
           </div>

@@ -28,6 +28,7 @@ const phases: Phase[] = [
       { id: "f6", title: "Provision Postgres + set DATABASE_URL on Vercel", detail: "Live as isolated `jfc` database on the shared Neon server — move to its own Neon project before launch", done: true },
       { id: "f7", title: "prisma db push + seed", done: true },
       { id: "f8", title: "Link GitHub repo to Vercel for push-to-deploy" },
+      { id: "f9", title: "Wire S3 media storage (Dennis's AWS)", detail: "New dedicated bucket + scoped IAM; presigned uploads. Unblocks resumes, headshots, galleries, videos. Vercel Blob is out (threshold)" },
     ],
   },
   {
@@ -62,6 +63,7 @@ const phases: Phase[] = [
       { id: "s4", title: "Saved jobs" },
       { id: "s5", title: "Job alert emails", detail: "Saved-search digest; use Resend or SES" },
       { id: "s6", title: "Candidate/JD fit scores", detail: "Heuristic red/amber/green + filters on search, job pages, and employer applicant view; LLM scoring later", done: true },
+      { id: "s7", title: "Instant video intros (record in browser)", detail: "MediaRecorder capture with retake/preview for candidate + employer videos; needs S3 (f9) to persist recordings" },
     ],
   },
   {

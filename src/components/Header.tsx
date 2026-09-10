@@ -141,17 +141,25 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
   },
 };
 
+// module state: survives client-side route changes, resets on full page load —
+// so the sweep plays once per real page load, never on in-app navigation
+let shinePlayed = false;
+
 export default function Header() {
   const [open, setOpen] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [shine, setShine] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // light-sweep the logo once per session, on the first page it loads
-    if (!sessionStorage.getItem("jfc-logo-shine")) {
-      sessionStorage.setItem("jfc-logo-shine", "1");
+    if (!shinePlayed) {
+      shinePlayed = true;
       setShine(true);
     }
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -168,7 +176,11 @@ export default function Header() {
       </div>
 
       <header className="relative border-b border-black/5 bg-white/95 shadow-sm backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3">
+        <div
+          className={`mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 transition-all duration-300 ${
+            scrolled ? "py-2" : "py-3"
+          }`}
+        >
           <Link href="/" className="shrink-0" onMouseEnter={() => setOpen(null)}>
             <span className={`logo-shine ${shine ? "logo-shine-run" : ""}`}>
               <Image
@@ -176,7 +188,7 @@ export default function Header() {
                 alt="JobsForCatholics.com"
                 width={332}
                 height={133}
-                className="h-16 w-auto"
+                className={`w-auto transition-all duration-300 ${scrolled ? "h-12" : "h-[4.5rem]"}`}
                 priority
               />
             </span>
