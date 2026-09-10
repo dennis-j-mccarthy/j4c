@@ -168,6 +168,20 @@ model Application {
   @@index([userId])
 }
 
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  body        String
+  image       String
+  category    String
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+
+  @@index([category, publishedAt(sort: Desc)])
+}
+
 model PunchItem {
   id        String         @id
   done      Boolean        @default(false)
