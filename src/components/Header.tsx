@@ -94,6 +94,12 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
         description: "Get discovered by faithful employers",
         icon: icons.user,
       },
+      {
+        href: "/resume",
+        title: "AI Resume Builder",
+        description: "Plain English in, polished resume out",
+        icon: icons.book,
+      },
     ],
     featured: {
       title: "Work is a vocation",

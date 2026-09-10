@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import JobPostWizard from "@/components/JobPostWizard";
+import ResumeBuilder from "@/components/ResumeBuilder";
 
 export const metadata: Metadata = {
-  title: "Post a Job — Jobs For Catholics",
+  title: "AI Resume Builder — Jobs For Catholics",
   description:
-    "Post a job in minutes. Our writing assistant drafts a mission-forward description from your notes.",
+    "Answer in plain English, get a modern recruiter-ready resume — tailored to the role you want.",
 };
 
-export default function EmployerPostPage() {
+export default function ResumePage() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
       <Header />
       <main className="flex-1">
-        <JobPostWizard />
+        <ResumeBuilder />
       </main>
       <Footer />
     </div>

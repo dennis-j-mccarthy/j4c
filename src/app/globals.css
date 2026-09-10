@@ -187,3 +187,22 @@ body {
     transition: none;
   }
 }
+
+/* print: only the resume sheet */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resume-sheet,
+  .resume-sheet * {
+    visibility: visible;
+  }
+  .resume-sheet {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
