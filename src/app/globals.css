@@ -60,6 +60,28 @@ body {
   }
 }
 
+@keyframes shimmer {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+.btn-shimmer {
+  background: linear-gradient(
+    110deg,
+    #29b8fb 20%,
+    #0085c8 40%,
+    #7cd4ff 50%,
+    #0085c8 60%,
+    #29b8fb 80%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3.5s linear infinite;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

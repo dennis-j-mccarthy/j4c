@@ -97,17 +97,22 @@ model CandidateProfile {
 }
 
 model Company {
-  id        String   @id @default(cuid())
-  slug      String   @unique
-  name      String
-  website   String?
-  logoUrl   String?
-  location  String?
-  about     String?
-  members   User[]
-  jobs      Job[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  name         String
+  website      String?
+  logoUrl      String?
+  location     String?
+  about        String?
+  orgType      String?
+  size         String?
+  planInterest String?
+  galleryNames String[]
+  videoName    String?
+  members      User[]
+  jobs         Job[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Job {

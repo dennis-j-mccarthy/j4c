@@ -93,6 +93,7 @@ const phases: Phase[] = [
       { id: "c3", title: "Contact form", detail: "No PII in email — send notification, keep message in DB" },
       { id: "c4", title: "Job-seeker info + employer info pages" },
       { id: "c5", title: "Terms + privacy (copy from current site, review)" },
+      { id: "c6", title: "School vertical landing (/school)", detail: "Alt identity — future schools subdomain; live education jobs + school employers", done: true },
     ],
   },
   {

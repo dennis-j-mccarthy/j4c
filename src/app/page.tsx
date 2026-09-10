@@ -19,6 +19,7 @@ const employers = [
 const featuredJobs = [
   {
     title: "High School Theology Teacher",
+    slug: "high-school-theology-teacher-st-clare",
     org: "St. Clare of Assisi Catholic School",
     logo: "/brand/employers/qlv9.png",
     blurb:
@@ -31,6 +32,7 @@ const featuredJobs = [
   },
   {
     title: "Admissions Counselor",
+    slug: "admissions-counselor-franciscan",
     org: "Franciscan University of Steubenville",
     logo: "/brand/employers/felq.jpg",
     blurb:
@@ -43,6 +45,7 @@ const featuredJobs = [
   },
   {
     title: "Youth Minister",
+    slug: "youth-minister-regina-coeli",
     org: "Regina Coeli Parish",
     logo: "/brand/employers/wt86.webp",
     blurb:
@@ -55,6 +58,7 @@ const featuredJobs = [
   },
   {
     title: "Development Director",
+    slug: "development-director-legacy-of-life",
     org: "Legacy of Life Foundation",
     logo: "/brand/employers/8enr.png",
     blurb:
@@ -67,6 +71,7 @@ const featuredJobs = [
   },
   {
     title: "Executive Recruiter",
+    slug: "executive-recruiter-sol",
     org: "Sól Recruiting",
     logo: "/brand/employers/klqe.webp",
     blurb:
@@ -79,6 +84,7 @@ const featuredJobs = [
   },
   {
     title: "E-Commerce Manager",
+    slug: "ecommerce-manager-holy-land",
     org: "Holy Land Wood & Stone",
     logo: "/brand/employers/fz9n.webp",
     blurb:
@@ -111,6 +117,7 @@ const whyColumns = [
   {
     heading: "For Candidates",
     copy: "Skip the guesswork. Every listing comes from an organization that values faith, mission, and integrity — no more decoding vague “culture fit” language.",
+    cta: { href: "/search", label: "Browse jobs" },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
         <circle cx="12" cy="8" r="4" />
@@ -121,6 +128,7 @@ const whyColumns = [
   {
     heading: "For Employers",
     copy: "Skip the noise. Stop sorting through hundreds of unqualified applicants. Every candidate here is actively seeking mission-aligned work.",
+    cta: { href: "/employer/post", label: "Post a job" },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
         <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -131,6 +139,7 @@ const whyColumns = [
   {
     heading: "For Everyone",
     copy: "A trusted community. From Catholic schools and parishes to healthcare systems, nonprofits, and faith-driven businesses — we’re the meeting place for people who want their work to mean something.",
+    cta: { href: "/register", label: "Join free" },
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
         <circle cx="9" cy="8" r="3.5" />
@@ -318,7 +327,7 @@ export default function Home() {
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
               {whyColumns.map((col, i) => (
                 <Reveal key={col.heading} delay={i * 120} className="h-full">
-                  <div className="h-full rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5">
+                  <div className="flex h-full flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-tint text-brand-dark">
                       {col.icon}
                     </span>
@@ -328,6 +337,13 @@ export default function Home() {
                     <p className="mt-3 text-sm leading-relaxed text-muted">
                       {col.copy}
                     </p>
+                    <Link
+                      href={col.cta.href}
+                      className="group mt-auto inline-flex items-center gap-2 pt-5 font-semibold text-brand-dark"
+                    >
+                      {col.cta.label}
+                      <span className="transition-transform group-hover:translate-x-1">→</span>
+                    </Link>
                   </div>
                 </Reveal>
               ))}
@@ -520,7 +536,7 @@ export default function Home() {
               {featuredJobs.map((job, i) => (
                 <Reveal key={job.title} delay={(i % 3) * 100} className="h-full">
                   <Link
-                    href="/search"
+                    href={`/jobs/${job.slug}`}
                     className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-brand/40"
                   >
                     <div className="flex items-start justify-between">
