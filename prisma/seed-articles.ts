@@ -40,7 +40,13 @@ Put your name, your target role, and your strongest credential in the top third.
 • Three bullets per role, each starting with a verb and ending with a result
 • White space is a feature, not wasted space
 
-Win the skim, and the six seconds becomes six minutes. That's when the interview happens.`,
+Win the skim, and the six seconds becomes six minutes. That's when the interview happens.
+
+Think about what those six seconds contain from the reviewer's side. A school posting one teaching job can receive eighty resumes in a week, most reviewed after work hours by a principal who also ran a fire drill that day. The skim isn't disrespect — it's triage. Design for the tired reader and you'll beat the candidates who designed for an imaginary careful one.
+
+A practical exercise: hand your resume to a friend for exactly six seconds, take it back, and ask what they remember. Whatever they say is your current headline — whether you meant it or not. If they remember your objective statement instead of your best achievement, swap the real estate.
+
+One more edge: file names and formatting survive the skim too. "Maria-Alvarez-Theology-Teacher.pdf" reads professional before the document even opens. Send PDF unless asked otherwise, keep fonts boring, and never let the good stuff fall to page two.`,
   },
   {
     slug: "perfect-resume-structure-catholic-school-teachers",
@@ -55,7 +61,13 @@ Open with a two-line summary naming your grade band, subject, and years in Catho
 
 Then your classroom record: enrollment retained, scores improved, programs built. Finish with faith life relevant to the role: sacramental prep, retreat leadership, liturgical ministry.
 
-A principal should finish your first page thinking, "This person could start Monday." Everything else is conversation.`,
+A principal should finish your first page thinking, "This person could start Monday." Everything else is conversation.
+
+A worked example makes the order concrete. Top band: "Middle school science teacher, 8 years in Catholic education, Ohio license + catechist certification." Credentials block next — four lines, no prose. Then the record: "Raised 7th-grade standardized science scores 18 points in two years; launched a STEM club that now enrolls a third of the middle school; retained 95% of families year over year in my homeroom."
+
+Notice what's absent: a paragraph about your teaching philosophy. Principals stopped reading those years ago because everyone's philosophy sounds identical on paper. Your philosophy shows up in the interview and the demo lesson; the resume's job is to earn you both.
+
+Two Catholic-school-specific tips. First, name your sacramental and liturgical involvement precisely — "planned monthly all-school Masses with the chaplain" beats "supported school liturgies." Second, if you've taught in public schools, don't apologize for it; frame it: "bringing eight years of public-school instructional rigor home to Catholic education." Principals love that sentence.`,
   },
   {
     slug: "five-resume-mistakes-faithful-candidates",
@@ -72,7 +84,13 @@ A principal should finish your first page thinking, "This person could start Mon
 • Burying credentials: certifications belong near the top, not the footer
 • One resume for every job: two hours of tailoring beats twenty generic applications
 
-Name what you did plainly and let the results speak. That's not pride — that's clarity.`,
+Name what you did plainly and let the results speak. That's not pride — that's clarity.
+
+There's a sixth mistake worth naming separately: treating the resume as a spiritual autobiography. Your love of the Lord belongs in your life and, in the right form, in your interview. On the page, it has to be carried by evidence — the ministries you showed up for, the programs you built — or it reads as filler to the very employers you most want to reach.
+
+Where does the humility instinct come from? Many faithful candidates were formed to deflect credit, and that's beautiful at the dinner table. But consider the parable of the talents: the servant who buried his gift to keep it safe was not praised. A resume is an accounting of what you did with what you were given. Render it honestly.
+
+Practical fix for the vagueness habit: for every bullet, force yourself to answer "how many, how much, how often, compared to what?" If a bullet survives all four questions with no number, it's probably describing a duty, not a contribution — cut it or dig deeper.`,
   },
   {
     slug: "youth-group-resume-bullet",
@@ -87,7 +105,13 @@ Translate the ministry into its professional components. "Directed a weekly prog
 
 Same job. Same faithful service. But now a hiring manager in any sector — school, nonprofit, or business — can see the transferable skill.
 
-Do this for every ministry role you've held. You'll be surprised how much leadership you've been hiding under a bushel basket.`,
+Do this for every ministry role you've held. You'll be surprised how much leadership you've been hiding under a bushel basket.
+
+Here's the full translation table for common ministry lines. "Led a Bible study" → "facilitated a weekly discussion group of 12, sustained over three years." "Helped with VBS" → "co-directed a five-day program for 120 children with 25 volunteers." "Sang in the choir" → fine as-is under Faith & Service — not every line needs inflating, and knowing the difference is part of the craft.
+
+The deeper principle: ministries are organizations, and you held a role in one. Someone recruited people, managed money, handled a crisis, kept children safe under diocesan protocols. If that someone was you, those are professional facts. Safeguarding compliance in particular is a serious, audited responsibility — name it, because school and parish employers know exactly what it costs to maintain.
+
+If you're unsure whether you're overclaiming, apply the reference test: would the pastor or ministry lead who watched you nod at this bullet? If yes, it's not exaggeration — it's the first honest accounting of work you did for free.`,
   },
   {
     slug: "200-word-cover-letter",
@@ -104,7 +128,11 @@ Second: your one best proof point for this exact role. Not your history — your
 
 Third: a plain close. "I'd welcome the chance to talk. Thank you for the work you do."
 
-Mission-driven employers read short letters because a candidate who can be brief and specific about their mission is already demonstrating fit. Say less, mean more.`,
+Mission-driven employers read short letters because a candidate who can be brief and specific about their mission is already demonstrating fit. Say less, mean more.
+
+Here's a complete example, 148 words, for a parish communications role: "Dear Mrs. Delgado — I've admired how St. Anne's bulletin became something people actually read since the redesign last Advent, and I'd love to build on that. For the past four years I've run communications for a 40-employee nonprofit: a weekly email to 8,000 subscribers (48% open rate), a website rebuild that doubled online giving, and social channels grown from scratch to 5,000 followers. I'd bring the same discipline to St. Anne's — with the difference that this mission is my own. I'm a parishioner two towns over and have watched your parish's growth with real joy. I'd welcome a conversation. Thank you for the work you do."
+
+Notice the anatomy: one specific compliment that proves attention, three numbers that prove competence, one sentence of honest connection, and a close with no groveling. Nothing about "passionate self-starters." That letter gets read to the end — and the end is where interviews come from.`,
   },
   {
     slug: "resume-when-ministry-was-your-job",
@@ -119,7 +147,13 @@ List ministry roles exactly like jobs: title, organization, dates, and results. 
 
 For volunteer leadership, use the title the work deserved: Volunteer Coordinator, Events Lead, Treasurer.
 
-The employers on this board chose to hire from the Catholic community. Your ministry years aren't something to explain away here — they're the point.`,
+The employers on this board chose to hire from the Catholic community. Your ministry years aren't something to explain away here — they're the point.
+
+The trickiest version is unpaid ministry that ran alongside caregiving — the years you "didn't work" while running the parish festival, coordinating meal trains, and treasurer-ing the school board. Resist the urge to label those years a gap and apologize. Build a section called "Community & Ministry Leadership" with dated entries, exactly like employment, and let the work speak.
+
+One structural choice matters: for heavy ministry backgrounds, consider a skills-forward hybrid resume. Lead with three competency clusters — Program Leadership, Volunteer Management, Fundraising & Stewardship — each with proof bullets drawn from across your ministry life, then the chronological list below. This keeps a reviewer from having to assemble your case themselves.
+
+And convert the fundraising honestly: support-raising as a missionary is real development work — prospecting, asking, stewarding, reporting. Nonprofit employers pay for that exact skill set. "Raised and stewarded $40K/year from 60 individual donors, with 85% year-over-year retention" is a development resume line that many paid professionals can't match.`,
   },
   {
     slug: "career-change-corporate-to-catholic",
@@ -134,7 +168,13 @@ First, translate outcomes into mission terms. "Managed $2M P&L" becomes more pow
 
 Second, add the missing section: your faith and service life. The parish council seat, the Knights membership, the school auction you chaired — at a mission-driven employer, these aren't padding. They're evidence you'll stay when the salary is smaller and the mission is the compensation.
 
-Expect the "why the change?" question in every interview. Write your honest answer down first — it belongs, in compressed form, in your cover letter.`,
+Expect the "why the change?" question in every interview. Write your honest answer down first — it belongs, in compressed form, in your cover letter.
+
+Salary deserves its own honest paragraph. You will probably take a cut — sometimes a steep one — and the interview will go better if you've done the math beforehand. When they ask about compensation, "I've reviewed the range and my budget works" is a complete answer that removes their biggest fear about corporate candidates: that you'll leave in a year when the discount stops feeling noble.
+
+Translate your vocabulary too, in both directions. Corporate speak ("drove cross-functional alignment on KPIs") lands as noise in a parish office; say "got the school, parish, and finance council rowing the same direction on enrollment goals." Meanwhile, learn their language: charism, apostolate, ordinary time. Using it correctly signals the move is toward something, not just away from burnout.
+
+Finally, expect a longer, slower process than you're used to — approvals move through pastors and councils. The candidates who convert successfully treat the slower pace as their first lesson in the culture rather than their first frustration with it.`,
   },
   {
     slug: "faith-on-resume-without-oversharing",
@@ -149,7 +189,13 @@ A resume line is a fact: "Lector and Extraordinary Minister, St. Mary's Parish, 
 
 What doesn't belong is the essay — conversion stories and spiritual autobiographies are for the interview, if invited, where they can be a conversation instead of a claim.
 
-One clean "Faith & Service" section near the end of the resume, three to five lines of verifiable involvement, outworks any paragraph of piety. Let the facts be faithful for you.`,
+One clean "Faith & Service" section near the end of the resume, three to five lines of verifiable involvement, outworks any paragraph of piety. Let the facts be faithful for you.
+
+The judgment call gets easier when you sort faith lines into three buckets. Bucket one, always include: roles with duties and dates — catechist, lector, council member, retreat leader. Bucket two, include when relevant: formation and credentials — a theology degree, catechetical certification, safe-environment training. Bucket three, save for conversation: devotional life, conversion story, spiritual direction. The first two are evidence; the third is intimacy, and intimacy shared too early costs credibility.
+
+Adjust for the employer, too. Applying to a diocese, put Faith & Service prominently on page one — it's a qualification. Applying to a Catholic-owned business for an accounting role, keep the section brief and let your professional record lead; the fit shows in where you chose to apply.
+
+One caution for the genuinely accomplished: resist listing every ministry you've ever touched. Twelve lines of involvement reads as either padding or an inability to prioritize. Five lines you'd happily discuss for ten minutes each is the stronger portfolio.`,
   },
   {
     slug: "references-that-actually-help",
@@ -164,7 +210,13 @@ Choose people who have actually watched you work: the principal who observed you
 
 Then prepare them. Send the job posting, tell them why you want it, and name the two things you hope they'll mention. That's not coaching — it's courtesy, and it turns a generic endorsement into a targeted one.
 
-Three prepared references beat five surprised ones, every time.`,
+Three prepared references beat five surprised ones, every time.
+
+Timing matters as much as selection. Ask permission when you begin the search, not when the recruiter calls — "may I list you, and is there anything you'd want to know about what I'm pursuing?" This turns your references into scouts who are watching for you, and it prevents the deadly reference-checker experience: reaching someone who audibly can't place you.
+
+Handle the delicate cases deliberately. If you're leaving a difficult situation and can't use your current supervisor, prepare the sentence that explains it without drama: "My current pastor doesn't know I'm searching; here are three others who've supervised my work directly." Every experienced employer has heard this; said plainly, it costs you nothing.
+
+After the process ends — either way — close the loop. Tell your references what happened and thank them specifically. Partly because gratitude is right, and partly because careers in the Catholic world are long and small: the reference you thank properly this year is the colleague who calls you about an opening in three.`,
   },
   {
     slug: "fifteen-minute-resume-tuneup",
@@ -181,7 +233,13 @@ Minutes 6-10: make sure those exact words appear — honestly — in your summar
 
 Minutes 11-15: reorder. Your most relevant role or bullet moves up. The line that doesn't serve this application moves down or out.
 
-Small effort, compounding advantage. The tailored resume reads like you wrote it for them — because you did.`,
+Small effort, compounding advantage. The tailored resume reads like you wrote it for them — because you did.
+
+An example of the ritual in motion. The posting says: "seeking a Director of Faith Formation to build family-centered catechesis and coordinate sacramental preparation across two merged parishes." Circle: faith formation, family-centered, sacramental preparation, merged parishes. Now the tune-up: your summary line becomes "Faith formation leader experienced in family-based catechesis and sacramental prep — including two years navigating a parish merger." That last clause was buried in your third job; today it's the headline, because today it's their headline.
+
+Keep a "parts bin" document to make this fast: every bullet you've ever written, all versions, organized by theme. Tailoring stops being rewriting and becomes selecting — five minutes of shopping in your own history.
+
+The discipline pays a second dividend: after ten tune-ups you'll notice which of your bullets keeps earning the top slot across different postings. That's the market telling you what your strongest material is — useful intelligence for interviews, and for choosing what to build next in your career.`,
   },
 
   // ---------- Mission Fit ----------
@@ -198,7 +256,13 @@ That's different from culture fit (do we enjoy the same lunch conversations), an
 
 What mission fit is not: a personality type, a piety contest, or a requirement that you be best friends with your coworkers. Some of the best mission-fit hires are temperamental opposites of their teams — aligned on the why, refreshingly different on the how.
 
-Name your own mission in one sentence. Fit is simply how much of that sentence an employer can help you live.`,
+Name your own mission in one sentence. Fit is simply how much of that sentence an employer can help you live.
+
+Test yourself with a thought experiment: if this organization vanished tomorrow, would you grieve the loss of the mission or just the loss of the paycheck? Both are legitimate losses — but only the first indicates fit. A second test runs the other direction: does the organization's way of pursuing the mission sit well with your conscience and your gifts? You can love Catholic education and still be wrong for a particular school's model.
+
+Fit also has degrees, and pretending otherwise causes grief. A 100% overlap — the mission is your mission — is rare and mostly found in founders. A healthy hire usually lives at 70%: strong alignment on the core, honest indifference to some of the periphery. Trouble starts below 50%, where you're performing enthusiasm you don't feel; performance of that kind has a short shelf life and a high spiritual cost.
+
+So before the next application, write your one-sentence mission and grade the overlap honestly. Not to disqualify yourself — to know what you're signing, and to say true things in the interview instead of borrowed ones.`,
   },
   {
     slug: "culture-fit-vs-mission-fit",
@@ -213,7 +277,13 @@ Culture changes with every leadership transition, office move, and reorg. The te
 
 Mission compounds instead. The longer you serve a purpose you believe in, the more your skills, relationships, and story organize around it — and the more valuable you become to every organization that shares it.
 
-When you evaluate an offer, weigh culture honestly but weight mission heavier. Charm fades; purpose accrues interest.`,
+When you evaluate an offer, weigh culture honestly but weight mission heavier. Charm fades; purpose accrues interest.
+
+A story that repeats constantly: a candidate joins a Catholic nonprofit because the team was delightful — game nights, inside jokes, a boss who felt like an older brother. Two years later the boss moves to another diocese, half the team follows, and the delightful culture is a memory. What remains is the actual job: the mission, the work, the people served. The hires who stayed happy were the ones who'd have chosen the place anyway, without the game nights.
+
+This doesn't make culture trivial — a toxic culture will poison even perfect mission alignment, and you should walk away from cruelty no matter how noble the letterhead. The point is about what you optimize for when both options are decent.
+
+There's an interview tactic hiding here too. Culture questions ("what's it like to work here?") get you rehearsed answers. Mission questions ("what has this organization refused to do to grow?") get you the truth. Ask more of the second kind, and notice that employers evaluating you make the same distinction — your game-night charm matters less to them than whether you'd still be here after the reorg.`,
   },
   {
     slug: "tell-if-employer-lives-its-mission",
@@ -230,7 +300,13 @@ Calendar: what does leadership spend time on? Ask your interviewer, "What did th
 
 Exits: why did the last three people leave? Ask directly. Healthy mission-driven workplaces answer honestly because turnover embarrasses them less than pretense.
 
-Organizations live their mission in their habits. Interview the habits.`,
+Organizations live their mission in their habits. Interview the habits.
+
+Add two more inspection points to the list. People: meet someone below the leadership tier — the front-desk coordinator, a second-year teacher — and ask what the mission means in their daily work. In organizations that live their mission, the answer comes fast and concrete. In organizations that laminate it, you'll hear the website recited back with a small sigh.
+
+History: every mission gets tested eventually — a budget crisis, a scandal weathered, a hard personnel call. Ask "tell me about a season that tested this place." The organizations worth joining tell you the story straight, including what it cost. Evasion on this question is itself an answer.
+
+Calibrate your expectations, though: no organization lives its mission perfectly, and a candidate sniffing for hypocrisy will find it everywhere humans work together. You're not auditing for sainthood. You're distinguishing between places where the mission is a working document — argued over, returned to, occasionally failed and repaired — and places where it's wall art. The first kind deserves your years. The second will spend them.`,
   },
   {
     slug: "interview-questions-reveal-mission-fit",
@@ -247,7 +323,13 @@ Organizations live their mission in their habits. Interview the habits.`,
 • "How does this role serve the mission — in your words, not the posting's?"
 • "What would make the person in this role a disappointment a year from now?"
 
-Ask them warmly, and notice not just the answers but the reaction. Mission-driven employers light up at these questions. The other kind changes the subject.`,
+Ask them warmly, and notice not just the answers but the reaction. Mission-driven employers light up at these questions. The other kind changes the subject.
+
+Delivery matters as much as the list. Space these questions through the conversation rather than firing them as an audit at the end — the goal is dialogue, not deposition. And genuinely listen, because the follow-up is where the gold is: when they name a decision that cost money but served the mission, ask what the debate was like. Whether there was a debate tells you if the mission has teeth or just a trophy case.
+
+Watch the room, too. In panel interviews, notice who answers mission questions and who defers. If only the pastor can speak to purpose while the operations manager studies the table, you've learned where the mission lives and where it doesn't — useful, since you'd work for the operations manager.
+
+Finally, reciprocate. When they ask why you want the role, give them the same specificity you're demanding: your actual reasons, tied to their actual work. These questions raise the bar for the whole conversation, and the strongest possible interview is one where both sides leave having told the truth and liked it.`,
   },
   {
     slug: "qualified-but-not-called",
@@ -262,7 +344,13 @@ Signs you're qualified but not called: you talk about the offer in terms of what
 
 Discernment isn't mysticism; it's honesty with a prayer life. Take the question to a holy hour instead of a spreadsheet. Ask what the role serves, who it forms you into, and whether you'd respect the version of yourself who takes it.
 
-A "no" to a good job is often the "yes" that makes the right one possible.`,
+A "no" to a good job is often the "yes" that makes the right one possible.
+
+There's a practical structure for this discernment, borrowed from Ignatian practice. Set a decision date — vague timelines breed vague thinking. Before it, spend three sessions of honest prayer: one imagining you took the job (notice consolation or desolation, not excitement or fear — they're different), one imagining you declined, one asking for indifference to everything except God's will and your family's real needs.
+
+Bring in one or two counselors who know you, not just the situation — a spiritual director, a spouse, an old friend with permission to be blunt. Frame the question carefully: not "should I take it?" but "what do you see in me when I talk about it?" People who love you notice your face and your verbs before you do.
+
+And remember that "no" has a cost you're allowed to count. Turning down a good job on discernment grounds is not a failure of gratitude or ambition; it's a claim that your working years are finite and consecrated. The tradition has a name for treating them that way: stewardship.`,
   },
   {
     slug: "red-flags-were-like-a-family",
@@ -277,7 +365,13 @@ Watch for the tells. Family-as-warmth comes with clear roles, honest pay convers
 
 A truly mission-driven employer doesn't need the family metaphor — the mission itself is the bond. Colleagues can be brothers and sisters in purpose while remaining professionals in structure.
 
-Love your coworkers. But sign a contract with an organization, and make sure the organization behaves like one.`,
+Love your coworkers. But sign a contract with an organization, and make sure the organization behaves like one.
+
+The metaphor gets truly dangerous at departure time. Real families don't have exits; jobs do — and organizations that run on family language often treat resignation as betrayal. Ask around gently: how were the last few departures handled? If people who left in good faith are spoken of like defectors, you've found the tell. Mission-driven workplaces bless their alumni and mean it, because the mission is bigger than the roster.
+
+Also watch compensation conversations closely. In the family-as-leverage shop, negotiation is met with wounded surprise: "we thought you were committed." That sentence is a price tag on your compliance, not your work. A healthy employer hears a negotiation as a professional talking, because the mission needs professionals more than it needs martyrs.
+
+None of this means warmth is a red flag. Plenty of parishes and schools are genuinely tender places, and it's one of the joys of working in them. The distinction is simple: in healthy warmth, care flows alongside clarity — contracts, reviews, honest pay bands. In unhealthy warmth, care substitutes for clarity. Take the warmth; insist on the clarity.`,
   },
   {
     slug: "mission-fit-two-way-street",
@@ -294,7 +388,13 @@ You owe honesty when your fit changes. Seasons shift, callings evolve — the tw
 
 And you owe the mission your growth. The person who arrived is not the person the mission needs in year three.
 
-Employers should earn your loyalty. When they do, give it wholeheartedly — that's what makes the whole model work.`,
+Employers should earn your loyalty. When they do, give it wholeheartedly — that's what makes the whole model work.
+
+There's a fourth debt worth naming: you owe the mission your voice. Organizations drift — programs calcify, decisions accrete away from the founding purpose — and the people best positioned to notice are the mission-fit hires who care enough to say so. Loyal dissent, offered respectfully through the right channels, is a form of service. The employee who watches drift silently and then leaves "disappointed" gave the mission nothing but their absence.
+
+The covenant framing also disciplines how you leave, when leaving is right. Two-way mission fit means departing the way you'd want to be departed from: real notice, real documentation, a successor set up to win, and no poaching of morale on your way out. In the small world of Catholic employment, how you leave one mission is the first thing the next one learns about you.
+
+Employers, the mirror image is yours: if you hired for mission, honor it — invest in growth, pay what the budget honestly allows, and never weaponize the mission against just complaints. The covenant collapses fastest from the top.`,
   },
   {
     slug: "mission-fit-hires-stay-longer",
@@ -309,7 +409,13 @@ The reason is simple mechanics. Every job accumulates friction: the raise that c
 
 For candidates, the lesson is to weight purpose heavily in your decision — you're choosing your own future durability.
 
-For employers, it's to stop treating mission questions as soft-skill garnish in interviews. They're the strongest retention predictor you have.`,
+For employers, it's to stop treating mission questions as soft-skill garnish in interviews. They're the strongest retention predictor you have.
+
+Put rough numbers on it, because leaders budget with numbers. Replacing a mid-level hire is commonly estimated at half to a full year of salary once you count recruiting, onboarding, and the productivity trough. A school that turns over four teachers a year at that rate is burning a program's worth of budget on churn. Cut turnover in half through better fit-screening — an interview-process change that costs almost nothing — and you've funded the raise pool you keep saying you can't afford.
+
+The compounding works inside careers too. The employee who stays seven mission-aligned years builds institutional knowledge, community trust, and program continuity that no talented two-year rotation can replicate. Catholic organizations, whose "product" is largely relationships, feel this more than most.
+
+One caveat to keep the claim honest: mission fit predicts retention only when the basics are met. Below-survival wages, chaotic management, or vanished growth paths will eventually outrun any amount of alignment — mission-fit people leave too, they just leave slower and sadder. Fit is the multiplier, not the substitute.`,
   },
 
   // ---------- The Perfect Match ----------
@@ -326,7 +432,13 @@ Candidates signal with specificity — a profile that names real roles, real cat
 
 Employers signal with honest postings: the actual salary range, the actual work mode, the mission in plain words.
 
-That's why our fit scores work the way they do — they read the overlap between what you've declared and what the job declares. Sharpen your declarations and the green pills follow. The perfect match starts with telling the truth in public.`,
+That's why our fit scores work the way they do — they read the overlap between what you've declared and what the job declares. Sharpen your declarations and the green pills follow. The perfect match starts with telling the truth in public.
+
+Consider what happens mechanically when both sides sharpen their signals. A candidate adds three honest titles to her profile instead of one; her match surface triples. An employer adds a salary range to a posting; applications rise and — more importantly — the wrong applicants self-select out, saving everyone's time. Each act of specificity does double duty: it attracts the right party and repels the wrong one. Vagueness does the opposite twice.
+
+This is also why "spray and pray" fails in a mission-driven market. Fifty generic applications signal nothing except volume. Five applications with tailored resumes, each engaging the employer's actual mission, send the strongest signal there is: I chose you on purpose. In a community where everyone eventually knows everyone, deliberateness compounds into reputation.
+
+The platform's job — our job — is to make the signals legible: structured profiles, honest postings, fit scores that surface overlap. But no algorithm can invent a signal you didn't send. Write the truth about yourself in public, in detail, and the matching gets shockingly easier.`,
   },
   {
     slug: "best-on-paper-not-right-hire",
@@ -341,7 +453,13 @@ A resume records what someone did inside someone else's structure, with someone 
 
 What predicts better: trajectory (are they growing?), reasons (why this mission, specifically?), and behavior in low-stakes moments — how they treated the receptionist, whether they asked about the mission or only the benefits.
 
-Read resumes to qualify. Hire on direction, motive, and character. Paper qualifies; person performs.`,
+Read resumes to qualify. Hire on direction, motive, and character. Paper qualifies; person performs.
+
+The failure mode has a name in hiring circles: credential capture. A stellar resume walks in and the interview quietly becomes a confirmation exercise — every answer heard generously, every doubt suppressed, because surely someone this qualified is right. The discipline that prevents it is boringly procedural: written criteria before you meet anyone, the same questions for every candidate, and a scoring conversation where "what evidence did we see?" outranks "how did they strike you?"
+
+For candidates with modest paper, the inverse lesson is encouraging: you beat stronger resumes by supplying what paper can't. Bring artifacts — the curriculum you wrote, the event plan, the before-and-after numbers. Offer a working session: teach a demo lesson, sketch a comms calendar for their actual parish. Every artifact moves the decision from resumes, where you lose, to evidence, where you might win.
+
+And a caution for both sides: the inverse error exists too. Romanticizing the underdog is credential capture upside-down. The point isn't that paper lies — it's that paper is one witness, and wise hiring calls several.`,
   },
   {
     slug: "anatomy-of-a-great-job-match",
@@ -358,7 +476,13 @@ Read resumes to qualify. Hire on direction, motive, and character. Paper qualifi
 • Mutual enthusiasm: both sides would be disappointed to lose the other
 • A named growth path: everyone can say what year three looks like
 
-Notice that four of the five are knowable before the offer. Most bad matches weren't unlucky — one side skipped a signal and hoped. Check all five, every time.`,
+Notice that four of the five are knowable before the offer. Most bad matches weren't unlucky — one side skipped a signal and hoped. Check all five, every time.
+
+The 20% stretch deserves elaboration because both sides misjudge it. Candidates chronically overestimate how much stretch they want — the role two sizes up flatters in the interview and crushes by October. Employers underestimate how much stretch retains — the perfectly-sized hire is bored in a year, and boredom resigns politely. The sweet spot: the candidate can do 80% of the job on day one and is genuinely excited to grow into the rest with support that actually exists.
+
+"Honest logistics" also hides the most preventable failures. The 55-minute commute that was "fine" in the offer glow becomes the reason for departure eighteen months later. The salary that required a spouse's second job becomes a slow leak in the family. Say the hard numbers out loud in the final conversation — both sides — because the offer glow is exactly when nobody wants to.
+
+Use the five signals as a literal checklist in your final interview or your final deliberation. Any signal you can't check gets one direct question before signing. Matches rarely fail from the unknowable; they fail from the unasked.`,
   },
   {
     slug: "how-fit-scores-work",
@@ -373,7 +497,13 @@ Your score weighs five things: how closely the job title matches roles you said 
 
 Which means you can raise your scores by sharpening your profile. Add every title you'd genuinely accept. Pick all the categories that fit your gifts, not just one. Update your location and relocation status when life changes.
 
-The score serves one purpose: pointing your attention where it's most likely to be returned. Keep your profile honest and current, and let the green pills do your searching.`,
+The score serves one purpose: pointing your attention where it's most likely to be returned. Keep your profile honest and current, and let the green pills do your searching.
+
+A few honest limits, because trust requires them. The score reads your declared preferences, not your soul — it can't know that you'd bend your "full-time only" rule for the right parish, or that "Youth Minister" undersells the range of what you'd love. That's why a red pill is information, not a verdict: it means "this differs from what you told us," and sometimes the right response is updating what you told us.
+
+The score also can't yet read the deepest layer — the actual content of your experience against the actual demands of the role. That upgrade is coming: with resumes as structured data, scoring will weigh what you've done, not just what you've declared. The pills will keep the same colors and get quietly smarter.
+
+Meanwhile, two habits get the most from the current system. Recheck your profile quarterly — profiles go stale the way resumes do, and a stale profile scores stale matches. And when a green pill surprises you, give it a real look before dismissing it: the arithmetic occasionally knows your breadth better than your self-image does.`,
   },
   {
     slug: "where-candidates-and-employers-miss",
@@ -390,7 +520,13 @@ Employers post too briefly: a two-line posting with no salary attracts nobody sp
 
 Both sides move too slowly: faithful candidates deliberate prayerfully, small employers approve slowly, and meanwhile the other side reads silence as rejection.
 
-The mission-driven hiring world is small. Say more, search wider, respond faster — the person you're looking for is probably looking back.`,
+The mission-driven hiring world is small. Say more, search wider, respond faster — the person you're looking for is probably looking back.
+
+Two more misses round out the pattern. Geography pride: candidates hard-limit their search to one metro while the ideal role sits ninety minutes away with a pastor who'd happily flex two remote days — and employers never mention the flexibility because nobody asked. Put your true radius and your true flexibility in writing, both of you.
+
+Title inflation and deflation: the parish calling its 30-hour role "coordinator" when the duties are director-level scares off exactly the experienced candidates it needs; the candidate calling herself "volunteer" when she ran the program for six years files herself under the wrong shelf. Titles are search keys — choose them for accuracy, not modesty.
+
+The meta-fix for all of these is the same uncomfortable act: publishing more truth than feels natural. The salary you'd actually pay. The titles you'd actually accept. The flexibility that actually exists. Every withheld detail feels safe and costs a match. In a market this small and this mission-bound, the bold truth-tellers clear first — watch the postings with salary ranges fill while the "competitive compensation" ones age.`,
   },
   {
     slug: "first-90-days-proving-the-match",
@@ -405,7 +541,13 @@ New hires: your one job is to convert trust into evidence. Ship something visibl
 
 Employers: the fastest way to break a right match is a vague start. A desk that's ready, a first-week schedule, and one clearly-owned early project outperform any welcome lunch.
 
-Ninety days of small kept promises turns a good decision into a great tenure. The match was on paper; the fit is built in person.`,
+Ninety days of small kept promises turns a good decision into a great tenure. The match was on paper; the fit is built in person.
+
+A week-by-week sketch helps. Weeks 1-2: learn names, systems, and the unwritten calendar; ask "how does this usually go?" before proposing how it should go. Weeks 3-6: ship the first visible win — small, finished, and useful beats large and half-done. Weeks 7-12: take real ownership of one domain and give your manager the recurring one-page update they didn't know they wanted. Somewhere in there, schedule the 45-day conversation yourself: "what's working, what should I adjust?" Asking early converts small misalignments before they compound.
+
+New hires also carry a listening duty: the first ninety days are the only time you'll ever see the organization with outsider eyes. Keep a private list of everything that confuses you. Half will make sense by Christmas; the other half is your improvement agenda for year one — offered humbly, once you've earned the standing.
+
+Employers, one addition to the checklist: assign a peer guide who isn't the boss. The question a new hire won't ask a manager ("is it always like this in Advent?") flows easily to a colleague, and answered questions become retained employees.`,
   },
   {
     slug: "from-application-to-belonging",
@@ -422,7 +564,13 @@ The interview went both directions. The parish asked to see her rehearse a choir
 
 The offer came with a named mentor and a year-one goal. By Advent she wasn't the new hire; she was theirs.
 
-Nothing in that story required luck. Every step is copyable.`,
+Nothing in that story required luck. Every step is copyable.
+
+It's worth naming what each party resisted, because the temptations are universal. The parish resisted padding the posting — no "competitive salary" evasion, no wish-list of twelve requirements for a role that needed four. Anna resisted the spray: she applied to three jobs that season, not thirty, and it showed in every tailored line. Both resisted rushing the discernment; two weeks of mutual diligence beat the false urgency that produces eighteen-month tenures.
+
+Notice also the small structural choices that carried weight. The rehearsal audition let Anna's actual gift speak — résumés can't conduct. The pastor's honest answer about sacrifices told her the mission had receipts. The named mentor and the year-one goal turned "welcome aboard" from sentiment into scaffolding.
+
+None of this required a big budget — a parish of any size can copy every step this week: write the honest posting, design one working audition, prepare one true answer about cost, name one mentor. Belonging isn't a mystery that happens to lucky hires. It's hospitality, engineered.`,
   },
 
   // ---------- Meaning at Work ----------
@@ -439,7 +587,13 @@ Work occupies more waking hours than family, prayer, and rest combined. A job th
 
 Meaning doesn't require a dramatic vocation. It requires a connection you actually believe between your daily tasks and a good you actually value. Feeding families, forming students, keeping a parish's lights on — named and owned, ordinary work carries extraordinary weight.
 
-Don't apologize for wanting your work to matter. You were built that way on purpose.`,
+Don't apologize for wanting your work to matter. You were built that way on purpose.
+
+The objection writes itself: "meaning doesn't pay the mortgage." True — and the tradition never asked you to choose. Providing for your family is itself meaningful work, arguably your first mission; a father taking the higher-paying job for his children's sake hasn't abandoned meaning, he's located it. The trap isn't earning well. The trap is the job that pays adequately and means nothing and quietly convinces you that's all work is.
+
+Watch for the symptoms of meaning-deficit, because they masquerade as other things: the Sunday-night dread that isn't about workload, the cynicism that arrives before age forty, the strange fatigue of days that weren't hard. People medicate these with vacations and job-hops, but the underlying condition — effort disconnected from purpose — travels with them.
+
+The repair can start small, this week: write one sentence connecting your work to a good you believe in, and read it before you open your inbox. If you can't write the sentence — if no honest version exists — that's not a prompt for despair. It's a prompt for a job search, and you're in the right place for one.`,
   },
   {
     slug: "work-as-vocation-colossians",
@@ -456,7 +610,13 @@ It dignifies every honest job — the spreadsheet, the supply closet, the second
 
 But it also raises the stakes on your choices. If work is offered to God, then where you work, what it builds, and who it serves are spiritual questions, not just financial ones.
 
-Vocation isn't a category of jobs. It's a posture toward work — and a criterion for choosing it.`,
+Vocation isn't a category of jobs. It's a posture toward work — and a criterion for choosing it.
+
+Paul's audience makes the verse sharper. He was writing, in part, to bondservants — people with no career options, no LinkedIn, no exit. To them he said: your work, even this work, can be offered to the Lord and it will count. If the verse could dignify labor under those conditions, it can certainly dignify your spreadsheet. But notice it never romanticizes the conditions — elsewhere the same Paul tells masters their obligations and slaves to gain freedom if they can. Offering your work to God and improving your working conditions are not rivals.
+
+"With all your heart" also rebukes a subtle temptation in religious circles: treating excellence as worldly. The Christian who does shoddy work while talking piously has inverted the verse — heartless work, heartfelt talk. The tradition's craftsmen knew better: the cathedral carvers finished the backs of statues no one would see, because Someone would.
+
+Try the verse as a daily examen for a week. Each evening, one question: what part of today's work could I honestly have offered up, and what part was I just enduring? The pattern that emerges is your vocational compass, pointing at what to grow and what to change.`,
   },
   {
     slug: "sunday-shouldnt-be-only-day",
@@ -471,7 +631,13 @@ The integrated life doesn't require church employment. It requires being able to
 
 What corrodes the soul is work that requires you to leave your convictions in the car: products you wouldn't defend, practices you have to not think about.
 
-If you can't draw the line from Monday to Sunday, that's not a mood — it's data. Follow it.`,
+If you can't draw the line from Monday to Sunday, that's not a mood — it's data. Follow it.
+
+Integration has practical architecture, not just sentiment. Morning offering before the commute — thirty seconds that files the whole day under intention. An examen on Friday afternoon: where did this week's work serve, where did it just spin? Grace before the lunch you eat at your desk. These micro-practices sound small because they are; their power is repetition, the same way compartmentalization was built by a thousand unexamined Mondays.
+
+The workplace itself offers material. Every colleague is someone to will the good for — the tiresome one most of all. Every deadline is a chance to do ordinary things with extraordinary care, which a wise saint called the whole program. You don't need a chapel down the hall to work in the presence of God; you need the intention, renewed more often than feels natural at first.
+
+And when you evaluate your next role, add the integration question to your list alongside salary and commute: will this job let me be one person? Jobs that demand a weekday self estranged from your Sunday self charge rent on your integrity. Whatever they pay, subtract that.`,
   },
   {
     slug: "quiet-burnout-of-meaningless-work",
@@ -486,7 +652,13 @@ The way out usually isn't dramatic. Start by locating the meaning that already e
 
 Then expand what you can: volunteer for the project that actually helps someone, mentor the new hire, bring craftsmanship to tasks that don't require it. Excellence is meaning you can add unilaterally.
 
-And if the well is truly dry — if the organization's purpose and yours will never touch — begin the patient work of leaving well. Quiet burnout doesn't fix itself. It just gets quieter.`,
+And if the well is truly dry — if the organization's purpose and yours will never touch — begin the patient work of leaving well. Quiet burnout doesn't fix itself. It just gets quieter.
+
+Diagnose before you treat, because quiet burnout has look-alikes. Sometimes the job is meaningful and you've simply lost sight of the chain — a season of drudge tasks obscured who's served, and the fix is reconnection, not resignation. Sometimes the problem is a manager, not a mission; don't leave a good purpose over a bad boss without at least attempting the honest conversation. And sometimes it's life-stage exhaustion wearing work's clothing. The test question: "if I were rested and appreciated, would this work matter to me?" If yes, repair. If no, plan.
+
+When the answer is plan, do it like an adult with obligations: eighteen-month runway, skills sharpened on the current employer's clock (legitimately — take the training, lead the project), debts trimmed, and a specific target list rather than a vague escape wish. Quiet burnout's greatest danger is that it produces desperate, poorly-chosen exits into jobs that are differently meaningless.
+
+And tell someone. Burnout of every volume isolates, and isolation ratifies its lies. A spouse, a director, a friend in your field — the mere act of describing the flatness out loud is often the first day it starts to lift.`,
   },
   {
     slug: "ora-et-labora-benedictines",
@@ -501,7 +673,13 @@ The Benedictine insights translate directly to careers. Work in rhythm: the monk
 
 Most of all: stability. Monks vow themselves to one community for life and go deep instead of wide. In a job-hopping economy, there's a quiet case for choosing a mission worth staying with.
 
-You don't need a monastery. You need a rule — a deliberate shape for how work fits a life aimed at God.`,
+You don't need a monastery. You need a rule — a deliberate shape for how work fits a life aimed at God.
+
+The Rule's most transferable tool might be the bell itself. Benedict's monks stop mid-sentence when it rings — the work is interrupted on purpose, hourly, to remember what the work is for. Your version needn't be liturgical: a phone alarm at noon for the Angelus, a hard stop at six that you keep like an appointment, a Sabbath that email cannot breach. The schedule is the spirituality. Nobody drifts into balance; it's built, in advance, in the calendar.
+
+Benedict also insists that tools of the monastery be treated "as vessels of the altar" — the hoe and the chalice get the same reverence. Applied today: the shared spreadsheet, the school van, the donor database are not beneath your care. Sloppiness with common things is a spiritual tell, and so is its opposite.
+
+Even stability, the strangest vow to modern ears, has a portable core: commit somewhere long enough to be changed by it. You can honor that in five-year seasons rather than lifetimes — but the person with four one-year stints has been introduced to four communities and formed by none. Depth requires staying past the point where novelty runs out. That's precisely where the Benedictines say the good part starts.`,
   },
   {
     slug: "ordinary-job-calling",
@@ -516,7 +694,13 @@ A calling has three marks, and none requires a religious employer. It fits your 
 
 An ordinary job becomes a calling the way ordinary bread becomes significant — through what's done with it and who it's offered to. The parish bookkeeper protecting donors' sacrifice with meticulous ledgers is living a vocation, full stop.
 
-Stop waiting for a lightning bolt. Look at your gifts, your neighbors, and your fruits. The call is usually already in your hands.`,
+Stop waiting for a lightning bolt. Look at your gifts, your neighbors, and your fruits. The call is usually already in your hands.
+
+The three marks work as a diagnostic when something feels off, too. Gifts without service curdles into mere self-expression — the job that showcases you but helps no one eventually echoes. Service without gifts is generous burnout — the volunteer-turned-employee grinding away at tasks God gave someone else the hands for. Service plus gifts without confirmation deserves attention: if everyone who loves you winces at what the job does to you, humility says collect more data.
+
+Notice also that callings have seasons. The classroom that was unmistakably your vocation for fifteen years may release you; the ledger that was "just a job" may deepen into one as your mastery turns into mentorship. Vocation isn't a one-time assignment sealed at twenty-five — it's a conversation, and conversations continue.
+
+A practical exercise for the unsure: for one month, keep a two-column log. Left: moments at work when you felt most alive and useful. Right: moments of deadness. At month's end, the left column is a map of your gifts in their natural habitat. Whether it points at your current job, a different one, or the same job held differently — it's the most honest career counseling available, and it's free.`,
   },
   {
     slug: "money-meaning-tradeoff-myth",
@@ -531,7 +715,13 @@ It lets mission-driven employers underpay ("the mission is the compensation") �
 
 The truth: providing for a family is itself meaningful work — a just wage serves your first mission. And meaning compounds into market value: people who care become people who excel.
 
-So negotiate without guilt at mission-driven employers; they need sustainable hires, not martyrs. And count meaning honestly in every offer — it's not a discount you accept, it's value you receive. The goal isn't a trade-off. It's a life where the paycheck and the purpose both hold.`,
+So negotiate without guilt at mission-driven employers; they need sustainable hires, not martyrs. And count meaning honestly in every offer — it's not a discount you accept, it's value you receive. The goal isn't a trade-off. It's a life where the paycheck and the purpose both hold.
+
+Run the actual arithmetic on both sides, because vagueness is where the myth lives. Candidates: price the meaning honestly — if the mission job pays $12K less, that's $1,000 a month; against it, weigh the commute, the healthcare, what the flat feeling of the current job costs your family in your presence and mood. Sometimes the mission job loses that math and declining it is stewardship, not betrayal. Sometimes it wins by a mile and the only obstacle was an unexamined number.
+
+Employers: audit the quiet discount you may be charging. List what your people forgo against market — then ask what you're returning beyond the mission itself: real flexibility, real development, real voice, benefits a corporation wouldn't bother with. If the honest answer is "mostly the mission," you're not running on meaning; you're running on your best people's savings accounts, and the invoice arrives as turnover.
+
+The healthiest sentence either side can say in a negotiation: "the mission matters to me, and I need the number to work." Anyone who hears that as a contradiction — on either side of the table — is still inside the myth.`,
   },
   {
     slug: "teaching-kids-what-work-is-for",
@@ -546,7 +736,13 @@ If work is only ever the thing that steals you from them, they learn work is the
 
 This has hiring implications, honestly: choosing an employer whose mission you can explain to a seven-year-old is a family decision, not just a career one.
 
-The catechism of work is taught at your kitchen table, and you're the professor. Teach the version you'd want them to live.`,
+The catechism of work is taught at your kitchen table, and you're the professor. Teach the version you'd want them to live.
+
+The curriculum is mostly involuntary, but parts can be taught on purpose. Bring the kids to work once a year if you can — let them see the classroom, the office, the site, and meet one person you serve or serve alongside. Narrate your work decisions at their altitude: "I took this job because it lets me help families keep their homes" is a sentence a seven-year-old files away forever. Let them see you rest, too — the parent who never stops teaches that work is a god, which is its own bad catechism.
+
+Include the hard chapters, edited for age. A season of unemployment, honestly framed — "we're trusting God and I'm working hard to find the next place" — teaches more about providence and dignity than a decade of smooth commutes. Kids don't need your career to be impressive; they need your relationship to it to be truthful.
+
+And when they're older, the dinner table is where discernment gets modeled: talk through your actual crossroads out loud, prayer and spreadsheet both. The child who watches a parent turn down money for mission — or take money for the family's sake, and explain why both can be faithful — has received a complete education in vocation before ever writing a resume.`,
   },
 
   // ---------- For Employers ----------
@@ -564,7 +760,13 @@ The catechism of work is taught at your kitchen table, and you're the professor.
 • Cost awareness: do you understand what this work is like when it's hard, or are you in love with a brochure?
 • Reciprocity: do you have a reason this mission serves your growth too? (Pure self-sacrifice burns out; employers know it.)
 
-None of these can be faked in an hour, which is exactly why employers probe them. The good news: if the fit is real, all four are easy. Just tell the truth with specifics.`,
+None of these can be faked in an hour, which is exactly why employers probe them. The good news: if the fit is real, all four are easy. Just tell the truth with specifics.
+
+Watch how the four channels surface in real interview moments. Fluency: "Tell me what you think we're trying to do here" — the candidate who answers with the website's exact phrasing scores lower than the one who says something imperfect in their own words. History: the interviewer flips to the Faith & Service section first, not last, looking for dates that predate the job search. Cost awareness: "This role includes managing volunteers who don't show up. How does that land?" — the brochure-lovers flinch; the realists smile in recognition.
+
+Reciprocity is the least understood, so employers ask it sideways: "What would you get out of this role?" Candidates trained to answer selflessly ("I just want to serve") actually worry them — selflessness with no fuel source has a two-year burn rate. The reassuring answer names a real personal stake: growth toward a credential, a gift finally used at full stretch, a season of life this work fits.
+
+If you're the candidate, don't game the checklist — inhabit it. Before the interview, write your own four answers honestly. If one is empty, that's not a scripting problem. It's the discernment doing its job early.`,
   },
   {
     slug: "spot-mission-driven-candidate-one-interview",
@@ -583,7 +785,13 @@ Free history. Their past includes unrequired service — the choir, the food ban
 
 Reaction to the hard parts. Describe the role's genuine difficulties and watch: mission-fit candidates lean in and ask how it's being handled. Others visibly re-price the job.
 
-One interview is enough — if you spend it on these four channels instead of a resume walk-through.`,
+One interview is enough — if you spend it on these four channels instead of a resume walk-through.
+
+There's a fifth channel experienced interviewers add: how candidates talk about previous employers. The mission-driven candidate criticizes carefully and credits generously, even where they were hurt — because they see institutions as communities of people rather than career equipment. The candidate who torches their last parish in the interview will torch yours in three years, and the room knows it.
+
+Two cautions keep the radar honest. First, don't confuse polish with mission — articulate extroverts can perform purpose brilliantly for an hour, while a shy candidate with twenty years of quiet service stumbles over the "why us" question. Weight the history over the eloquence; the record doesn't get nervous. Second, don't let the radar become a piety contest. You're hiring for this role's mission, not canonizing anyone — the bookkeeper needs to love accuracy in service of the parish, not preach.
+
+Structure beats instinct in the end: put the four questions in every interview script, ask them of every candidate identically, and write down evidence rather than impressions. The radar metaphor is romantic, but the checklist is what keeps it fair — and legally defensible.`,
   },
   {
     slug: "skills-trainable-mission-isnt",
@@ -598,7 +806,13 @@ A parish business manager can learn your accounting software in a month. Nobody 
 
 This isn't an excuse to hire incompetence — skills still gate the interview. It's about the tiebreaker, and most hires come down to one: the polished candidate who could take any job versus the solid candidate who wants this one. Organizations that consistently choose the second build low-turnover, high-trust teams. Organizations that chase credentials rent talent until a better offer arrives.
 
-Skills depreciate and refresh. Mission alignment compounds. Hire the asset that appreciates.`,
+Skills depreciate and refresh. Mission alignment compounds. Hire the asset that appreciates.
+
+The principle needs its boundary stated plainly: some skills gates are absolute, and pretending mission covers them is its own failure. The unqualified-but-devout teacher costs children a year of learning; the beloved volunteer promoted past their competence becomes a beloved crisis. "Hire for mission, train for skill" assumes the skill is genuinely trainable within the season the organization can afford. Ask that question explicitly for every role: what's the true ramp time, and can we carry it?
+
+Where the principle earns its keep is the genuine tiebreak — and in building the training muscle that makes it usable. Organizations that hire for mission but never budget for development are writing checks their onboarding can't cash. The pair travels together: choose the aligned candidate, then actually build the skill — mentoring, courses, protected learning time, patience measured in quarters.
+
+There's a compounding effect on the roster, too. Every mission-first hire raises the odds the next great aligned candidate says yes, because people can smell their future colleagues in the interview. Credential-first shops assemble impressive strangers. Mission-first shops assemble a people — and a people, over a decade, out-executes a talent pool.`,
   },
   {
     slug: "how-catholic-employers-read-resumes",
@@ -615,7 +829,13 @@ They notice parish and ministry lines that other employers skim past, and treat 
 
 And they read for tone. Grandiose self-marketing that plays well elsewhere can misfire; plain, specific, quantified service plays best.
 
-Candidates: don't hide your Catholic life on a Catholic job board — organize it. Employers: say in your postings what you actually value, so candidates know to show it.`,
+Candidates: don't hide your Catholic life on a Catholic job board — organize it. Employers: say in your postings what you actually value, so candidates know to show it.
+
+The second lens has a few more filters worth knowing. Stability reads differently here: the corporate world forgives job-hopping as ambition; parish and school employers, whose communities absorb every departure, quietly prize the candidate with five-year chapters. If your resume hops for good reasons — spouse relocations, mission years, a bad-fit escape — one clause of context ("relocated for spouse's residency") converts a red flag into a shrug.
+
+Names and places carry information too. The reviewer likely knows your former parish, your pastor, possibly your third-grade catechist — the Catholic world is a small town wearing a big map. This cuts both ways: verifiable service builds instant trust, and any inflation will eventually meet someone who was in the room. Write accordingly.
+
+One more difference: the cover letter survives here. In corporate pipelines it's often skipped by software and humans alike; in a parish office, a warm specific letter is frequently read before the resume and sets the frame for everything after. The 200-word version — one true compliment, one proof point, one honest close — is disproportionately powerful precisely where you want to work.`,
   },
   {
     slug: "parish-business-manager-wishes",
@@ -632,7 +852,13 @@ They wish candidates applied even at 80% qualified. Parishes hire whole people f
 
 They wish candidates understood the pace: approvals route through pastors, councils, and sometimes the diocese. Two quiet weeks isn't rejection — a brief, warm follow-up genuinely helps.
 
-Most of all: parish jobs are real jobs. The best applications treat a parish with the same professionalism as a company — resume tailored, references ready, questions prepared — while grasping that the bottom line here is measured in souls served.`,
+Most of all: parish jobs are real jobs. The best applications treat a parish with the same professionalism as a company — resume tailored, references ready, questions prepared — while grasping that the bottom line here is measured in souls served.
+
+The list continues past the top four. They wish candidates read the bulletin before the interview — fifteen minutes with three months of bulletins tells you the parish's actual priorities, festivals, finances, and griefs, and the candidate who references them stands out instantly. They wish "what does success look like in year one?" got asked more, because it's the question that proves someone plans to stay. They wish salary expectations came up honestly at the first conversation, not the last — parish budgets have no room for a late-stage surprise, and neither does your mortgage.
+
+On the employer's own side of the ledger, the wish is for grace about the seams: the interview interrupted by a funeral, the offer letter delayed by a finance council vacation, the job description last updated when the previous pastor was new. Small organizations show their seams; candidates who treat the seams with warmth rather than judgment reveal exactly the temperament parish work requires.
+
+The meta-wish underneath all of it: that both sides would treat parish hiring as what it is — serious employment in service of something eternal. Professional standards and supernatural purpose, together. Candidates who bring both halves are the ones whose names get passed between parishes for years.`,
   },
   {
     slug: "hiring-for-mission-legally",
@@ -649,7 +875,13 @@ What stays off-limits everywhere: questions about age, disability, pregnancy, an
 
 Best practice is to put the requirement in the posting — "practicing Catholic in good standing required" — so the standard is public, tied to the role, and applied evenly.
 
-Get the framework right once, write it down, and mission-fit hiring becomes both principled and safe.`,
+Get the framework right once, write it down, and mission-fit hiring becomes both principled and safe.
+
+A few practical structures keep organizations on the right side of their own principles. Write role-by-role religious criteria before posting, with reasons: the theology teacher transmits doctrine (faith requirement clearly tied to function); the facilities manager stewards a sacred space (mission respect required; personal faith optional). When criteria are documented in advance, decisions become defensible and — just as important — consistent, so the answer doesn't drift with whoever interviews that day.
+
+Train everyone who touches interviews, including the volunteer search committee and the well-meaning parishioner on the panel. Most legal exposure comes not from policy but from an unscripted moment — the friendly question about someone's kids, the assumption spoken aloud. A one-page "we ask / we never ask" sheet, reviewed before every interview cycle, prevents the majority of it.
+
+And treat candidates' religious information with the gravity it deserves: it's sensitive data, shared in trust. Collect only what the role justifies, store it carefully, and never let it leak into small talk. Organizations that handle mission requirements with visible professionalism send a message to every candidate — including the ones they don't hire — that this is a place where serious things are done seriously. That reputation is itself a recruiting asset.`,
   },
   {
     slug: "why-employers-pay-more-for-mission",
@@ -666,7 +898,13 @@ They also carry hidden productivity: discretionary effort. The employee who beli
 
 And they recruit for you. Every fulfilled mission-fit employee is a walking job posting to their whole community.
 
-Pay fairly for alignment. It's not sentiment — it's the best deal in the budget.`,
+Pay fairly for alignment. It's not sentiment — it's the best deal in the budget.
+
+The arithmetic sharpens when you price discretionary effort directly. Two employees, identical salaries: one does the job description; the other also notices the failing donor pipeline, mentors the new hire through a rough October, and catches the scheduling error before it becomes a parent-facing crisis. The second employee's extra contribution — invisible in any payroll system — is routinely worth 20-30% of salary. Mission alignment is the most reliable predictor of who becomes that second employee, which means paying 10% above your instinct for a mission-fit hire is buying value at a discount.
+
+The recruiting flywheel deserves numbers too. A parish school known for treating aligned staff well fills openings in weeks from warm referrals; the school known for burning through idealists pays recruiters, runs longer vacancies, and settles more often. Reputation in a tight-knit community is a compounding asset with direct payroll consequences — in both directions.
+
+None of this argues for reckless generosity; small-organization budgets are real. It argues for precision: spend your limited compensation dollars preferentially on demonstrated mission fit, state plainly in offers why you're doing so, and watch the retention math quietly outperform every cost-saving instinct that produced the old churn.`,
   },
 ];
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type MenuKey = "work" | "employers";
 
@@ -144,6 +144,15 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
 export default function Header() {
   const [open, setOpen] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [shine, setShine] = useState(false);
+
+  useEffect(() => {
+    // light-sweep the logo once per session, on the first page it loads
+    if (!sessionStorage.getItem("jfc-logo-shine")) {
+      sessionStorage.setItem("jfc-logo-shine", "1");
+      setShine(true);
+    }
+  }, []);
 
   return (
     <div className="sticky top-0 z-50" onMouseLeave={() => setOpen(null)}>
@@ -161,14 +170,16 @@ export default function Header() {
       <header className="relative border-b border-black/5 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3">
           <Link href="/" className="shrink-0" onMouseEnter={() => setOpen(null)}>
-            <Image
-              src="/brand/logomail.png"
-              alt="JobsForCatholics.com"
-              width={332}
-              height={133}
-              className="h-14 w-auto"
-              priority
-            />
+            <span className={`logo-shine ${shine ? "logo-shine-run" : ""}`}>
+              <Image
+                src="/brand/logomail.png"
+                alt="JobsForCatholics.com"
+                width={332}
+                height={133}
+                className="h-16 w-auto"
+                priority
+              />
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 text-[13px] font-semibold tracking-[0.12em] text-ink uppercase lg:flex">
