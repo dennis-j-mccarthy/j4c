@@ -151,10 +151,16 @@ function Field({
   );
 }
 
+type Media = { name: string; url: string };
+
 export default function CandidateIntake() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [titleDraft, setTitleDraft] = useState("");
+  const [headshot, setHeadshot] = useState<Media | null>(null);
+  const [portfolio, setPortfolio] = useState<Media[]>([]);
+  const [videoIntro, setVideoIntro] = useState("");
+  const [mediaOpen, setMediaOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
@@ -228,7 +234,12 @@ export default function CandidateIntake() {
       const res = await fetch("/api/candidates", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          headshotName: headshot?.name ?? null,
+          portfolioNames: portfolio.map((p) => p.name),
+          videoName: videoIntro || null,
+        }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -551,6 +562,167 @@ export default function CandidateIntake() {
                 placeholder="Your story, your gifts, and what mission-driven work means to you."
               />
             </Field>
+
+            {/* fancy media reveal */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setMediaOpen(!mediaOpen)}
+                aria-expanded={mediaOpen}
+                className="btn-shimmer flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-4 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+                  <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" strokeLinecap="round" />
+                </svg>
+                {mediaOpen ? "Hide media studio" : "Stand out — add a headshot, portfolio & video intro"}
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className={`h-4 w-4 transition-transform duration-300 ${mediaOpen ? "rotate-180" : ""}`}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.3 7.8a1 1 0 0 1 1.4 0L10 11.1l3.3-3.3a1 1 0 1 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+
+              <div
+                className={`grid transition-all duration-500 ease-in-out ${
+                  mediaOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-5 rounded-2xl border border-brand/20 bg-brand-tint/40 p-5">
+                    <div className="flex items-center gap-4">
+                      {headshot ? (
+                        <div className="group relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/40">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={headshot.url} alt="Headshot preview" className="h-full w-full object-cover" />
+                          <button
+                            type="button"
+                            aria-label="Remove headshot"
+                            onClick={() => {
+                              URL.revokeObjectURL(headshot.url);
+                              setHeadshot(null);
+                            }}
+                            className="absolute inset-0 flex items-center justify-center bg-ink/60 text-white opacity-0 transition group-hover:opacity-100"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="flex h-20 w-20 shrink-0 cursor-pointer flex-col items-center justify-center rounded-full border-2 border-dashed border-brand/40 bg-white text-brand-dark transition hover:border-brand hover:bg-brand-tint">
+                          <span className="text-xl leading-none">+</span>
+                          <span className="text-[10px] font-semibold">Headshot</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={(e) => {
+                              const f = e.target.files?.[0];
+                              if (f) setHeadshot({ name: f.name, url: URL.createObjectURL(f) });
+                            }}
+                          />
+                        </label>
+                      )}
+                      <div>
+                        <p className="text-sm font-semibold text-ink">Professional headshot</p>
+                        <p className="text-xs text-muted">
+                          Profiles with a photo get noticed first.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-ink">Portfolio</p>
+                      <p className="text-xs text-muted">
+                        Lesson plans, music, design work — up to 8 images.
+                      </p>
+                      <div className="mt-3 grid grid-cols-4 gap-3">
+                        {portfolio.map((g, i) => (
+                          <div key={g.url} className="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-black/10">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={g.url} alt={g.name} className="h-full w-full object-cover" />
+                            <button
+                              type="button"
+                              aria-label={`Remove ${g.name}`}
+                              onClick={() => {
+                                URL.revokeObjectURL(g.url);
+                                setPortfolio(portfolio.filter((_, x) => x !== i));
+                              }}
+                              className="absolute top-1.5 right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-ink/70 text-xs text-white opacity-0 transition group-hover:opacity-100"
+                            >
+                              ×
+                            </button>
+                          </div>
+                        ))}
+                        {portfolio.length < 8 && (
+                          <label className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-xl border-2 border-dashed border-brand/40 bg-white text-brand-dark transition hover:border-brand hover:bg-brand-tint">
+                            <span className="text-2xl leading-none">+</span>
+                            <span className="text-xs font-semibold">Add</span>
+                            <input
+                              type="file"
+                              accept="image/*"
+                              multiple
+                              className="hidden"
+                              onChange={(e) => {
+                                const files = e.target.files;
+                                if (!files) return;
+                                const next = [...portfolio];
+                                for (const f of Array.from(files).slice(0, 8 - next.length)) {
+                                  next.push({ name: f.name, url: URL.createObjectURL(f) });
+                                }
+                                setPortfolio(next);
+                              }}
+                            />
+                          </label>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-ink">Video introduction</p>
+                      <p className="text-xs text-muted">
+                        30-60 seconds: who you are and what you&apos;re called to do.
+                      </p>
+                      {videoIntro ? (
+                        <div className="mt-3 flex items-center justify-between rounded-xl bg-white px-4 py-3 ring-1 ring-black/10">
+                          <span className="flex items-center gap-2 text-sm font-medium text-ink">
+                            <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-brand-dark">
+                              <path d="M4 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3.2l4.6-2.9A1 1 0 0 1 22 6.2v11.6a1 1 0 0 1-1.4.9L16 15.8V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Z" />
+                            </svg>
+                            {videoIntro}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setVideoIntro("")}
+                            className="text-sm text-muted hover:text-red-500"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      ) : (
+                        <label className="mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-dashed border-brand/40 bg-white px-4 py-5 text-sm font-semibold text-brand-dark transition hover:border-brand hover:bg-brand-tint">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+                            <path d="M12 16V4m0 0 4 4m-4-4L8 8" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" strokeLinecap="round" />
+                          </svg>
+                          Upload a video (MP4, up to 200 MB)
+                          <input
+                            type="file"
+                            accept="video/*"
+                            className="hidden"
+                            onChange={(e) => setVideoIntro(e.target.files?.[0]?.name ?? "")}
+                          />
+                        </label>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 

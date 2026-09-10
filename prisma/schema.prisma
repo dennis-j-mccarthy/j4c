@@ -89,6 +89,9 @@ model CandidateProfile {
   bio             String?
   resumeName      String?
   resumeUrl       String?
+  headshotName    String?
+  portfolioNames  String[]
+  videoName       String?
   relocate        Boolean        @default(false)
   searchable      Boolean        @default(true)
   alertFrequency  AlertFrequency @default(WEEKLY)

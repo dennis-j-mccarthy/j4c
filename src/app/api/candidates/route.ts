@@ -40,6 +40,9 @@ export async function POST(request: Request) {
     linkedin: str(body.linkedin),
     bio: str(body.bio)?.slice(0, 2000) ?? null,
     resumeName: str(body.resumeName),
+    headshotName: str(body.headshotName),
+    portfolioNames: list(body.portfolioNames).slice(0, 8),
+    videoName: str(body.videoName),
     relocate: !!body.relocate,
     searchable: body.searchable !== false,
     alertFrequency: (FREQUENCIES.includes(body.alertFrequency)
