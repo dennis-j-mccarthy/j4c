@@ -906,6 +906,182 @@ The recruiting flywheel deserves numbers too. A parish school known for treating
 
 None of this argues for reckless generosity; small-organization budgets are real. It argues for precision: spend your limited compensation dollars preferentially on demonstrated mission fit, state plainly in offers why you're doing so, and watch the retention math quietly outperform every cost-saving instinct that produced the old churn.`,
   },
+
+  // ---------- Catholic Jobs Guide (search-focused) ----------
+  {
+    slug: "catholic-jobs-near-me",
+    title: "Catholic Jobs Near Me: How to Find Faith-Based Work in Your Area",
+    category: "Catholic Jobs Guide",
+    image: "/blog/open-field.jpg",
+    daysAgo: 1,
+    excerpt: "Every diocese is an employment network hiding in plain sight. Here's how to search yours.",
+    body: `Searching "Catholic jobs near me" returns a strange mix — because Catholic employment is scattered across parish websites, diocesan HR pages, school systems, and general job boards that don't understand the category. The work exists; the indexing doesn't. Here's how to actually search your area.
+
+Start with your diocese. Every diocese in the U.S. maintains some form of employment page covering its offices, parishes, and often its schools — and most parish openings that never reach the big boards land there. Bookmark it and check weekly; diocesan HR pages update on office schedules, not algorithms.
+
+Then think in institutions, not job titles. Within driving distance you likely have parishes, one or more Catholic schools, possibly a Catholic hospital system, Catholic Charities, a pregnancy center, a Newman center, religious orders, and Catholic-owned businesses. Each is an employer. List them, find their careers pages, and you've built a local search engine no algorithm offers.
+
+Third, work the network the way the network actually works: the parish bulletin, the pastor's announcements, the Knights council, the school auction committee. A remarkable share of Catholic hiring happens through "we know someone" — being known is a search strategy.
+
+And of course, use a board built for exactly this. Jobs For Catholics aggregates mission-driven employers and lets you filter by location, category, and work setting — plus fit scores that tell you which local openings actually match your profile. Set your city and state in your candidate profile, turn on alerts, and "near me" stops being a search phrase and becomes an email that arrives when something opens down the road.`,
+  },
+  {
+    slug: "what-counts-as-a-catholic-job",
+    title: "What Counts as a Catholic Job? A Complete Guide to Faith-Based Careers",
+    category: "Catholic Jobs Guide",
+    image: "/brand/hero-church-windows.jpg",
+    daysAgo: 3,
+    excerpt: "It's a bigger category than parish work — and smaller than 'any job a Catholic holds.'",
+    body: `"Catholic job" gets used to mean everything from ordained ministry to any desk a Catholic happens to occupy. For a job search, a working taxonomy helps — because each tier hires differently.
+
+Tier one: roles that transmit the faith directly. Priests and religious, obviously, but also lay ecclesial ministers — directors of religious education, youth ministers, campus ministers, theology teachers, music directors. These roles usually require practicing Catholics, often with credentials in theology or ministry, and employers may lawfully require fidelity to Church teaching.
+
+Tier two: roles inside Catholic institutions that don't teach doctrine — the school's math teacher and business manager, the hospital's nurses, the diocese's accountant, Catholic Charities' case workers. Requirements vary: some employers ask all staff to support the mission; others simply ask for respect toward it. This tier is far larger than most job seekers realize, and it's where most "Catholic jobs" actually live.
+
+Tier three: Catholic-owned businesses and apostolates — publishers, media, devotional goods, faith-driven companies of every kind. Legally ordinary employers, culturally distinct workplaces.
+
+Tier four — and don't dismiss it — any honest work done Catholicly. The tradition insists secular work sanctified by intention is vocation, full stop.
+
+Practical takeaway for your search: decide which tiers fit your gifts and credentials, then search accordingly. A theology degree opens tier one; an accounting license opens tier two everywhere; a marketing portfolio opens tier three. On our board you'll find all three tiers represented — filter by category, and let your profile's fit scores show you which tier is calling loudest.`,
+  },
+  {
+    slug: "catholic-church-jobs-parish-roles",
+    title: "Catholic Church Jobs: Every Role a Parish Actually Hires For",
+    category: "Catholic Jobs Guide",
+    image: "/blog/church-candles.jpg",
+    daysAgo: 6,
+    excerpt: "A working parish is a small enterprise. Here's the full org chart most job seekers never see.",
+    body: `Ask someone what jobs exist at a Catholic parish and they'll name the priest and maybe "the secretary." A functioning parish is actually a small enterprise — often the size of a mid-sized business — and it hires across a surprising range.
+
+The pastoral side: directors of religious education, youth ministers, RCIA/OCIA coordinators, family life ministers, pastoral associates, sacramental coordinators. The liturgical side: music directors, organists, cantors, sacristans, liturgy coordinators. The operational side — where the most overlooked openings live: business managers, bookkeepers, office managers, administrative assistants, communications coordinators, database and stewardship staff, facilities and maintenance technicians, cemetery staff, event coordinators.
+
+Larger parishes add development directors, IT support, safe-environment coordinators, and school liaisons. Parish schools multiply the list again with principals, teachers, aides, counselors, and coaches.
+
+Three things to know about parish hiring. It's seasonal: education and ministry roles cluster in spring for fall starts; operational roles open year-round. It's relational: postings often circulate in bulletins and diocesan pages before anywhere else. And it's stretchy: parish job descriptions flex around the person hired — the communications coordinator who can also photograph events becomes indispensable.
+
+If parish work calls to you, build your candidate profile with every title you'd accept — coordinator, associate, director variants included — because parishes name the same job a dozen ways. Set your categories to Ministry, Music & Liturgy, or Administration, and watch the fit scores sort your local parish openings from best match down.`,
+  },
+  {
+    slug: "catholic-school-jobs-hiring-timeline",
+    title: "Catholic School Jobs: The Complete Hiring Timeline (and When to Apply)",
+    category: "Catholic Jobs Guide",
+    image: "/blog/teacher-class.jpg",
+    daysAgo: 9,
+    excerpt: "Catholic schools hire on a calendar. Miss it and you wait a year; learn it and you're early.",
+    body: `Catholic school hiring runs on an academic clock, and knowing it is half the search. Here's the year as principals actually live it.
+
+January-February: budgets settle and contracts go out to current staff. Principals learn who's leaving. The sharpest candidates introduce themselves now — before postings exist — with a short letter and resume: "if an opening emerges for next fall, I'd love to be considered."
+
+March-May: peak posting season. The bulk of teaching openings for August start dates appear in these three months. Apply fast; Catholic schools often interview on a rolling basis and close when they find their person, not when a deadline passes.
+
+June-July: the second wave — late resignations, enrollment surprises, and the openings created when a school's first choice took another offer. Candidates still searching in June shouldn't despair; schools hiring in June can't afford to be slow, and good candidates get grabbed in days.
+
+August: the scramble. A resignation two weeks before school starts makes a principal call every contact they have. If you're available and known, this is when phones ring.
+
+Year-round: aides, substitutes, coaches, after-care staff, and mid-year openings from life's usual interruptions. Substituting, by the way, remains the single best audition for a full contract — principals hire the sub they've watched over the stranger with the better resume.
+
+Administrative searches (principals, presidents) run earlier — often the fall before. And everything above shifts a few weeks by region and diocese. Build your profile now, set alerts for Education, and let the calendar work for you instead of discovering it a season late.`,
+  },
+  {
+    slug: "remote-catholic-jobs",
+    title: "Remote Catholic Jobs: Working for the Church From Anywhere",
+    category: "Catholic Jobs Guide",
+    image: "/brand/working-laptop.jpg",
+    daysAgo: 12,
+    excerpt: "The Church went remote too. Here's where the real work-from-home Catholic jobs are.",
+    body: `"Remote Catholic jobs" used to be a nearly empty search. Not anymore. Catholic organizations discovered distributed work along with everyone else, and a real remote job market now exists for candidates whose location and vocation don't line up.
+
+Where the remote roles actually are: communications and digital — social media managers, content writers, video editors, and web developers for apostolates, dioceses, and Catholic media. Development — grant writers, donor database managers, and campaign staff work remotely for organizations nationwide. Administration — bookkeeping, virtual assistance, and registrar work for schools and nonprofits. Technology — Catholic publishers, ed-tech, and app teams hire fully remote engineers and designers. Education — online Catholic schools and homeschool programs employ remote teachers and tutors. And the freelance layer: musicians, designers, writers, and consultants serving many parishes from one desk.
+
+What's rarely remote, honestly: ministry that happens to people in rooms — youth ministry, sacramental prep, liturgy, teaching in physical classrooms. Hybrid arrangements exist, but presence is the job.
+
+Remote Catholic work carries a particular challenge worth naming: mission connection thins over distance. The best remote-friendly Catholic employers counter it deliberately — team prayer on video, annual in-person gatherings, missions kept vivid in every meeting. Ask about that rhythm in interviews; its absence predicts the drift.
+
+On our board, filter any search by Remote work setting — or set your profile's work modes to include Remote and let fit scores surface every work-from-anywhere opening automatically. The Church's work now travels over wires too, and somebody faithful has to do it. It might as well be you.`,
+  },
+  {
+    slug: "catholic-jobs-no-theology-degree",
+    title: "Catholic Jobs That Don't Require a Theology Degree",
+    category: "Catholic Jobs Guide",
+    image: "/blog/meeting-office.jpg",
+    daysAgo: 16,
+    excerpt: "Most Catholic jobs aren't theology jobs. Your existing skills are probably already wanted.",
+    body: `The most common misconception about Catholic employment: that it's for theology graduates. Walk through any diocese's payroll and the opposite appears — the majority of Catholic jobs run on skills learned everywhere else.
+
+Every Catholic institution needs money managed: bookkeepers, accountants, business managers, finance directors. Every one needs communication: writers, designers, social media managers, videographers. Buildings need facilities staff, trades, and groundskeepers. Schools need not just teachers but registrars, admissions staff, counselors, coaches, nurses, and IT. Catholic healthcare employs every clinical and administrative role a secular hospital does. Catholic Charities and pregnancy centers need case workers, drivers, warehouse coordinators, and grant writers. Development offices need fundraisers and event planners. And Catholic-owned businesses need everything businesses need.
+
+What these employers ask for, in place of a theology degree, is usually one of three postures depending on the role: active practice of the faith, general support for the mission, or simple respect for it. Job postings state which — and if they don't, ask; it's a fair and expected question.
+
+Two genuine advantages non-theology candidates bring: outside professionalism (parishes and nonprofits often hunger for the operational discipline you take for granted) and durability (you're not competing for the small pool of ministry titles, so your search moves faster).
+
+The move: search by your existing skill category — Administration, Communications, Trades, Technology, Nonprofit — rather than by "Catholic." Set your profile accordingly and let the fit scores match your actual resume to the mission-driven employers who need exactly it. The Church has always run on more than theologians. It runs on people who can close the books, fix the boiler, and tell the story.`,
+  },
+  {
+    slug: "entry-level-catholic-jobs",
+    title: "Entry-Level Catholic Jobs: Where to Start a Faith-Based Career",
+    category: "Catholic Jobs Guide",
+    image: "/blog/laptop-writing.jpg",
+    daysAgo: 20,
+    excerpt: "No experience, real faith, ready to work? Here's the actual on-ramp map.",
+    body: `Every field has its on-ramps, and Catholic employment is no different — though nobody hands you the map. Here it is.
+
+The classic first jobs: parish administrative assistant (the single best view of how a parish actually runs), school aide or after-care staff, youth ministry assistant, development or communications assistant at a diocese or nonprofit, direct-care roles at Catholic Charities, and camp or retreat staff — the summer job that has launched a thousand ministry careers.
+
+The volunteer-to-hire pipeline is real and unusually strong in Catholic institutions. The catechist becomes the DRE's assistant; the festival volunteer becomes the events coordinator; the choir member becomes the part-time cantor. Institutions hire people they've watched. If you're aiming at a particular parish or school, six months of visible, reliable volunteering is often worth more than a credential.
+
+Mission years deserve special mention: NET Ministries, FOCUS, Totus Tuus, Christ in the City, and similar programs function as the Catholic world's graduate school of practical ministry. Alumni networks run deep, and "served two years with NET" opens doors for decades.
+
+Entry-level honesty: pay starts modest — often $15-20/hour or low-thirties salaried. Offset it by learning greedily: volunteer for the database, the livestream, the grant report. Skills stack fast in small organizations because nobody stops you from taking on more.
+
+On the board, filter by Internship, Part-time, and Volunteer job types to surface on-ramps, and keep your profile categories broad at this stage — your first Catholic job is mostly about getting inside the walls. Direction comes after.`,
+  },
+  {
+    slug: "how-much-do-catholic-jobs-pay",
+    title: "How Much Do Catholic Jobs Pay? An Honest Salary Guide by Role",
+    category: "Catholic Jobs Guide",
+    image: "/blog/notebook-pen.jpg",
+    daysAgo: 25,
+    excerpt: "Real ranges, real trade-offs, and how to negotiate without guilt.",
+    body: `Nobody publishes an honest salary guide for Catholic work, so rumors fill the gap — either "it pays nothing" or uncomfortable silence. Here are real ranges as of this writing, with the caveats that region, diocese, and organization size move every number.
+
+Parish roles: administrative assistants $30-42K; bookkeepers and office managers $38-55K; DREs and youth ministers $35-55K; music directors $40-65K full-time (often part-time or stipended); business managers $55-85K. Schools: Catholic school teachers commonly run 10-30% below their public-district neighbors — $38-60K for most classroom roles — with principals $70-110K. Diocesan professional staff (finance, HR, communications) track nonprofit market rates: $50-90K for managers, more for directors. Catholic healthcare pays market clinical rates — nurses lose nothing by choosing the Catholic hospital. Nonprofits and apostolates vary widest: development directors $60-105K, case workers $35-50K. Catholic business jobs simply pay what the business pays.
+
+Beyond the number, weigh the whole compensation: school tuition discounts for staff children (worth thousands per kid), housing at some parishes, genuine schedule flexibility, pensions in some diocesan systems, and the non-trivial value of work you believe in.
+
+Now the negotiation permission slip: mission-driven employers need sustainable employees, not martyrs whose finances quietly collapse. Asking for the top of a posted range, or for a review at six months, is professional behavior — and the healthy employers respond professionally. On our board, look for postings with published ranges (and employers: publish yours — it's the single strongest signal of an honest shop).`,
+  },
+  {
+    slug: "catholic-nonprofit-jobs",
+    title: "Catholic Nonprofit Jobs: From Apostolates to Charities",
+    category: "Catholic Jobs Guide",
+    image: "/blog/praying.jpg",
+    daysAgo: 30,
+    excerpt: "The Church's works of mercy have payrolls. Here's the landscape beyond parish walls.",
+    body: `Between the parish and the purely secular nonprofit lies a vast Catholic middle: organizations doing corporal and spiritual works of mercy at professional scale. If your calling is service more than sanctuary, this is your job market.
+
+The landscape: Catholic Charities affiliates — among the largest social-service networks in the country — hire case managers, counselors, refugee resettlement staff, housing specialists, and every operational role that supports them. Pregnancy resource centers hire client advocates, nurses, sonographers, and center directors. St. Vincent de Paul societies and Catholic food banks run warehouses, thrift operations, and volunteer programs with paid staff. Religious orders operate schools, retreat centers, and eldercare with lay professionals throughout. Apostolates — media, evangelization, campus outreach — hire communicators, fundraisers, and program staff. And the ecosystem's connective tissue: foundations, diocesan mission offices, and national organizations from the bishops' conference to the Knights.
+
+What distinguishes Catholic nonprofit work from parish work: the pace is programmatic rather than liturgical, funding is grant-and-donor-driven (making development skills golden), and teams often mix Catholics with colleagues of every faith united around the mission's works.
+
+What to bring: any human-services credential travels well; so do fundraising, volunteer management, and grant writing. What to ask in interviews: how the Catholic identity concretely shapes the work — the answer tells you whether you're joining an apostolate or a generic agency with a saint's name.
+
+Search the Nonprofit category on the board, and note which employers publish their mission in their postings with specificity. The ones who can say exactly whom they serve are the ones worth serving.`,
+  },
+  {
+    slug: "catholic-jobs-for-career-changers",
+    title: "Catholic Jobs for Career Changers: Bringing Your Skills to the Church",
+    category: "Catholic Jobs Guide",
+    image: "/brand/employer-2.jpg",
+    daysAgo: 35,
+    excerpt: "Mid-career and mission-hungry: the Church needs exactly what you already know how to do.",
+    body: `Somewhere in year twelve of a perfectly fine career, a certain kind of Catholic starts doing math at Mass: how many working years remain, and what are they for? If that's you, here's the encouraging truth — the career-changer is Catholic employment's most valuable import, because institutions rich in mission are frequently poor in exactly the professional disciplines you've spent a decade mastering.
+
+The high-demand imports: finance and accounting (every diocese and school), project and operations management (parishes merging, schools consolidating, nonprofits scaling), marketing and communications (the Church's perennial gap), HR (small institutions desperately need grown-up hiring practices), IT and data (parish systems run decades behind), and sales — which translates directly into development, the most chronically understaffed function in Catholic life.
+
+The transition playbook, condensed: start volunteering your professional skill now, where you worship — the finance council, the school board, the capital campaign. It converts your resume from "outsider with intentions" to "known contributor." Expect and plan for the pay adjustment; run the family math before the interview, not after the offer. Translate your resume into mission terms and add the Faith & Service section corporate formatting taught you to omit. And target tier-two roles first — operational positions inside Catholic institutions — where your skills transfer at full strength while you learn the culture.
+
+Timeline honesty: the move typically takes six to eighteen months from decision to desk. Build your profile now with your real titles and your target categories both, set alerts, and let the fit scores flag the openings where your first career funds your second calling.`,
+  },
 ];
 
 async function main() {
