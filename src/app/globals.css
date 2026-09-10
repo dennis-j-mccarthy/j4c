@@ -72,31 +72,10 @@ body {
   animation: logo-pop 1.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.logo-shine-run::after {
-  content: "";
+.logo-sparkle {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -60%;
-  width: 45%;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.95) 50%,
-    transparent 100%
-  );
-  transform: skewX(-18deg);
-  animation: logo-glint 1.1s ease-in-out 0.45s 1 both;
+  inset: 0;
   pointer-events: none;
-}
-
-@keyframes logo-glint {
-  from {
-    left: -60%;
-  }
-  to {
-    left: 130%;
-  }
 }
 
 @keyframes logo-pop {
@@ -196,9 +175,11 @@ body {
   .animate-kenburns,
   .animate-marquee,
   .pin-ring,
-  .logo-shine-run img,
-  .logo-shine-run::after {
+  .logo-shine-run img {
     animation: none;
+  }
+  .logo-sparkle {
+    display: none;
   }
   .reveal {
     opacity: 1;

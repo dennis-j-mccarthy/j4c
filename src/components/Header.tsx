@@ -191,6 +191,83 @@ export default function Header() {
                 className={`w-auto transition-all duration-300 ${scrolled ? "h-12" : "h-[4.5rem]"}`}
                 priority
               />
+              {shine && (
+                <svg
+                  viewBox="0 0 332 133"
+                  preserveAspectRatio="xMinYMid meet"
+                  aria-hidden
+                  className="logo-sparkle h-full w-auto"
+                >
+                  <defs>
+                    <filter id="spark-glow" x="-150%" y="-150%" width="400%" height="400%">
+                      <feGaussianBlur stdDeviation="2.2" />
+                    </filter>
+                  </defs>
+                  <g opacity="0">
+                    {/* travel along the road, left to right */}
+                    <animateMotion
+                      begin="0.35s"
+                      dur="1.5s"
+                      fill="freeze"
+                      rotate="0"
+                      path="M 10 103 C 44 99 72 92 97 79 C 112 71 122 64 126 58"
+                      calcMode="spline"
+                      keyTimes="0;1"
+                      keySplines="0.4 0 0.2 1"
+                    />
+                    <animate
+                      attributeName="opacity"
+                      begin="0.35s"
+                      dur="1.5s"
+                      values="0;1;1"
+                      keyTimes="0;0.12;1"
+                      fill="freeze"
+                    />
+                    {/* end-of-road burst, then vanish */}
+                    <animate
+                      attributeName="opacity"
+                      begin="1.85s"
+                      dur="0.45s"
+                      values="1;1;0"
+                      keyTimes="0;0.55;1"
+                      fill="freeze"
+                    />
+                    <g>
+                      <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        begin="0.35s"
+                        dur="1.5s"
+                        from="0"
+                        to="150"
+                        fill="freeze"
+                      />
+                      <animateTransform
+                        attributeName="transform"
+                        type="scale"
+                        additive="sum"
+                        begin="1.85s"
+                        dur="0.45s"
+                        values="1;2.6;0.4"
+                        keyTimes="0;0.55;1"
+                        fill="freeze"
+                      />
+                      <path
+                        d="M0,-9 L2.1,-2.1 L9,0 L2.1,2.1 L0,9 L-2.1,2.1 L-9,0 L-2.1,-2.1 Z"
+                        fill="#bfe9ff"
+                        opacity="0.55"
+                        filter="url(#spark-glow)"
+                        transform="scale(1.7)"
+                      />
+                      <path
+                        d="M0,-9 L2.1,-2.1 L9,0 L2.1,2.1 L0,9 L-2.1,2.1 L-9,0 L-2.1,-2.1 Z"
+                        fill="#ffffff"
+                      />
+                      <circle r="1.6" fill="#ffffff" />
+                    </g>
+                  </g>
+                </svg>
+              )}
             </span>
           </Link>
 
