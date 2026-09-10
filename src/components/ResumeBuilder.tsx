@@ -51,6 +51,7 @@ export default function ResumeBuilder() {
   const [phone, setPhone] = useState("");
   const [cityState, setCityState] = useState("");
   const [linkedin, setLinkedin] = useState("");
+  const [photo, setPhoto] = useState<string | null>(null);
   const [headline, setHeadline] = useState("");
   const [target, setTarget] = useState("");
   const [experiences, setExperiences] = useState<Exp[]>([{ ...EMPTY_EXP }]);
@@ -83,9 +84,50 @@ export default function ResumeBuilder() {
         }
         if (data.resume) {
           setResume(data.resume);
+          if (data.resume.contact?.photo) setPhoto(data.resume.contact.photo);
         }
       })
       .catch(() => {});
+  }, []);
+
+  // option-command-F: prefill the whole wizard with sample data (demo/testing)
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (!(e.altKey && e.metaKey && e.code === "KeyF")) return;
+      e.preventDefault();
+      setName("Maria Alvarez");
+      setEmail("maria.alvarez@example.org");
+      setPhone("(239) 555-0142");
+      setCityState("Naples, FL");
+      setLinkedin("linkedin.com/in/maria-alvarez");
+      setHeadline("Theology teacher and retreat leader, 6 years in Catholic schools");
+      setTarget("High School Theology Teacher");
+      setExperiences([
+        {
+          title: "Theology Teacher",
+          org: "St. Elizabeth Catholic High School",
+          dates: "2020 – present",
+          story:
+            "I teach four sections of sophomore theology and one senior elective on Catholic social teaching. I redesigned the sophomore curriculum around the Catechism. I mentor the campus ministry student leaders and help plan the annual Kairos retreat.",
+          impact: "Sophomore theology assessment scores rose 18% over two years",
+        },
+        {
+          title: "Youth Minister",
+          org: "Our Lady of Grace Parish",
+          dates: "2017 – 2020",
+          story:
+            "I ran weekly youth nights for middle and high schoolers. I recruited and trained twelve adult volunteers and kept everyone current on safe-environment certification. I planned two retreats a year on a shoestring budget.",
+          impact: "Weekly attendance grew from 20 to 65 teens",
+        },
+      ]);
+      setSkills("Curriculum design\nRetreat planning\nVolunteer leadership\nSpanish (conversational)");
+      setEducation("B.A. Theology — Ave Maria University, 2016\nCatechist Certification, Diocese of Venice");
+      setFaith("Lector & EMHC, St. Agnes Parish (2016 – present)\nKairos retreat leader");
+      setStep(0);
+      setError(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   const setExp = (i: number, patch: Partial<Exp>) =>
@@ -144,7 +186,7 @@ export default function ResumeBuilder() {
       const res = await fetch("/api/candidates/resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resume: { ...resume, contact: { name, email, phone, cityState, linkedin } } }),
+        body: JSON.stringify({ resume: { ...resume, contact: { name, email, phone, cityState, linkedin, photo } } }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error ?? "Save failed.");
@@ -208,9 +250,52 @@ export default function ResumeBuilder() {
             <Field label="LinkedIn or portfolio" optional>
               <input className={inputCls} value={linkedin} onChange={(e) => setLinkedin(e.target.value)} inputMode="url" />
             </Field>
+            <Field label="Photo" optional hint="Common and welcome in parish, school, and ministry hiring. For corporate roles it's your call — easy to leave off.">
+              <div className="flex items-center gap-4">
+                {photo ? (
+                  <div className="group relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/40">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={photo} alt="Resume photo" className="h-full w-full object-cover" />
+                    <button
+                      type="button"
+                      aria-label="Remove photo"
+                      onClick={() => setPhoto(null)}
+                      className="absolute inset-0 flex items-center justify-center bg-ink/60 text-white opacity-0 transition group-hover:opacity-100"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ) : (
+                  <label className="flex h-20 w-20 shrink-0 cursor-pointer flex-col items-center justify-center rounded-full border-2 border-dashed border-brand/40 bg-white text-brand-dark transition hover:border-brand hover:bg-brand-tint">
+                    <span className="text-xl leading-none">+</span>
+                    <span className="text-[10px] font-semibold">Photo</span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (!f) return;
+                        if (f.size > 4 * 1024 * 1024) {
+                          setError("Photo must be under 4 MB.");
+                          return;
+                        }
+                        const reader = new FileReader();
+                        reader.onload = () => setPhoto(String(reader.result));
+                        reader.readAsDataURL(f);
+                      }}
+                    />
+                  </label>
+                )}
+                <p className="text-sm text-muted">
+                  A warm, well-lit headshot. It appears at the top of your
+                  resume and prints with the PDF.
+                </p>
+              </div>
+            </Field>
             <Tip>
               Modern resumes skip the street address — city and state are all
-              employers need. No photo either (standard for U.S. hiring).
+              employers need.
             </Tip>
           </div>
         )}
@@ -396,11 +481,17 @@ export default function ResumeBuilder() {
       {/* live preview / print sheet */}
       {resume && step === 4 && (
         <div className="resume-sheet mx-auto mt-10 max-w-3xl bg-white p-10 shadow-sm ring-1 ring-black/10 print:mt-0 print:p-0 print:shadow-none print:ring-0">
-          <header className="border-b-2 border-ink pb-4">
-            <h2 className="font-heading text-3xl font-medium text-ink">{name || "Your Name"}</h2>
-            <p className="mt-1 text-sm text-ink/70">
-              {[cityState, phone, email, linkedin].filter(Boolean).join("  ·  ")}
-            </p>
+          <header className="flex items-start justify-between gap-6 border-b-2 border-ink pb-4">
+            <div>
+              <h2 className="font-heading text-3xl font-medium text-ink">{name || "Your Name"}</h2>
+              <p className="mt-1 text-sm text-ink/70">
+                {[cityState, phone, email, linkedin].filter(Boolean).join("  ·  ")}
+              </p>
+            </div>
+            {photo && (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img src={photo} alt="" className="h-24 w-24 shrink-0 rounded-full object-cover ring-1 ring-black/10" />
+            )}
           </header>
           {resume.summary && (
             <p className="mt-4 text-sm leading-relaxed text-ink/85">{resume.summary}</p>
