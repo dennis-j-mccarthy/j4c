@@ -112,13 +112,29 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-10 max-w-2xl rounded-2xl bg-brand-tint/70 p-6 text-center ring-1 ring-brand/20">
-            <p className="font-semibold text-ink">
-              Freelancers: listing your craft is free, always — and we take 0% commission.
-            </p>
-            <Link href="/freelance#join" className="mt-1 inline-block text-sm font-semibold text-brand-dark hover:underline">
-              List your craft →
-            </Link>
+          <div id="freelance" className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl bg-brand-tint/70 p-6 ring-1 ring-brand/20">
+              <p className="font-heading text-lg font-medium text-ink">Freelancers: list free</p>
+              <p className="mt-1 text-sm text-muted">
+                Listing your craft costs nothing, and we take 0% commission —
+                you keep everything you earn.
+              </p>
+              <Link href="/freelance#join" className="mt-3 inline-block text-sm font-semibold text-brand-dark hover:underline">
+                List your craft →
+              </Link>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 p-6 ring-1 ring-accent/30">
+              <p className="font-heading text-lg font-medium text-ink">
+                ★ Featured Craft — <span className="text-accent">$19/mo</span>
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Top of your category, featured badge, roughly 3× the views.
+                Cancel anytime — still 0% commission.
+              </p>
+              <Link href="/contact" className="mt-3 inline-block text-sm font-semibold text-accent hover:underline">
+                Get featured →
+              </Link>
+            </div>
           </div>
         </div>
       </main>
