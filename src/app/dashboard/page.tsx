@@ -69,7 +69,7 @@ export default async function DashboardPage() {
     );
   }
 
-  const [applications, jobs] = await Promise.all([
+  const [applications, jobs, tailoredCount] = await Promise.all([
     prisma.application.findMany({
       where: { OR: [{ userId: profile.userId }, { email: profile.user.email }] },
       include: { job: { include: { company: true } } },
@@ -81,6 +81,7 @@ export default async function DashboardPage() {
       orderBy: { postedAt: "desc" },
       take: 100,
     }),
+    prisma.resumeDoc.count({ where: { profileId: profile.id } }),
   ]);
 
   const appliedJobIds = new Set(applications.map((a) => a.jobId));
@@ -213,17 +214,19 @@ export default async function DashboardPage() {
               </section>
 
               <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
-                <h2 className="font-heading text-lg font-medium text-ink">My resume</h2>
+                <h2 className="font-heading text-lg font-medium text-ink">My resumes</h2>
                 <p className="mt-2 text-sm text-muted">
                   {profile.resumeData
-                    ? "Your AI-built resume is saved and ready to print or tailor."
+                    ? tailoredCount > 0
+                      ? `Master resume saved, plus ${tailoredCount} tailored version${tailoredCount > 1 ? "s" : ""} — each one keeps the job it was written for.`
+                      : "Master resume saved. Open any job and tailor it in one click."
                     : "Build a polished resume in five guided steps — Claude does the writing."}
                 </p>
                 <Link
-                  href="/resume"
+                  href={profile.resumeData ? "/resumes" : "/resume"}
                   className="btn-shimmer mt-4 block rounded-full bg-gradient-to-r from-brand to-brand-dark py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-brand/30 transition hover:-translate-y-0.5"
                 >
-                  {profile.resumeData ? "Open resume builder" : "✦ Build my resume"}
+                  {profile.resumeData ? "Open my collection" : "✦ Build my resume"}
                 </Link>
               </section>
 

@@ -93,11 +93,30 @@ model CandidateProfile {
   portfolioNames  String[]
   videoName       String?
   resumeData      Json?
+  resumeDocs      ResumeDoc[]
   relocate        Boolean        @default(false)
   searchable      Boolean        @default(true)
   alertFrequency  AlertFrequency @default(WEEKLY)
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt
+}
+
+// A tailored resume + cover letter, snapshotting the JD it targeted.
+// jobTitle/companyName are copies, not FKs — the doc outlives the posting.
+model ResumeDoc {
+  id          String           @id @default(cuid())
+  profile     CandidateProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId   String
+  jobTitle    String
+  companyName String?
+  jobSlug     String?
+  data        Json
+  coverLetter String?
+  source      String           @default("ai")
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([profileId, createdAt(sort: Desc)])
 }
 
 model Company {

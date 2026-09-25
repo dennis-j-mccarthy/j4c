@@ -97,6 +97,7 @@ const phases: Phase[] = [
       { id: "ai3", title: "AI JD maker", detail: "Title + facts + mission → structured posting (or polish a pasted draft); fixes raw-pasted JDs at the source" },
       { id: "ai4", title: "LLM fit scoring v2", detail: "Claude reads the saved resume against the full JD — score, strengths, gaps, and a candid summary on every job page", done: true },
       { id: "ai5", title: "AI cover letter writer", detail: "One click in the apply form drafts a sub-180-word letter from the candidate's profile + this posting", done: true },
+      { id: "ai6", title: "Per-JD tailored resumes (/resumes)", detail: "One click on any job tailors the master resume + cover letter to that JD; saved as a collection labeled by job title, kept even after the posting comes down", done: true },
     ],
   },
   {

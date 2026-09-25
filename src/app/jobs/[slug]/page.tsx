@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import ApplyForm from "@/components/ApplyForm";
 import FitPill from "@/components/FitPill";
 import AiFitPanel from "@/components/AiFitPanel";
+import TailorButton from "@/components/TailorButton";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
 import { scoreJobFit } from "@/lib/fitScore";
@@ -192,6 +193,7 @@ export default async function JobPage({
                   ))}
                 </ul>
                 <AiFitPanel slug={job.slug} />
+                <TailorButton slug={job.slug} />
                 <p className="mt-4 border-t border-black/5 pt-3 text-xs text-muted">
                   Score seem off?{" "}
                   <Link

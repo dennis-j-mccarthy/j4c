@@ -106,6 +106,12 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
         description: "Applications, matches & profile strength",
         icon: icons.grid,
       },
+      {
+        href: "/resumes",
+        title: "My Resumes",
+        description: "A tailored version for every job you chase",
+        icon: icons.sparkle,
+      },
     ],
     featured: {
       title: "Work is a vocation",
