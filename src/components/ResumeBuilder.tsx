@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import ResumeSheet from "@/components/ResumeSheet";
 
 type Exp = { title: string; org: string; dates: string; story: string; impact: string };
 type ResumeData = {
@@ -203,8 +204,46 @@ export default function ResumeBuilder() {
     setSaved(false);
   };
 
+  // Live preview: mirrors the generated resume once it exists, otherwise a
+  // draft assembled from whatever is typed so far.
+  const preview = useMemo(() => {
+    const lines = (s: string) => s.split(/\n/).map((t) => t.trim()).filter(Boolean);
+    const skillList = (s: string) => s.split(/\n|,/).map((t) => t.trim()).filter(Boolean);
+    const draftBullets = (story: string, impact: string) => {
+      const bullets = story
+        .split(/(?<=[.!?])\s+|\n+/)
+        .map((t) => t.trim().replace(/^[-•]\s*/, "").replace(/\.$/, ""))
+        .filter((t) => t.length > 3)
+        .slice(0, 4)
+        .map((t) => t.replace(/^I\s+(also\s+)?/i, ""))
+        .map((t) => t.charAt(0).toUpperCase() + t.slice(1));
+      if (impact.trim()) bullets.push(`Key result: ${impact.trim().replace(/\.$/, "")}`);
+      return bullets;
+    };
+    const body = resume ?? {
+      summary: headline || (target ? `Candidate for ${target}.` : ""),
+      experience: experiences
+        .filter((e) => e.title.trim() || e.org.trim())
+        .map((e) => ({
+          title: e.title,
+          organization: e.org,
+          dates: e.dates,
+          bullets: draftBullets(e.story, e.impact),
+        })),
+      skills: skillList(skills),
+      education: lines(education),
+      faithService: lines(faith),
+    };
+    return {
+      ...body,
+      contact: { name, email, phone, cityState, linkedin, photo },
+    };
+  }, [resume, name, email, phone, cityState, linkedin, photo, headline, target, experiences, skills, education, faith]);
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14">
+    <div className="grid items-start lg:grid-cols-2">
+      {/* left: the wizard */}
+      <div className="mx-auto w-full max-w-2xl px-4 py-14 lg:px-10">
       <p className="text-xs font-semibold tracking-[0.3em] text-brand-dark uppercase">
         Resume Builder
       </p>
@@ -212,8 +251,8 @@ export default function ResumeBuilder() {
         A resume worthy of your work.
       </h1>
       <p className="mt-3 text-muted">
-        Answer in plain English — the builder turns it into a modern,
-        recruiter-ready resume. No resume-speak required.
+        Answer in plain English — your resume builds itself on the right as
+        you type. No resume-speak required.
       </p>
 
       <ol className="mt-10 flex items-center gap-2">
@@ -478,73 +517,28 @@ export default function ResumeBuilder() {
         )}
       </div>
 
-      {/* live preview / print sheet */}
-      {resume && step === 4 && (
-        <div className="resume-sheet mx-auto mt-10 max-w-3xl bg-white p-10 shadow-sm ring-1 ring-black/10 print:mt-0 print:p-0 print:shadow-none print:ring-0">
-          <header className="flex items-start justify-between gap-6 border-b-2 border-ink pb-4">
-            <div>
-              <h2 className="font-heading text-3xl font-medium text-ink">{name || "Your Name"}</h2>
-              <p className="mt-1 text-sm text-ink/70">
-                {[cityState, phone, email, linkedin].filter(Boolean).join("  ·  ")}
-              </p>
-            </div>
-            {photo && (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={photo} alt="" className="h-24 w-24 shrink-0 rounded-full object-cover ring-1 ring-black/10" />
-            )}
-          </header>
-          {resume.summary && (
-            <p className="mt-4 text-sm leading-relaxed text-ink/85">{resume.summary}</p>
-          )}
-          {resume.experience.length > 0 && (
-            <section className="mt-5">
-              <h3 className="text-xs font-bold tracking-[0.2em] text-ink uppercase">Experience</h3>
-              {resume.experience.map((role, i) => (
-                <div key={i} className="mt-3">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <p className="text-sm font-bold text-ink">
-                      {role.title}
-                      {role.organization && <span className="font-normal"> — {role.organization}</span>}
-                    </p>
-                    <p className="text-xs text-ink/60">{role.dates}</p>
-                  </div>
-                  <ul className="mt-1.5 space-y-1 pl-4">
-                    {role.bullets.filter((b) => b.trim()).map((b, x) => (
-                      <li key={x} className="list-disc text-sm leading-snug text-ink/85">{b}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </section>
-          )}
-          {resume.skills.filter((s) => s.trim()).length > 0 && (
-            <section className="mt-5">
-              <h3 className="text-xs font-bold tracking-[0.2em] text-ink uppercase">Skills</h3>
-              <p className="mt-1.5 text-sm text-ink/85">{resume.skills.filter((s) => s.trim()).join("  ·  ")}</p>
-            </section>
-          )}
-          {resume.education.filter((s) => s.trim()).length > 0 && (
-            <section className="mt-5">
-              <h3 className="text-xs font-bold tracking-[0.2em] text-ink uppercase">Education</h3>
-              <ul className="mt-1.5 space-y-1">
-                {resume.education.filter((s) => s.trim()).map((e, i) => (
-                  <li key={i} className="text-sm text-ink/85">{e}</li>
-                ))}
-              </ul>
-            </section>
-          )}
-          {resume.faithService.filter((s) => s.trim()).length > 0 && (
-            <section className="mt-5">
-              <h3 className="text-xs font-bold tracking-[0.2em] text-ink uppercase">Faith & Service</h3>
-              <ul className="mt-1.5 space-y-1">
-                {resume.faithService.filter((s) => s.trim()).map((f, i) => (
-                  <li key={i} className="text-sm text-ink/85">{f}</li>
-                ))}
-              </ul>
-            </section>
-          )}
+      </div>
+
+      {/* right: live paper preview, resume.io style */}
+      <aside className="bg-slate-800 px-6 py-10 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:overflow-hidden lg:px-10 print:contents">
+        <div className="mb-4 flex items-center justify-between print:hidden">
+          <p className="text-xs font-semibold tracking-[0.2em] text-white/60 uppercase">
+            Live preview
+          </p>
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-white ring-1 ring-white/20 transition hover:bg-white hover:text-ink"
+          >
+            Download PDF
+          </button>
         </div>
-      )}
+        <div className="lg:min-h-0 lg:flex-1 lg:overflow-y-auto print:contents">
+          <div className="mx-auto max-w-3xl origin-top lg:scale-[0.82] xl:scale-[0.9] print:scale-100">
+            <ResumeSheet resume={preview} />
+          </div>
+        </div>
+      </aside>
     </div>
   );
 }
