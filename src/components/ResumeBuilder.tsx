@@ -220,7 +220,9 @@ export default function ResumeBuilder() {
       if (impact.trim()) bullets.push(`Key result: ${impact.trim().replace(/\.$/, "")}`);
       return bullets;
     };
-    const body = resume ?? {
+    // While filling in steps, mirror the raw inputs live; only the final step
+    // shows the generated/saved resume (which its own edits also update live).
+    const body = step === 4 && resume ? resume : {
       summary: headline || (target ? `Candidate for ${target}.` : ""),
       experience: experiences
         .filter((e) => e.title.trim() || e.org.trim())
@@ -238,7 +240,7 @@ export default function ResumeBuilder() {
       ...body,
       contact: { name, email, phone, cityState, linkedin, photo },
     };
-  }, [resume, name, email, phone, cityState, linkedin, photo, headline, target, experiences, skills, education, faith]);
+  }, [step, resume, name, email, phone, cityState, linkedin, photo, headline, target, experiences, skills, education, faith]);
 
   return (
     <div className="grid items-start lg:grid-cols-2">
