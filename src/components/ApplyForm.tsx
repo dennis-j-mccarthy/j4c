@@ -20,6 +20,27 @@ export default function ApplyForm({
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [drafting, setDrafting] = useState(false);
+
+  const draftLetter = async () => {
+    if (drafting) return;
+    setDrafting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/generate/cover-letter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Couldn't draft a letter.");
+      setCoverLetter(data.letter);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Couldn't draft a letter.");
+    } finally {
+      setDrafting(false);
+    }
+  };
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,13 +110,23 @@ export default function ApplyForm({
         onChange={(e) => setResumeUrl(e.target.value)}
         inputMode="url"
       />
-      <textarea
-        className={`${inputCls} min-h-24 resize-y`}
-        placeholder="Brief note or cover letter (optional)"
-        value={coverLetter}
-        onChange={(e) => setCoverLetter(e.target.value)}
-        maxLength={4000}
-      />
+      <div>
+        <textarea
+          className={`${inputCls} min-h-24 resize-y`}
+          placeholder="Brief note or cover letter (optional)"
+          value={coverLetter}
+          onChange={(e) => setCoverLetter(e.target.value)}
+          maxLength={4000}
+        />
+        <button
+          type="button"
+          onClick={draftLetter}
+          disabled={drafting}
+          className="mt-1.5 text-xs font-semibold text-brand-dark transition hover:underline disabled:opacity-60"
+        >
+          {drafting ? "Claude is writing…" : "✦ Draft my cover letter with AI"}
+        </button>
+      </div>
       {error && (
         <p className="rounded-lg bg-red-50 px-3 py-2 text-sm font-medium text-red-600">
           {error}

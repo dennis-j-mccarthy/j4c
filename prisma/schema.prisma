@@ -200,6 +200,37 @@ model PunchComment {
   @@index([itemId])
 }
 
+enum ProspectStatus {
+  NEW
+  QUEUED
+  EMAILED
+  REPLIED
+  WON
+  PASSED
+}
+
+model Prospect {
+  id        String         @id @default(cuid())
+  name      String
+  orgType   String?
+  location  String?
+  state     String?
+  contact   String?
+  email     String?
+  domain    String?
+  roles     String?
+  jobCount  Int            @default(1)
+  source    String         @default("catholicjobs.com")
+  status    ProspectStatus @default(NEW)
+  notes     String?
+  lastTouch DateTime?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@unique([name, source])
+  @@index([status])
+}
+
 model SavedJob {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String

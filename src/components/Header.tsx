@@ -100,6 +100,12 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
         description: "Plain English in, polished resume out",
         icon: icons.book,
       },
+      {
+        href: "/dashboard",
+        title: "My Dashboard",
+        description: "Applications, matches & profile strength",
+        icon: icons.grid,
+      },
     ],
     featured: {
       title: "Work is a vocation",
