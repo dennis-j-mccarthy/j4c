@@ -64,6 +64,7 @@ const phases: Phase[] = [
       { id: "s5", title: "Job alert emails", detail: "Saved-search digest; use Resend or SES" },
       { id: "s6", title: "Candidate/JD fit scores", detail: "Heuristic red/amber/green + filters on search, job pages, and employer applicant view; LLM scoring later", done: true },
       { id: "s7", title: "Instant video intros (record in browser)", detail: "MediaRecorder capture with retake/preview for candidate + employer videos; needs S3 (f9) to persist recordings" },
+      { id: "s8", title: "Candidate dashboard (/dashboard)", detail: "Applications with live status, top AI-matched openings, profile strength meter, resume shortcut — in the Find Work menu", done: true },
     ],
   },
   {
@@ -94,7 +95,18 @@ const phases: Phase[] = [
       { id: "ai1", title: "Provision Anthropic API key", detail: "Client needs their own key from console.anthropic.com → ANTHROPIC_API_KEY in .env + Vercel. Sonnet pricing = pennies per generation" },
       { id: "ai2", title: "AI resume maker", detail: "Profile + plain-English Q&A → drafted resume; 'Tailor to this job' + cover letter from any posting" },
       { id: "ai3", title: "AI JD maker", detail: "Title + facts + mission → structured posting (or polish a pasted draft); fixes raw-pasted JDs at the source" },
-      { id: "ai4", title: "LLM fit scoring v2", detail: "Claude reads resume text vs full JD; upgrades the existing red/amber/green pills in place" },
+      { id: "ai4", title: "LLM fit scoring v2", detail: "Claude reads the saved resume against the full JD — score, strengths, gaps, and a candid summary on every job page", done: true },
+      { id: "ai5", title: "AI cover letter writer", detail: "One click in the apply form drafts a sub-180-word letter from the candidate's profile + this posting", done: true },
+    ],
+  },
+  {
+    name: "Growth engine",
+    blurb: "Filling the board is the product — outreach tooling built in.",
+    items: [
+      { id: "g1", title: "Employer prospect CRM (/admin/prospects)", detail: "40 employers hiring on CatholicJobs.com with contacts, emails, domains; status pipeline, notes, one-click personalized outreach draft", done: true },
+      { id: "g2", title: "SEO pack: sitemap.xml + robots.txt", detail: "Jobs and all 50 articles submitted for indexing; admin and dashboard excluded", done: true },
+      { id: "g3", title: "Send the first outreach batch", detail: "Verify derived contact names first; needs a warmed send domain + CAN-SPAM footer" },
+      { id: "g4", title: "Full competitor catalog sweep", detail: "Same enrichment across every category — est. 150-300 more employer prospects" },
     ],
   },
   {
