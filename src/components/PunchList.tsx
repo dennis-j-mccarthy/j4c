@@ -85,7 +85,7 @@ const phases: Phase[] = [
     items: [
       { id: "m1", title: "Freelancer directory (/freelance)", detail: "Live marketplace: search, category filters, availability, rates; 9 crafts seeded; AI pitch-polisher on the join form", done: true },
       { id: "m2", title: "Contact / inquiry flow between employers and freelancers", detail: "Inquiry modal on every card; messages stored in DB", done: true },
-      { id: "m3", title: "Freelance monetization model", detail: "Decided: free to list + 0% commission (builds supply, beats Upwork on take-rate); revenue = Featured Craft placement $19/mo. Stripe checkout rides on e4", done: true },
+      { id: "m3", title: "Freelance monetization model", detail: "Decided: freelancers pay $20/mo to be listed, 0% commission. Stripe checkout rides on e4; early listings free until payments go live", done: true },
     ],
   },
   {

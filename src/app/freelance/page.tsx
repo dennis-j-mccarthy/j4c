@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 const STEPS = [
   {
     n: "1",
-    title: "List your craft — free",
-    copy: "Two minutes, no fee, no commission. Our AI even polishes your pitch.",
+    title: "List your craft — $20/mo",
+    copy: "Two minutes to set up, cancel anytime. Our AI even polishes your pitch.",
   },
   {
     n: "2",
@@ -82,7 +82,7 @@ export default async function FreelancePage() {
               href="#join"
               className="btn-shimmer rounded-full bg-gradient-to-r from-brand to-brand-dark px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/40 transition hover:-translate-y-0.5"
             >
-              ✦ List your craft — free
+              ✦ List your craft — $20/mo
             </a>
             <a
               href="#browse"
@@ -101,8 +101,8 @@ export default async function FreelancePage() {
               <p className="text-xs tracking-wide text-white/60 uppercase">Commission</p>
             </div>
             <div>
-              <p className="font-heading text-3xl font-medium text-brand">$0</p>
-              <p className="text-xs tracking-wide text-white/60 uppercase">To join</p>
+              <p className="font-heading text-3xl font-medium text-brand">$20</p>
+              <p className="text-xs tracking-wide text-white/60 uppercase">Per month</p>
             </div>
           </div>
         </div>

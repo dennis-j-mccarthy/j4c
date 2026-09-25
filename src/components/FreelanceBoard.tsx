@@ -131,11 +131,6 @@ export default function FreelanceBoard({ initial }: { initial: FreelancerRow[] }
               <div className="min-w-0">
                 <p className="font-heading text-lg font-medium text-ink group-hover:text-brand-dark">
                   {f.name}
-                  {f.featured && (
-                    <span className="ml-2 inline-block rounded-full bg-accent/15 px-2 py-0.5 align-middle text-[11px] font-bold text-accent">
-                      ★ Featured
-                    </span>
-                  )}
                 </p>
                 <p className="text-sm font-semibold text-brand-dark">{f.craft}</p>
                 <p className="mt-0.5 flex items-center gap-2 text-xs text-muted">

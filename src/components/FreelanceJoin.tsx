@@ -84,23 +84,10 @@ export default function FreelanceJoin() {
           Your craft is live on the marketplace. Refresh the page to see your
           card — inquiries land straight in your inbox.
         </p>
-        <div className="mx-auto mt-6 max-w-md rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 p-6 text-left ring-1 ring-accent/30">
-          <p className="font-heading text-lg font-medium text-ink">
-            ★ Go Featured — <span className="text-accent">$19/mo</span>
-          </p>
-          <ul className="mt-2 space-y-1 text-sm text-muted">
-            <li>· Pinned to the top of your category</li>
-            <li>· Featured badge on your card</li>
-            <li>· About 3× the views of a standard listing</li>
-          </ul>
-          <a
-            href="/pricing"
-            className="mt-4 inline-block rounded-full bg-accent px-6 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
-          >
-            Feature my craft
-          </a>
-          <p className="mt-2 text-xs text-muted">Still 0% commission — you keep everything you earn.</p>
-        </div>
+        <p className="mx-auto mt-4 max-w-md text-sm text-muted">
+          Your $20/mo subscription starts when payments go live at launch —
+          until then, early listings ride free.
+        </p>
       </div>
     );
   }
@@ -148,10 +135,10 @@ export default function FreelanceJoin() {
         disabled={saving}
         className="btn-shimmer mt-5 w-full rounded-full bg-gradient-to-r from-brand to-brand-dark px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 disabled:opacity-60"
       >
-        {saving ? "Listing your craft…" : "List my craft — free"}
+        {saving ? "Listing your craft…" : "List my craft — $20/mo"}
       </button>
       <p className="mt-3 text-center text-xs text-muted">
-        No commission, no membership fee. You keep 100% of what you earn.
+        $20/month, cancel anytime. 0% commission — you keep everything you earn.
       </p>
     </form>
   );

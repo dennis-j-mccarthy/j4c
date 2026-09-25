@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Sign Up — Jobs For Catholics",
-  description: "Join free as a job seeker, an employer, or a freelancer.",
+  description: "Join as a job seeker, an employer, or a freelancer.",
 };
 
 const OPTIONS = [
@@ -35,8 +35,8 @@ const OPTIONS = [
   },
   {
     title: "I'm a freelancer",
-    copy: "List your craft — music, sacred art, grant writing, web design — and let parishes and apostolates come to you. No commission.",
-    cta: "List my craft — free",
+    copy: "List your craft — music, sacred art, grant writing, web design — and let parishes and apostolates come to you. $20/mo, 0% commission.",
+    cta: "List my craft",
     href: "/freelance#join",
     accent: "from-emerald-500 to-teal-700",
     icon: (
@@ -54,14 +54,15 @@ export default function RegisterPage() {
       <main className="flex flex-1 items-center px-4 py-16">
         <div className="mx-auto w-full max-w-5xl">
           <p className="text-center text-xs font-bold tracking-[0.14em] text-brand-dark uppercase">
-            Join free
+            Join us
           </p>
           <h1 className="mt-2 text-center font-heading text-4xl font-medium tracking-tight text-ink">
             How will you build the Body of Christ?
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted">
-            Three ways in — all free. Pick the one that fits and you&apos;ll be
-            set up in about two minutes.
+            Free for job seekers, first listing free for employers, $20/mo for
+            freelancers. Pick your lane — you&apos;ll be set up in about two
+            minutes.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {OPTIONS.map((o) => (
