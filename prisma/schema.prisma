@@ -250,6 +250,45 @@ model Prospect {
   @@index([status])
 }
 
+model Freelancer {
+  id        String              @id @default(cuid())
+  name      String
+  email     String              @unique
+  craft     String
+  category  String
+  city      String?
+  state     String?
+  rate      String?
+  bio       String
+  skills    String[]
+  available Boolean             @default(true)
+  featured  Boolean             @default(false)
+  inquiries FreelancerInquiry[]
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+}
+
+model FreelancerInquiry {
+  id           String     @id @default(cuid())
+  freelancer   Freelancer @relation(fields: [freelancerId], references: [id], onDelete: Cascade)
+  freelancerId String
+  name         String
+  email        String
+  message      String
+  createdAt    DateTime   @default(now())
+
+  @@index([freelancerId])
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  topic     String?
+  message   String
+  createdAt DateTime @default(now())
+}
+
 model SavedJob {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
