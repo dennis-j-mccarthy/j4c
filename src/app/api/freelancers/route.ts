@@ -20,11 +20,15 @@ export async function POST(request: Request) {
   if (!craft) return NextResponse.json({ error: "Name your craft — what do you do?" }, { status: 400 });
   if (!bio) return NextResponse.json({ error: "Add a short pitch so people know what you offer." }, { status: 400 });
 
+  const base = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const taken = await prisma.freelancer.findFirst({ where: { slug: base, NOT: { email } } });
+  const slug = taken ? `${base}-${Date.now().toString(36).slice(-4)}` : base;
+
   const freelancer = await prisma.freelancer.upsert({
     where: { email },
-    create: { name, email, craft, category: category || "Other", city: city || null, rate: rate || null, bio, skills },
+    create: { name, email, slug, craft, category: category || "Other", city: city || null, rate: rate || null, bio, skills },
     update: { name, craft, category: category || "Other", city: city || null, rate: rate || null, bio, skills },
   });
 
-  return NextResponse.json({ ok: true, id: freelancer.id });
+  return NextResponse.json({ ok: true, id: freelancer.id, slug: freelancer.slug });
 }

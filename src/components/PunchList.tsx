@@ -83,7 +83,7 @@ const phases: Phase[] = [
     name: "Freelance marketplace",
     blurb: "The new third leg — no JobBoardHQ equivalent to migrate.",
     items: [
-      { id: "m1", title: "Freelancer directory (/freelance)", detail: "Live marketplace: search, category filters, availability, rates; 9 crafts seeded; AI pitch-polisher on the join form", done: true },
+      { id: "m1", title: "Freelancer directory (/freelance)", detail: "Live marketplace: search, category filters, availability, rates; 9 crafts seeded; AI pitch-polisher on the join form; profile pages with photo portfolios + captions", done: true },
       { id: "m2", title: "Contact / inquiry flow between employers and freelancers", detail: "Inquiry modal on every card; messages stored in DB", done: true },
       { id: "m3", title: "Freelance monetization model", detail: "Decided: freelancers pay $20/mo to be listed, 0% commission. Stripe checkout rides on e4; early listings free until payments go live", done: true },
     ],

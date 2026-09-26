@@ -35,10 +35,13 @@ const STEPS = [
 export default async function FreelancePage() {
   const freelancers = await prisma.freelancer.findMany({
     orderBy: [{ featured: "desc" }, { createdAt: "asc" }],
+    include: { _count: { select: { portfolio: true } } },
   });
 
   const rows: FreelancerRow[] = freelancers.map((f) => ({
     id: f.id,
+    slug: f.slug,
+    portfolioCount: f._count.portfolio,
     name: f.name,
     craft: f.craft,
     category: f.category,

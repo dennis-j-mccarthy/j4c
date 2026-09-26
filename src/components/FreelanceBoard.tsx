@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 
 export type FreelancerRow = {
   id: string;
+  slug: string | null;
+  portfolioCount: number;
   name: string;
   craft: string;
   category: string;
@@ -122,7 +124,7 @@ export default function FreelanceBoard({ initial }: { initial: FreelancerRow[] }
             key={f.id}
             className="group flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-lg hover:ring-brand/30"
           >
-            <div className="flex items-start gap-4">
+            <a href={`/freelance/${f.slug ?? f.id}`} className="flex items-start gap-4">
               <div
                 className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-lg font-bold text-white ${DISC_COLORS[i % DISC_COLORS.length]}`}
               >
@@ -144,7 +146,7 @@ export default function FreelanceBoard({ initial }: { initial: FreelancerRow[] }
                   {f.rate && <span>· {f.rate}</span>}
                 </p>
               </div>
-            </div>
+            </a>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{f.bio}</p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {f.skills.slice(0, 4).map((s) => (
@@ -153,12 +155,22 @@ export default function FreelanceBoard({ initial }: { initial: FreelancerRow[] }
                 </span>
               ))}
             </div>
-            <button
-              onClick={() => openInquiry(f)}
-              className="mt-4 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-brand-dark"
-            >
-              Get in touch
-            </button>
+            <div className="mt-4 flex items-center gap-2">
+              <button
+                onClick={() => openInquiry(f)}
+                className="flex-1 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition group-hover:bg-brand-dark"
+              >
+                Get in touch
+              </button>
+              {f.portfolioCount > 0 && (
+                <a
+                  href={`/freelance/${f.slug ?? f.id}`}
+                  className="rounded-full px-4 py-2.5 text-sm font-semibold text-brand-dark ring-1 ring-brand/40 transition hover:bg-brand-tint"
+                >
+                  Portfolio ({f.portfolioCount})
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
