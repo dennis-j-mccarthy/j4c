@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
@@ -58,9 +59,17 @@ export default async function FreelancePage() {
     <div className="flex min-h-screen flex-col bg-slate-50">
       <Header />
 
-      <section className="relative overflow-hidden bg-ink px-4 py-20 text-white">
+      <section className="relative overflow-hidden bg-ink px-4 py-24 text-white">
+        <Image
+          src="/brand/freelance-hero.jpg"
+          alt="Sunlit stone nave of a Catholic church, built by generations of craftsmen"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/35" />
         <div
-          className="pointer-events-none absolute inset-0 opacity-20"
+          className="pointer-events-none absolute inset-0 opacity-25"
           style={{
             background:
               "radial-gradient(ellipse at 20% 0%, #29b8fb55, transparent 55%), radial-gradient(ellipse at 90% 100%, #ff980033, transparent 50%)",
