@@ -28,7 +28,7 @@ const phases: Phase[] = [
       { id: "f6", title: "Provision Postgres + set DATABASE_URL on Vercel", detail: "Live as isolated `jfc` database on the shared Neon server — move to its own Neon project before launch", done: true },
       { id: "f7", title: "prisma db push + seed", done: true },
       { id: "f8", title: "Link GitHub repo to Vercel for push-to-deploy" },
-      { id: "f9", title: "Wire S3 media storage (Dennis's AWS)", detail: "New dedicated bucket + scoped IAM; presigned uploads. Unblocks resumes, headshots, galleries, videos. Vercel Blob is out (threshold)" },
+      { id: "f9", title: "Wire S3 media storage", detail: "Live: private bucket jfc-media-9054… + scoped jfc-app IAM user; presigned PUT uploads, presigned GET display (account policy blocks public buckets — CloudFront for launch). Portfolio uploads wired; resumes/headshots/videos next", done: true },
     ],
   },
   {

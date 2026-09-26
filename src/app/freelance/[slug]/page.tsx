@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import ProfileInquiry from "@/components/ProfileInquiry";
 import { prisma } from "@/lib/prisma";
+import { resolveMediaUrl } from "@/lib/s3";
 
 export const dynamic = "force-dynamic";
 
@@ -47,6 +48,13 @@ export default async function FreelancerProfilePage({
   const { slug } = await params;
   const f = await getFreelancer(slug);
   if (!f) notFound();
+
+  const portfolio = await Promise.all(
+    f.portfolio.map(async (item) => ({
+      ...item,
+      url: await resolveMediaUrl(item.image),
+    })),
+  );
 
   const initials = f.name
     .split(/\s+/)
@@ -112,27 +120,27 @@ export default async function FreelancerProfilePage({
               <p className="mt-3 leading-relaxed text-ink/80">{f.bio}</p>
             </article>
 
-            {f.portfolio.length > 0 && (
+            {portfolio.length > 0 && (
               <section>
                 <h2 className="font-heading text-2xl font-medium tracking-tight text-ink">
                   Portfolio
                 </h2>
                 <p className="mt-1 text-sm text-muted">Recent work, in {firstName}&apos;s own words.</p>
                 <div className="mt-5 space-y-6">
-                  {f.portfolio.map((item, i) => (
+                  {portfolio.map((item, i) => (
                     <Reveal key={item.id} delay={i * 100}>
                       <figure className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
-                        {item.image.startsWith("data:") ? (
-                          /* eslint-disable-next-line @next/next/no-img-element */
-                          <img src={item.image} alt={item.caption} className="max-h-[480px] w-full object-cover" />
-                        ) : (
+                        {item.url.startsWith("/") ? (
                           <Image
-                            src={item.image}
+                            src={item.url}
                             alt={item.caption}
                             width={1200}
                             height={800}
                             className="max-h-[480px] w-full object-cover"
                           />
+                        ) : (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img src={item.url} alt={item.caption} className="max-h-[480px] w-full object-cover" />
                         )}
                         <figcaption className="px-6 py-4 text-sm text-muted italic">
                           “{item.caption}”

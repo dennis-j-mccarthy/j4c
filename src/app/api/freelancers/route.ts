@@ -30,5 +30,22 @@ export async function POST(request: Request) {
     update: { name, craft, category: category || "Other", city: city || null, rate: rate || null, bio, skills },
   });
 
+  const portfolio = Array.isArray(body.portfolio) ? body.portfolio.slice(0, 6) : [];
+  if (portfolio.length > 0) {
+    await prisma.portfolioItem.deleteMany({ where: { freelancerId: freelancer.id } });
+    for (let i = 0; i < portfolio.length; i++) {
+      const image = String(portfolio[i]?.image ?? "");
+      if (!image.startsWith("s3:")) continue;
+      await prisma.portfolioItem.create({
+        data: {
+          freelancerId: freelancer.id,
+          image,
+          caption: String(portfolio[i]?.caption ?? "").slice(0, 300),
+          sort: i,
+        },
+      });
+    }
+  }
+
   return NextResponse.json({ ok: true, id: freelancer.id, slug: freelancer.slug });
 }
