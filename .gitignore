@@ -43,3 +43,6 @@ next-env.d.ts
 # prisma generated client
 /src/generated/
 !.env.example
+
+# local MCP config (machine-specific paths)
+.mcp.json
