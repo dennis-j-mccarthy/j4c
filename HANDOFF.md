@@ -1,6 +1,6 @@
 # jfc / Jobs For Catholics — Agent Handoff
 
-_Last updated: 2026-10-02. This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
+_Last updated: 2026-10-02 (stopping point)._ This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
 
 ## What this is
 
@@ -42,7 +42,7 @@ A proof-of-concept replacement for **jobsforcatholics.com** (currently hosted on
 ## Demo accounts
 
 - **Employer:** sign in at `/login` with **hiring@stclare.example.org** (Anne Whitaker, St. Clare of Assisi Catholic School). Lands on `/employer/dashboard`. St. Clare's "High School Theology Teacher" posting has 5 applicants including Maria — move her to Interviewing and her `/dashboard` shows it. Seed: `npx tsx prisma/seed-demo-employer.ts`.
-- **Do not use `mark@jobsforcatholics.com`** (EMPLOYER on Holy Name Catholic Church) for testing — it's likely the stakeholder's own account.
+- **Do not use the EMPLOYER account attached to Holy Name Catholic Church** for testing — it's likely the stakeholder's own account. (Look it up in the DB; don't write the address into docs — this repo is public.)
 - Applicant lists (`/jobs/[slug]/applicants`) and the candidate directory (`/search-candidates`) are visible only to a signed-in employer; signed-out visitors get a sign-in prompt.
 
 ### Candidate
@@ -68,13 +68,31 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 `npx tsx prisma/seed-articles.ts | seed-prospects.ts | seed-freelancers.ts | seed-portfolios.ts` (all idempotent upserts; need `.env`).
 
-## Immediate next steps (in priority order)
+## Current status (stopping point 2026-10-02)
 
-1. **Rewire remaining uploads onto S3** via the existing `/api/upload` presign route: apply-form resume upload, candidate intake media (headshot/portfolio/video), employer logos. This unlocks **instant video intros** (punchlist s7, MediaRecorder capture).
-3. **Job alert emails** (s5): Resend or SES; AlertFrequency field already on profiles.
-2. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
-4. **Outreach batch** (g3): the prospect CRM's derived contact names need human verification before any send; needs a warmed domain + CAN-SPAM footer.
-5. **Before client handoff:** own Neon project for the DB; client's own Anthropic key; password-gate or auth `/admin/prospects` and `/punchlist`; link GitHub→Vercel (f8).
+- **Prod is current** with `main` (last app deploy: employer registration fix, 45f0677). Live at https://jfc-tau.vercel.app.
+- **Shipped this round:** employer sign-in + `/employer/dashboard` + edit/close/reopen + applicant pipeline (e1–e3), saved jobs (s4), DB-driven featured jobs on the home page (e5), terms + privacy drafts (c5), applicant lists and `/search-candidates` gated to employers, three dead menu links fixed.
+- **Marketing deliverables (finished, not in this repo — see below):** relaunch plan + creative kit (31 art pieces) and the social analysis add-on (18 templates). Both are claude.ai artifacts reachable from any device; files live on Dennis's Mac in `~/Downloads/jfc-relaunch-kit/` and the Desktop.
+- **This repo is PUBLIC.** No secrets are in its history (checked 10/02), but `prisma/data/cj-prospects.json` (40 scraped employers, 35 contact emails) is. That's why the marketing kit was deliberately NOT committed here.
+
+## Priorities (in order)
+
+1. **Make the GitHub repo private** (Dennis's call — Settings → General → Danger Zone → Change visibility). This is the only fix that also covers the prospect data already in git history. Until then, put nothing with real people's details in this repo.
+2. **Gate `/admin/prospects` and `/punchlist`** — both are unauthenticated on prod; the prospects page shows 35 real contact emails to anyone.
+3. **Pricing decision (Dennis):** `/pricing` shows $99/listing and $249/mo; CatholicJobs.com charges $33–$65 and Catholic Job Hub is posting free. Confirm or change before Mark sees the plan.
+4. **Email notifications:** freelancer inquiries and contact-form messages are stored in the DB but email no one. Needed before the freelancer email in the plan goes out. (Resend or SES — also unblocks job alerts, s5.)
+5. **Social links + vendor wording on the site:** the new footer has no Facebook/Instagram/LinkedIn links; the fit-button sublabel on job pages names the AI vendor (change before recording the plan's videos).
+6. **Rewire remaining uploads onto S3** via `/api/upload`: apply-form resume, candidate headshot/portfolio/video, employer logos → unlocks instant video intros (s7).
+7. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
+8. **Outreach batch** (g3): verify derived contact names first; needs a separate sending domain, mailing address and unsubscribe footer.
+9. **Before client handoff:** own Neon project for the DB; client's own Anthropic key; link GitHub→Vercel (f8); real auth (a1, magic links).
+
+## Picking this up on another machine
+
+- `git clone https://github.com/dennis-j-mccarthy/j4c.git jfc && cd jfc && npm i --legacy-peer-deps`
+- `.env` is not in git. Pull values with `vercel env pull .env --environment=production` (logged in as dennismccarthy-4340), or copy it from the Mac. Then `npx prisma generate`.
+- Deploy is manual: `vercel --prod --yes` from the repo root.
+- Marketing kit sources (art HTML, render scripts, photos) are only on the Mac at `~/Downloads/jfc-relaunch-kit/src/`. The finished plan and social add-on open from any device via their claude.ai links (above).
 
 ## Working style (Dennis)
 
