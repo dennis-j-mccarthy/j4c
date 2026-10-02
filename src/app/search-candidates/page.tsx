@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { prisma } from "@/lib/prisma";
+import { getEmployer } from "@/lib/employer";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,34 @@ export const metadata: Metadata = {
 };
 
 export default async function SearchCandidatesPage() {
+  const employer = await getEmployer();
+  if (!employer) {
+    return (
+      <div className="flex min-h-screen flex-col bg-slate-50">
+        <Header />
+        <main className="flex flex-1 items-center justify-center px-4 py-20">
+          <div className="max-w-md rounded-2xl bg-white p-10 text-center shadow-sm ring-1 ring-black/5">
+            <h1 className="font-heading text-2xl font-medium text-ink">Search candidates</h1>
+            <p className="mt-3 text-muted">
+              Candidate profiles are visible to registered employers only.
+              Sign in, or register your organization free — your first job
+              listing is on us.
+            </p>
+            <div className="mt-6 flex justify-center gap-3">
+              <Link href="/login" className="rounded-full bg-brand px-6 py-2.5 font-semibold text-white transition hover:bg-brand-dark">
+                Employer sign in
+              </Link>
+              <Link href="/employer/register" className="rounded-full px-6 py-2.5 font-semibold text-brand-dark ring-1 ring-brand/40 transition hover:bg-brand-tint">
+                Register free
+              </Link>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   const profiles = await prisma.candidateProfile.findMany({
     where: { searchable: true },
     include: { user: true },

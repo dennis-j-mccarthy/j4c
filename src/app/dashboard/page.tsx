@@ -69,7 +69,7 @@ export default async function DashboardPage() {
     );
   }
 
-  const [applications, jobs, tailoredCount] = await Promise.all([
+  const [applications, jobs, tailoredCount, saved] = await Promise.all([
     prisma.application.findMany({
       where: { OR: [{ userId: profile.userId }, { email: profile.user.email }] },
       include: { job: { include: { company: true } } },
@@ -82,6 +82,11 @@ export default async function DashboardPage() {
       take: 100,
     }),
     prisma.resumeDoc.count({ where: { profileId: profile.id } }),
+    prisma.savedJob.findMany({
+      where: { userId: profile.userId },
+      include: { job: { include: { company: true } } },
+      orderBy: { createdAt: "desc" },
+    }),
   ]);
 
   const appliedJobIds = new Set(applications.map((a) => a.jobId));
@@ -153,6 +158,46 @@ export default async function DashboardPage() {
                     </p>
                   )}
                 </div>
+              </section>
+
+              <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+                <h2 className="font-heading text-xl font-medium text-ink">
+                  Saved jobs
+                </h2>
+                {saved.length === 0 ? (
+                  <p className="mt-3 text-sm text-muted">
+                    Tap the heart on any job to keep it here for later.
+                  </p>
+                ) : (
+                  <ul className="mt-4 divide-y divide-black/5">
+                    {saved.map(({ job }) => (
+                      <li key={job.id} className="flex flex-wrap items-center gap-3 py-3">
+                        <div className="min-w-0 flex-1">
+                          {job.status === "PUBLISHED" ? (
+                            <Link href={`/jobs/${job.slug}`} className="font-semibold text-ink hover:text-brand-dark">
+                              {job.title}
+                            </Link>
+                          ) : (
+                            <span className="font-semibold text-ink/60">{job.title}</span>
+                          )}
+                          <p className="text-sm text-muted">
+                            {job.company.name}
+                            {job.location && ` · ${job.location}`}
+                          </p>
+                        </div>
+                        {job.status === "PUBLISHED" ? (
+                          <Link href={`/jobs/${job.slug}#apply`} className="rounded-full bg-brand px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-dark">
+                            Apply
+                          </Link>
+                        ) : (
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500">
+                            No longer open
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </section>
 
               <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">

@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FitPill from "@/components/FitPill";
+import SaveJobButton from "@/components/SaveJobButton";
 import FitSlider from "@/components/FitSlider";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
@@ -76,6 +77,17 @@ export default async function SearchPage({
         })
       : Promise.resolve(null),
   ]);
+
+  const savedIds = new Set(
+    profile
+      ? (
+          await prisma.savedJob.findMany({
+            where: { userId: profile.user.id },
+            select: { jobId: true },
+          })
+        ).map((r) => r.jobId)
+      : [],
+  );
 
   const scored: { job: (typeof allJobs)[number]; fit: FitResult | null }[] =
     allJobs.map((job) => ({
@@ -231,10 +243,18 @@ export default async function SearchPage({
               {jobs.map(({ job, fit }) => {
                 const salary = formatSalary(job.salaryMin, job.salaryMax);
                 return (
-                  <li key={job.id}>
+                  <li key={job.id} className="relative">
+                    <div className="absolute top-4 right-4 z-10">
+                      <SaveJobButton
+                        compact
+                        jobId={job.id}
+                        initialSaved={savedIds.has(job.id)}
+                        signedIn={!!profile}
+                      />
+                    </div>
                     <Link
                       href={`/jobs/${job.slug}`}
-                      className="group flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:ring-brand/40 sm:flex-row sm:items-center"
+                      className="group flex flex-col gap-4 rounded-2xl bg-white p-6 pr-16 shadow-sm ring-1 ring-black/5 transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:ring-brand/40 sm:flex-row sm:items-center"
                     >
                       {job.company.logoUrl && (
                         <Image

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { getOwnedJob } from "@/lib/employer";
 import { TYPE_LABELS, MODE_LABELS } from "@/lib/format";
@@ -52,6 +53,7 @@ export async function PATCH(
   }
 
   const updated = await prisma.job.update({ where: { id }, data });
+  revalidatePath("/");
   return NextResponse.json({
     ok: true,
     status: updated.status,

@@ -9,6 +9,7 @@ import ApplyForm from "@/components/ApplyForm";
 import FitPill from "@/components/FitPill";
 import AiFitPanel from "@/components/AiFitPanel";
 import TailorButton from "@/components/TailorButton";
+import SaveJobButton from "@/components/SaveJobButton";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
 import { scoreJobFit } from "@/lib/fitScore";
@@ -54,6 +55,11 @@ export default async function JobPage({
   const fit = profile ? scoreJobFit(profile, job) : null;
   const employer = await getEmployer();
   const isOwner = employer?.company.id === job.companyId;
+  const isSaved = profile
+    ? !!(await prisma.savedJob.findUnique({
+        where: { userId_jobId: { userId: profile.userId, jobId: job.id } },
+      }))
+    : false;
 
   const salary = formatSalary(job.salaryMin, job.salaryMax);
   const annual = (job.salaryMin ?? 0) >= 10000;
@@ -152,12 +158,15 @@ export default async function JobPage({
                   ))}
               </div>
             </div>
-            <a
-              href="#apply"
-              className="rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
-            >
-              Apply Now
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <SaveJobButton jobId={job.id} initialSaved={isSaved} signedIn={!!profile} />
+              <a
+                href="#apply"
+                className="rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+              >
+                Apply Now
+              </a>
+            </div>
           </div>
         </div>
       </section>

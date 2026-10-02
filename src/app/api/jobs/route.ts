@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS } from "@/lib/format";
 import { getEmployer } from "@/lib/employer";
@@ -75,5 +76,6 @@ export async function POST(request: Request) {
     },
   });
 
+  revalidatePath("/");
   return NextResponse.json({ ok: true, slug: job.slug });
 }

@@ -4,6 +4,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
+import { prisma } from "@/lib/prisma";
+import { TYPE_LABELS, MODE_LABELS, formatSalary } from "@/lib/format";
+
+export const revalidate = 300;
 
 /* ---------- placeholder content (swap for DB queries) ---------- */
 
@@ -16,86 +20,44 @@ const employers = [
   { logo: "/brand/employers/fz9n.webp", name: "Holy Land Wood & Stone" },
 ];
 
-const featuredJobs = [
-  {
-    title: "High School Theology Teacher",
-    slug: "high-school-theology-teacher-st-clare",
-    org: "St. Clare of Assisi Catholic School",
-    logo: "/brand/employers/qlv9.png",
-    blurb:
-      "Teach upper-school theology rooted in the Catechism at a growing K-12 classical academy.",
-    location: "Naples, FL",
-    type: "Full-time",
-    salary: "$48k – $62k",
-    tags: ["Education", "On-site"],
-    featured: true,
-  },
-  {
-    title: "Admissions Counselor",
-    slug: "admissions-counselor-franciscan",
-    org: "Franciscan University of Steubenville",
-    logo: "/brand/employers/felq.jpg",
-    blurb:
-      "Guide prospective students and families through the admissions journey at a faithfully Catholic university.",
-    location: "Steubenville, OH",
-    type: "Full-time",
-    salary: "$52k – $64k",
-    tags: ["Higher Ed", "On-site"],
-    featured: true,
-  },
-  {
-    title: "Youth Minister",
-    slug: "youth-minister-regina-coeli",
-    org: "Regina Coeli Parish",
-    logo: "/brand/employers/wt86.webp",
-    blurb:
-      "Build and shepherd middle- and high-school youth programs, retreats, and service projects.",
-    location: "Abilene, TX",
-    type: "Part-time",
-    salary: "$24 – $30/hr",
-    tags: ["Ministry", "On-site"],
-    featured: false,
-  },
-  {
-    title: "Development Director",
-    slug: "development-director-legacy-of-life",
-    org: "Legacy of Life Foundation",
-    logo: "/brand/employers/8enr.png",
-    blurb:
-      "Lead fundraising strategy and donor relationships for a foundation serving women and families.",
-    location: "Philadelphia, PA",
-    type: "Full-time",
-    salary: "$85k – $105k",
-    tags: ["Nonprofit", "Hybrid"],
-    featured: false,
-  },
-  {
-    title: "Executive Recruiter",
-    slug: "executive-recruiter-sol",
-    org: "Sól Recruiting",
-    logo: "/brand/employers/klqe.webp",
-    blurb:
-      "Place mission-aligned leaders with Catholic organizations nationwide. Fully remote.",
-    location: "Remote",
-    type: "Contract",
-    salary: "$60 – $85/hr",
-    tags: ["Recruiting", "Remote"],
-    featured: false,
-  },
-  {
-    title: "E-Commerce Manager",
-    slug: "ecommerce-manager-holy-land",
-    org: "Holy Land Wood & Stone",
-    logo: "/brand/employers/fz9n.webp",
-    blurb:
-      "Grow the online storefront for handcrafted olive-wood goods from the Holy Land.",
-    location: "Remote",
-    type: "Freelance",
-    salary: "$400 – $900/wk",
-    tags: ["Marketing", "Freelance"],
-    featured: false,
-  },
-];
+// fallback logos for seeded employers whose Company row has no logoUrl
+const logoBySlug: Record<string, string> = {
+  "st-clare-of-assisi-catholic-school": "/brand/employers/qlv9.png",
+  "franciscan-university-of-steubenville": "/brand/employers/felq.jpg",
+  "regina-coeli-parish": "/brand/employers/wt86.webp",
+  "legacy-of-life-foundation": "/brand/employers/8enr.png",
+  "sol-recruiting": "/brand/employers/klqe.webp",
+  "holy-land-wood-and-stone": "/brand/employers/fz9n.webp",
+};
+
+/** Featured live jobs first, backfilled with the newest so the grid stays full. */
+async function getHomeJobs() {
+  const jobs = await prisma.job.findMany({
+    where: { status: "PUBLISHED" },
+    include: { company: true },
+    orderBy: [{ featured: "desc" }, { postedAt: "desc" }],
+    take: 6,
+  });
+  return jobs.map((job) => {
+    const firstLine =
+      job.description
+        .split("\n")
+        .map((l) => l.trim())
+        .find((l) => l && !l.endsWith(":")) ?? "";
+    return {
+      title: job.title,
+      slug: job.slug,
+      org: job.company.name,
+      logo: job.company.logoUrl ?? logoBySlug[job.company.slug] ?? null,
+      blurb: firstLine.length > 130 ? `${firstLine.slice(0, 127).trimEnd()}…` : firstLine,
+      location: job.location ?? (job.workMode === "REMOTE" ? "Remote" : ""),
+      type: TYPE_LABELS[job.type],
+      salary: formatSalary(job.salaryMin, job.salaryMax),
+      tags: [job.category, MODE_LABELS[job.workMode]].filter(Boolean) as string[],
+      featured: job.featured,
+    };
+  });
+}
 
 const pins = [
   { x: 10, y: 22, label: "Seattle" },
@@ -211,7 +173,8 @@ const PinIcon = () => (
   </svg>
 );
 
-export default function Home() {
+export default async function Home() {
+  const featuredJobs = await getHomeJobs();
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -534,19 +497,25 @@ export default function Home() {
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {featuredJobs.map((job, i) => (
-                <Reveal key={job.title} delay={(i % 3) * 100} className="h-full">
+                <Reveal key={job.slug} delay={(i % 3) * 100} className="h-full">
                   <Link
                     href={`/jobs/${job.slug}`}
                     className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-brand/40"
                   >
                     <div className="flex items-start justify-between">
-                      <Image
-                        src={job.logo}
-                        alt={`${job.org} logo`}
-                        width={48}
-                        height={48}
-                        className="h-12 w-12 rounded-xl object-contain ring-1 ring-black/5"
-                      />
+                      {job.logo ? (
+                        <Image
+                          src={job.logo}
+                          alt={`${job.org} logo`}
+                          width={48}
+                          height={48}
+                          className="h-12 w-12 rounded-xl object-contain ring-1 ring-black/5"
+                        />
+                      ) : (
+                        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-tint font-heading text-lg font-medium text-brand-dark ring-1 ring-black/5">
+                          {job.org.charAt(0)}
+                        </span>
+                      )}
                       {job.featured && (
                         <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-bold text-accent">
                           Featured
@@ -563,7 +532,7 @@ export default function Home() {
                     <div className="mt-3 flex items-center gap-1.5 text-sm text-muted">
                       <PinIcon />
                       {job.location}
-                      <span className="mx-1 text-black/20">•</span>
+                      {job.location && <span className="mx-1 text-black/20">•</span>}
                       {job.type}
                     </div>
                     <div className="mt-auto flex items-center justify-between pt-5">
@@ -577,7 +546,7 @@ export default function Home() {
                           </span>
                         ))}
                       </div>
-                      <span className="text-sm font-bold text-ink">{job.salary}</span>
+                      {job.salary && <span className="text-sm font-bold text-ink">{job.salary}</span>}
                     </div>
                   </Link>
                 </Reveal>

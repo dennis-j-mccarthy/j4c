@@ -69,7 +69,11 @@ export default function Footer() {
       <div className="border-t border-white/10 px-4 py-5">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-sm text-white/60 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} JobsForCatholics.com</p>
-          <p className="italic">Ora et labora</p>
+          <div className="flex items-center gap-5">
+            <Link href="/terms" className="transition hover:text-brand">Terms</Link>
+            <Link href="/privacy" className="transition hover:text-brand">Privacy</Link>
+            <p className="italic">Ora et labora</p>
+          </div>
         </div>
       </div>
     </footer>
