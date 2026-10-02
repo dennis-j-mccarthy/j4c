@@ -25,11 +25,15 @@ function Field({ label, optional, hint, children }: { label: string; optional?: 
   );
 }
 
-export default function JobPostWizard() {
+export default function JobPostWizard({
+  initialOrg,
+}: {
+  initialOrg?: { name: string; orgType: string | null; about: string | null } | null;
+}) {
   const [step, setStep] = useState(0);
-  const [orgName, setOrgName] = useState("");
-  const [orgType, setOrgType] = useState("");
-  const [mission, setMission] = useState("");
+  const [orgName, setOrgName] = useState(initialOrg?.name ?? "");
+  const [orgType, setOrgType] = useState(initialOrg?.orgType ?? "");
+  const [mission, setMission] = useState(initialOrg?.about ?? "");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [type, setType] = useState("FULL_TIME");
@@ -133,6 +137,14 @@ export default function JobPostWizard() {
           >
             View Your Posting
           </a>
+          {initialOrg && (
+            <a
+              href="/employer/dashboard"
+              className="rounded-full border border-brand px-7 py-3 font-semibold text-brand-dark transition hover:bg-brand hover:text-white"
+            >
+              Employer Dashboard
+            </a>
+          )}
           <a
             href="/employer/post"
             className="rounded-full border border-brand px-7 py-3 font-semibold text-brand-dark transition hover:bg-brand hover:text-white"

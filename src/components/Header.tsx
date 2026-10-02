@@ -131,22 +131,28 @@ const menus: Record<MenuKey, { label: string; links: MegaLink[]; featured: { tit
         icon: icons.megaphone,
       },
       {
-        href: "/employer/candidates",
+        href: "/search-candidates",
         title: "Search Candidates",
         description: "Browse mission-aligned professionals",
         icon: icons.users,
       },
       {
-        href: "/employer/pricing",
+        href: "/pricing",
         title: "Pricing & Plans",
         description: "Simple plans for parishes to enterprises",
         icon: icons.tag,
       },
       {
-        href: "/employer/info",
+        href: "/why-us",
         title: "Why Jobs For Catholics",
         description: "Reach candidates who share your mission",
         icon: icons.book,
+      },
+      {
+        href: "/employer/dashboard",
+        title: "Employer Dashboard",
+        description: "Your postings, applicants & hiring stages",
+        icon: icons.grid,
       },
     ],
     featured: {
@@ -418,7 +424,7 @@ export default function Header() {
           <nav className="flex flex-col gap-1 px-4 py-4 text-sm font-semibold tracking-[0.12em] text-ink uppercase">
             {[
               { href: "/search", label: "Find Work" },
-              { href: "/employer/info", label: "For Employers" },
+              { href: "/why-us", label: "For Employers" },
               { href: "/freelance", label: "Freelancers" },
               { href: "/blog", label: "Blog" },
               { href: "/about", label: "About" },

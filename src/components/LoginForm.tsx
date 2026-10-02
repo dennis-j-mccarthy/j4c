@@ -20,7 +20,7 @@ export default function LoginForm() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error ?? "Sign-in failed.");
-      window.location.href = "/search";
+      window.location.href = data.redirect ?? "/dashboard";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign-in failed.");
       setSubmitting(false);

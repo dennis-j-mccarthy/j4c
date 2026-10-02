@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { EMPLOYER_COOKIE, employerCookieOptions } from "@/lib/employer";
 
 const slugify = (s: string) =>
   s
@@ -48,11 +49,13 @@ export async function POST(request: Request) {
     create: { slug, ...companyData },
   });
 
-  await prisma.user.upsert({
+  const user = await prisma.user.upsert({
     where: { email },
     update: { name: contactName, role: "EMPLOYER", companyId: company.id },
     create: { email, name: contactName, role: "EMPLOYER", companyId: company.id },
   });
 
-  return NextResponse.json({ ok: true, companySlug: slug });
+  const res = NextResponse.json({ ok: true, companySlug: slug });
+  res.cookies.set(EMPLOYER_COOKIE, user.id, employerCookieOptions);
+  return res;
 }

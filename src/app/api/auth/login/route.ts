@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { EMPLOYER_COOKIE, employerCookieOptions } from "@/lib/employer";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -12,19 +13,30 @@ export async function POST(request: Request) {
     where: { email },
     include: { profile: true },
   });
-  if (!user?.profile) {
+  const isEmployer = user?.role === "EMPLOYER" && !!user.companyId;
+
+  if (!user || (!user.profile && !isEmployer)) {
     return NextResponse.json(
-      { error: "No candidate profile found for that email. Create one first." },
+      { error: "No account found for that email. Create a profile first." },
       { status: 404 },
     );
   }
 
-  const res = NextResponse.json({ ok: true, name: user.name });
   // device sign-in until magic-link auth lands (punch list a1)
-  res.cookies.set("jfc_candidate", user.profile.id, {
-    path: "/",
-    maxAge: 60 * 60 * 24 * 365,
-    sameSite: "lax",
+  const res = NextResponse.json({
+    ok: true,
+    name: user.name,
+    redirect: isEmployer ? "/employer/dashboard" : "/dashboard",
   });
+  if (user.profile) {
+    res.cookies.set("jfc_candidate", user.profile.id, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+  }
+  if (isEmployer) {
+    res.cookies.set(EMPLOYER_COOKIE, user.id, employerCookieOptions);
+  }
   return res;
 }

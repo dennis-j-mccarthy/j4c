@@ -12,6 +12,7 @@ import TailorButton from "@/components/TailorButton";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS, formatSalary, timeAgo } from "@/lib/format";
 import { scoreJobFit } from "@/lib/fitScore";
+import { getEmployer } from "@/lib/employer";
 
 export const dynamic = "force-dynamic";
 
@@ -51,6 +52,8 @@ export default async function JobPage({
     ? await prisma.candidateProfile.findUnique({ where: { id: candidateId } })
     : null;
   const fit = profile ? scoreJobFit(profile, job) : null;
+  const employer = await getEmployer();
+  const isOwner = employer?.company.id === job.companyId;
 
   const salary = formatSalary(job.salaryMin, job.salaryMax);
   const annual = (job.salaryMin ?? 0) >= 10000;
@@ -227,14 +230,16 @@ export default async function JobPage({
               </h2>
               <ApplyForm slug={job.slug} jobTitle={job.title} />
             </div>
-            <p className="text-center">
-              <Link
-                href={`/jobs/${job.slug}/applicants`}
-                className="text-xs font-medium text-muted hover:text-brand-dark"
-              >
-                Employer view: applicants →
-              </Link>
-            </p>
+            {isOwner && (
+              <p className="text-center">
+                <Link
+                  href={`/jobs/${job.slug}/applicants`}
+                  className="text-sm font-semibold text-brand-dark hover:underline"
+                >
+                  Your posting — view applicants →
+                </Link>
+              </p>
+            )}
           </aside>
         </div>
       </main>

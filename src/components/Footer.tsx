@@ -15,9 +15,9 @@ const columns = [
     heading: "Employers",
     links: [
       { href: "/employer/post", label: "Post a Job" },
-      { href: "/employer/pricing", label: "Pricing" },
-      { href: "/employer/candidates", label: "Search Candidates" },
-      { href: "/employer/info", label: "Why Us" },
+      { href: "/pricing", label: "Pricing" },
+      { href: "/search-candidates", label: "Search Candidates" },
+      { href: "/why-us", label: "Why Us" },
     ],
   },
   {

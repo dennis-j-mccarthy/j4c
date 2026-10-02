@@ -185,16 +185,24 @@ export default function EmployerIntake() {
           Welcome aboard, {form.orgName}!
         </h1>
         <p className="mt-3 leading-relaxed text-muted">
-          Your employer profile is in. We&apos;ll email{" "}
-          <span className="font-semibold text-ink">{form.email}</span> a
-          sign-in link so you can post your first job.
+          Your employer profile is in, and you&apos;re signed in on this
+          device as <span className="font-semibold text-ink">{form.email}</span>.
+          Your first listing is free.
         </p>
-        <a
-          href="/search"
-          className="mt-8 inline-block rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
-        >
-          See the Board
-        </a>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <a
+            href="/employer/post"
+            className="rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
+          >
+            Post your first job
+          </a>
+          <a
+            href="/employer/dashboard"
+            className="rounded-full px-8 py-3.5 font-semibold text-brand-dark ring-1 ring-brand/40 transition hover:bg-brand-tint"
+          >
+            Go to your dashboard
+          </a>
+        </div>
       </div>
     );
   }

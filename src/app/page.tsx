@@ -444,13 +444,13 @@ export default function Home() {
                 </ul>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="/employer/pricing"
+                    href="/pricing"
                     className="rounded-full bg-brand px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark"
                   >
                     View Pricing &amp; Post a Job
                   </Link>
                   <Link
-                    href="/employer/info"
+                    href="/why-us"
                     className="rounded-full border-2 border-ink px-7 py-3.5 font-semibold text-ink transition hover:bg-ink hover:text-white"
                   >
                     Learn About Employer Tools
@@ -728,7 +728,7 @@ export default function Home() {
                       Post a Job
                     </Link>
                     <Link
-                      href="/employer/pricing"
+                      href="/pricing"
                       className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-ink"
                     >
                       See Pricing

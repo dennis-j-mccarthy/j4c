@@ -71,9 +71,9 @@ const phases: Phase[] = [
     name: "Employer features",
     blurb: "The reason the site makes money.",
     items: [
-      { id: "e1", title: "Employer dashboard (jobs, applicants, statuses)" },
-      { id: "e2", title: "Post / edit / close a job" },
-      { id: "e3", title: "Applicant pipeline", detail: "Application status enum is ready: SUBMITTED → HIRED/REJECTED" },
+      { id: "e1", title: "Employer dashboard (jobs, applicants, statuses)", detail: "/employer/dashboard — live postings, applicant counts by stage, Post a job; employer sign-in via the same /login page", done: true },
+      { id: "e2", title: "Post / edit / close a job", detail: "Edit page, Close, Mark filled, Reopen; signed-in employers post under their own organization", done: true },
+      { id: "e3", title: "Applicant pipeline", detail: "Stage per applicant (New → In review → Interviewing → Offer made → Hired / Not selected), stage tabs, private notes; applicants page now visible only to the hiring organization; candidates see their stage on /dashboard", done: true },
       { id: "e4", title: "Pricing plans + Stripe checkout", detail: "Match current plans before inventing new ones" },
       { id: "e5", title: "Featured-job upsell", detail: "featured flag exists; surface on landing + search" },
       { id: "e6", title: "Candidate search for employers" },

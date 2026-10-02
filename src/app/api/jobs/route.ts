@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { TYPE_LABELS, MODE_LABELS } from "@/lib/format";
+import { getEmployer } from "@/lib/employer";
 
 const slugify = (s: string) =>
   s
@@ -32,19 +33,23 @@ export async function POST(request: Request) {
   const type = TYPE_LABELS[String(body.type)] ? String(body.type) : "FULL_TIME";
   const workMode = MODE_LABELS[String(body.workMode)] ? String(body.workMode) : "ONSITE";
 
-  // attach to an existing company (by slugified name) or create a lightweight one
+  // signed-in employers always post under their own company; guests attach by
+  // slugified name or get a lightweight company created
+  const employer = await getEmployer();
   const companySlug = slugify(orgName);
-  const company = await prisma.company.upsert({
-    where: { slug: companySlug },
-    update: {},
-    create: {
-      slug: companySlug,
-      name: orgName,
-      orgType: str(body.orgType),
-      about: str(body.mission),
-      location: str(body.location),
-    },
-  });
+  const company =
+    employer?.company ??
+    (await prisma.company.upsert({
+      where: { slug: companySlug },
+      update: {},
+      create: {
+        slug: companySlug,
+        name: orgName,
+        orgType: str(body.orgType),
+        about: str(body.mission),
+        location: str(body.location),
+      },
+    }));
 
   // unique job slug
   const base = slugify(`${title} ${orgName}`);
