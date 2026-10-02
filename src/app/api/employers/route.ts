@@ -42,17 +42,33 @@ export async function POST(request: Request) {
     videoName: str(body.videoName),
   };
 
+  // Registration only ever creates. Joining or claiming an existing
+  // organization would hand over its applicant list, so that goes through
+  // sign-in (or support), never through this form.
   const slug = slugify(orgName);
-  const company = await prisma.company.upsert({
-    where: { slug },
-    update: companyData,
-    create: { slug, ...companyData },
-  });
+  const [existingCompany, existingUser] = await Promise.all([
+    prisma.company.findUnique({ where: { slug }, select: { id: true } }),
+    prisma.user.findUnique({ where: { email }, select: { id: true } }),
+  ]);
+  if (existingUser) {
+    return NextResponse.json(
+      { error: "That email already has an account. Sign in instead." },
+      { status: 409 },
+    );
+  }
+  if (existingCompany) {
+    return NextResponse.json(
+      {
+        error:
+          "That organization is already registered. Sign in with the email on file, or contact us to be added.",
+      },
+      { status: 409 },
+    );
+  }
 
-  const user = await prisma.user.upsert({
-    where: { email },
-    update: { name: contactName, role: "EMPLOYER", companyId: company.id },
-    create: { email, name: contactName, role: "EMPLOYER", companyId: company.id },
+  const company = await prisma.company.create({ data: { slug, ...companyData } });
+  const user = await prisma.user.create({
+    data: { email, name: contactName, role: "EMPLOYER", companyId: company.id },
   });
 
   const res = NextResponse.json({ ok: true, companySlug: slug });
