@@ -60,6 +60,7 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 - Full feature demo (self-contained HTML): `~/Desktop/jfc-feature-demo.html` · artifact https://claude.ai/artifact/3zG7hyPgdu2WUrk9NXHX7n
 - Freelance demo for Mark: `~/Desktop/jfc-freelance-demo.html` · artifact https://claude.ai/artifact/STh9U6bXyxjVdq6xg4pdd6
 - Relaunch plan + creative kit: `~/Downloads/jfc-relaunch-kit/` (jfc-relaunch-plan.html, .pdf, jfc-relaunch-art.zip, art/ with 31 PNGs, src/ with art.html + render.js to re-render) · Desktop copies of the HTML and PDF · artifact https://claude.ai/artifact/VsVAyAEzgTnA7faQkt67Sh (v4)
+- Social analysis add-on: `~/Downloads/jfc-relaunch-kit/jfc-social-analysis.html` + .pdf + jfc-social-art.zip (18 templates in art-social/; src/art-social.html + render-social.js, src/social.body.html + build-social.py) · Desktop copies · separate artifact. Recon 10/02: JFC FB 230 / IG 164 (8 posts) / LI 797; CatholicJobs.com FB 5.8K (dormant since Apr 2023) / X 1,489 automated / LI 2,602; Catholic Job Hub none found. New site footer has no social links yet; job page's fit-button sublabel names the AI vendor (change before recording video).
 - Known gaps the plan depends on: freelancer inquiries and contact-form messages are only stored in the DB (no email notification yet); /pricing still shows $99/$249 while CatholicJobs.com charges $33–$65 and Catholic Job Hub posts free
 - All artifacts are private until Dennis enables link sharing.
 
