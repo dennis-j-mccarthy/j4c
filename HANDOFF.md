@@ -1,6 +1,6 @@
 # jfc / Jobs For Catholics — Agent Handoff
 
-_Last updated: 2026-09-26. This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
+_Last updated: 2026-10-02. This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
 
 ## What this is
 
@@ -59,7 +59,8 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 - Full feature demo (self-contained HTML): `~/Desktop/jfc-feature-demo.html` · artifact https://claude.ai/artifact/3zG7hyPgdu2WUrk9NXHX7n
 - Freelance demo for Mark: `~/Desktop/jfc-freelance-demo.html` · artifact https://claude.ai/artifact/STh9U6bXyxjVdq6xg4pdd6
-- Both artifacts are private until Dennis enables link sharing.
+- Marketing plan: `~/Desktop/jfc-marketing-plan.html` · artifact https://claude.ai/artifact/VsVAyAEzgTnA7faQkt67Sh
+- All artifacts are private until Dennis enables link sharing.
 
 ## Seeds & scripts
 
@@ -69,9 +70,9 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 1. **Rewire remaining uploads onto S3** via the existing `/api/upload` presign route: apply-form resume upload, candidate intake media (headshot/portfolio/video), employer logos. This unlocks **instant video intros** (punchlist s7, MediaRecorder capture).
 3. **Job alert emails** (s5): Resend or SES; AlertFrequency field already on profiles.
-4. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
-5. **Outreach batch** (g3): the prospect CRM's derived contact names need human verification before any send; needs a warmed domain + CAN-SPAM footer.
-6. **Before client handoff:** own Neon project for the DB; client's own Anthropic key; password-gate or auth `/admin/prospects` and `/punchlist`; link GitHub→Vercel (f8).
+2. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
+4. **Outreach batch** (g3): the prospect CRM's derived contact names need human verification before any send; needs a warmed domain + CAN-SPAM footer.
+5. **Before client handoff:** own Neon project for the DB; client's own Anthropic key; password-gate or auth `/admin/prospects` and `/punchlist`; link GitHub→Vercel (f8).
 
 ## Working style (Dennis)
 
