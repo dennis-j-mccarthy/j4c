@@ -30,14 +30,22 @@ A proof-of-concept replacement for **jobsforcatholics.com** (currently hosted on
 | Job posting | `/employer/post` | 4-step wizard; **AI writes the JD** from facts + mission |
 | Resume builder | `/resume` | **resume.io-style split screen**: form left, live paper preview right, updates per keystroke; AI rewrite on final step; photo support; print = PDF. ⌥⌘F prefills sample data (demo shortcut) |
 | Tailored resumes | `/resumes`, `/resumes/[id]` | One click on any job tailors the master resume + matching cover letter to that JD; saved as a collection labeled by job title, survives posting deletion |
-| Candidate dashboard | `/dashboard` | Applications w/ status, AI-matched openings, profile strength, resume collection |
+| Candidate dashboard | `/dashboard` | Applications w/ status, AI-matched openings, saved jobs, profile strength, resume collection |
+| Employer dashboard | `/employer/dashboard`, `/employer/jobs/[id]/edit` | Postings with applicant counts by stage; Edit, Close, Mark filled, Reopen, Feature this job; applicant pipeline (stage + private notes) on the applicants page |
+| Legal | `/terms`, `/privacy` | Plain-language drafts marked "pending legal review" — need counsel sign-off; account delete/export promised in privacy isn't built |
 | Freelance marketplace | `/freelance`, `/freelance/[slug]` | 9 seeded crafts; search/category filters; profile pages with **photo portfolios + captions** (real S3 uploads from the join form); inquiry modal → DB; **AI pitch polisher**; church-interior hero |
 | Prospect CRM | `/admin/prospects` | 40 employers scraped from CatholicJobs.com (contacts/emails/domains), status pipeline, one-click personalized mailto draft. ⚠️ Unauthenticated — owner tool |
 | Punch list | `/punchlist` | Migration plan, DB-backed checkboxes + comments, client-visible. Update via `PATCH /api/punchlist/{id}` `{done: bool}` |
 | Content | `/blog` (50 articles incl. 10 "Catholic job" SEO pieces), `/about`, `/contact` (form→DB), `/pricing`, `/why-us`, `/register`, `/search-candidates` | Every nav/footer link resolves |
 | SEO | `sitemap.xml`, `robots.txt` | Jobs + articles indexed; admin/dashboard excluded |
 
-## Demo account
+## Demo accounts
+
+- **Employer:** sign in at `/login` with **hiring@stclare.example.org** (Anne Whitaker, St. Clare of Assisi Catholic School). Lands on `/employer/dashboard`. St. Clare's "High School Theology Teacher" posting has 5 applicants including Maria — move her to Interviewing and her `/dashboard` shows it. Seed: `npx tsx prisma/seed-demo-employer.ts`.
+- **Do not use `mark@jobsforcatholics.com`** (EMPLOYER on Holy Name Catholic Church) for testing — it's likely the stakeholder's own account.
+- Applicant lists (`/jobs/[slug]/applicants`) and the candidate directory (`/search-candidates`) are visible only to a signed-in employer; signed-out visitors get a sign-in prompt.
+
+### Candidate
 
 Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cookie `jfc_candidate` = CandidateProfile id; magic-link auth is punchlist a1). Maria has a saved master resume and tailored documents. Test writes are fine on Maria; keep the marketplace clean of junk freelancers (delete test rows after).
 
@@ -60,7 +68,6 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 ## Immediate next steps (in priority order)
 
 1. **Rewire remaining uploads onto S3** via the existing `/api/upload` presign route: apply-form resume upload, candidate intake media (headshot/portfolio/video), employer logos. This unlocks **instant video intros** (punchlist s7, MediaRecorder capture).
-2. **Employer applicant pipeline** (e3): status changes on `/jobs/[slug]/applicants`, employer dashboard (e1/e2).
 3. **Job alert emails** (s5): Resend or SES; AlertFrequency field already on profiles.
 4. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
 5. **Outreach batch** (g3): the prospect CRM's derived contact names need human verification before any send; needs a warmed domain + CAN-SPAM footer.
