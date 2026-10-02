@@ -59,7 +59,8 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 - Full feature demo (self-contained HTML): `~/Desktop/jfc-feature-demo.html` · artifact https://claude.ai/artifact/3zG7hyPgdu2WUrk9NXHX7n
 - Freelance demo for Mark: `~/Desktop/jfc-freelance-demo.html` · artifact https://claude.ai/artifact/STh9U6bXyxjVdq6xg4pdd6
-- Marketing plan: `~/Desktop/jfc-marketing-plan.html` · artifact https://claude.ai/artifact/VsVAyAEzgTnA7faQkt67Sh
+- Relaunch plan + creative kit: `~/Downloads/jfc-relaunch-kit/` (jfc-relaunch-plan.html, .pdf, jfc-relaunch-art.zip, art/ with 31 PNGs, src/ with art.html + render.js to re-render) · Desktop copies of the HTML and PDF · artifact https://claude.ai/artifact/VsVAyAEzgTnA7faQkt67Sh (v4)
+- Known gaps the plan depends on: freelancer inquiries and contact-form messages are only stored in the DB (no email notification yet); /pricing still shows $99/$249 while CatholicJobs.com charges $33–$65 and Catholic Job Hub posts free
 - All artifacts are private until Dennis enables link sharing.
 
 ## Seeds & scripts
