@@ -1,6 +1,6 @@
 # jfc / Jobs For Catholics — Agent Handoff
 
-_Last updated: 2026-10-02 (stopping point)._ This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
+_Last updated: 2026-10-04 (e4 + e6 punch run)._ This file is the full context needed to continue development with any AI agent or human. No secrets here — all credentials live in `.env` (gitignored) and in Vercel project env vars._
 
 ## What this is
 
@@ -31,7 +31,7 @@ A proof-of-concept replacement for **jobsforcatholics.com** (currently hosted on
 | Resume builder | `/resume` | **resume.io-style split screen**: form left, live paper preview right, updates per keystroke; AI rewrite on final step; photo support; print = PDF. ⌥⌘F prefills sample data (demo shortcut) |
 | Tailored resumes | `/resumes`, `/resumes/[id]` | One click on any job tailors the master resume + matching cover letter to that JD; saved as a collection labeled by job title, survives posting deletion |
 | Candidate dashboard | `/dashboard` | Applications w/ status, AI-matched openings, saved jobs, profile strength, resume collection |
-| Employer dashboard | `/employer/dashboard`, `/employer/jobs/[id]/edit` | Postings with applicant counts by stage; Edit, Close, Mark filled, Reopen, Feature this job; applicant pipeline (stage + private notes) on the applicants page |
+| Employer dashboard | `/employer/dashboard`, `/employer/jobs/[id]/edit` | Plan card (plan, renewal, credits); postings with applicant counts by stage; Edit, Close, Mark filled, Reopen, Feature this job; applicant pipeline (stage + private notes) on the applicants page |
 | Legal | `/terms`, `/privacy` | Plain-language drafts marked "pending legal review" — need counsel sign-off; account delete/export promised in privacy isn't built |
 | Freelance marketplace | `/freelance`, `/freelance/[slug]` | 9 seeded crafts; search/category filters; profile pages with **photo portfolios + captions** (real S3 uploads from the join form); inquiry modal → DB; **AI pitch polisher**; church-interior hero |
 | Prospect CRM | `/admin/prospects` | 40 employers scraped from CatholicJobs.com (contacts/emails/domains), status pipeline, one-click personalized mailto draft. ⚠️ Unauthenticated — owner tool |
@@ -77,9 +77,11 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 `npx tsx prisma/seed-articles.ts | seed-prospects.ts | seed-freelancers.ts | seed-portfolios.ts` (all idempotent upserts; need `.env`).
 
-## Current status (stopping point 2026-10-02)
+## Current status (2026-10-04)
 
-- **Prod is current** with `main` (last app deploy: employer registration fix, 45f0677). Live at https://jfc-tau.vercel.app.
+- **Prod is current** with `main` (last app deploy 9e11f9d, 10/04). Live at https://jfc-tau.vercel.app.
+- **10/04:** e4 pricing + Stripe built (`/pricing`, `/api/billing/checkout`, `/api/billing/webhook`, `/billing/success`, plan card on the employer dashboard) — **blocked on Stripe keys**, see Billing above. e6 candidate search shipped: `/search-candidates` filters (keyword, category, state, job type, work mode, relocating, resume on file) + "Match to one of your jobs" fit ranking; `GET /api/candidates/search` returns the same, employer-only, no contact details.
+- **Open pricing question:** the St. John Paul the Great tier advertises candidate search and a home page logo, but every signed-in employer can search today and logos aren't tied to plans. Gate search to that tier and up, or reword the perk.
 - **Shipped this round:** employer sign-in + `/employer/dashboard` + edit/close/reopen + applicant pipeline (e1–e3), saved jobs (s4), DB-driven featured jobs on the home page (e5), terms + privacy drafts (c5), applicant lists and `/search-candidates` gated to employers, three dead menu links fixed.
 - **Marketing deliverables (finished, not in this repo — see below):** relaunch plan + creative kit (31 art pieces) and the social analysis add-on (18 templates). Both are claude.ai artifacts reachable from any device; files live on Dennis's Mac in `~/Downloads/jfc-relaunch-kit/` and the Desktop.
 - **This repo is PUBLIC.** No secrets are in its history (checked 10/02), but `prisma/data/cj-prospects.json` (40 scraped employers, 35 contact emails) is. That's why the marketing kit was deliberately NOT committed here.
