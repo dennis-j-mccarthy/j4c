@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { PLANS as CATALOG, formatPrice } from "@/lib/plans";
 
 const ORG_TYPES = [
   "Parish",
@@ -16,30 +17,15 @@ const SIZES = ["1–10", "11–50", "51–200", "201–1,000", "1,000+"];
 
 const STATES = "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC".split(" ");
 
-const PLANS = [
-  {
-    value: "starter",
-    name: "Starter",
-    price: "$99",
-    per: "per posting",
-    perks: ["One 60-day job posting", "Standard placement", "Email support"],
-  },
-  {
-    value: "standard",
-    name: "Standard",
-    price: "$249",
-    per: "per quarter",
-    perks: ["3 active postings", "One featured slot", "Candidate search access"],
-    popular: true,
-  },
-  {
-    value: "partner",
-    name: "Mission Partner",
-    price: "$499",
-    per: "per quarter",
-    perks: ["Unlimited postings", "Profile spotlight + media", "Dedicated support"],
-  },
-];
+// Intake records interest only (Company.planInterest); paying happens on /pricing.
+const PLANS = CATALOG.filter((p) => p.audience === "employer" && p.interval).map((p) => ({
+  value: p.key,
+  name: p.name,
+  price: formatPrice(p.price),
+  per: "per month",
+  perks: p.perks.slice(0, 3),
+  popular: p.popular,
+}));
 
 const STEPS = ["Organization", "Profile & media", "Plan & review"];
 
@@ -70,7 +56,7 @@ const EMPTY: FormState = {
   state: "",
   size: "",
   about: "",
-  plan: "standard",
+  plan: "jp2",
 };
 
 const inputCls =
@@ -470,7 +456,7 @@ export default function EmployerIntake() {
 
         {step === 2 && (
           <div className="space-y-7">
-            <Field label="Which plan fits? (sample pricing — nothing is charged today)">
+            <Field label="Which subscription fits? Your first listing is free either way — you can subscribe later from Pricing.">
               <div className="grid gap-3 sm:grid-cols-3">
                 {PLANS.map((p) => (
                   <button

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import EmployerJobActions from "@/components/EmployerJobActions";
 import { prisma } from "@/lib/prisma";
 import { getEmployer } from "@/lib/employer";
+import { getPlan } from "@/lib/plans";
 import { PIPELINE, ACTIVE_STAGES } from "@/lib/pipeline";
 import { TYPE_LABELS, MODE_LABELS, timeAgo } from "@/lib/format";
 
@@ -70,6 +71,9 @@ export default async function EmployerDashboardPage() {
     { value: interviewing, label: "Interviewing" },
   ];
 
+  const company = employer.company;
+  const plan = getPlan(company.plan);
+
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
       <Header />
@@ -109,6 +113,28 @@ export default async function EmployerDashboardPage() {
                 <p className="mt-1 text-xs font-semibold tracking-wide text-muted uppercase">{s.label}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5">
+            <div>
+              <p className="text-xs font-semibold tracking-wide text-muted uppercase">Your plan</p>
+              <p className="mt-1 font-heading text-xl font-medium text-ink">
+                {plan && company.planStatus !== "canceled" ? plan.name : "Pay as you go"}
+                {company.planStatus && company.planStatus !== "active" && company.planStatus !== "canceled" && (
+                  <span className="ml-2 rounded-full bg-amber-100 px-2.5 py-0.5 align-middle text-xs font-semibold text-amber-800">
+                    {company.planStatus.replace("_", " ")}
+                  </span>
+                )}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                {plan?.featuredSlots ? `${plan.featuredSlots} featured listings live at once` : "First listing free"}
+                {company.planRenewsAt && ` · renews ${company.planRenewsAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+                {` · ${company.listingCredits} listing and ${company.featuredCredits} featured credits`}
+              </p>
+            </div>
+            <Link href="/pricing" className="rounded-full px-5 py-2.5 text-sm font-semibold text-brand-dark ring-1 ring-brand/40 transition hover:bg-brand-tint">
+              {plan ? "See plans" : "Upgrade"}
+            </Link>
           </div>
 
           <h2 className="mt-12 font-heading text-2xl font-medium text-ink">Your postings</h2>
