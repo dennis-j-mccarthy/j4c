@@ -74,9 +74,9 @@ const phases: Phase[] = [
       { id: "e1", title: "Employer dashboard (jobs, applicants, statuses)", detail: "/employer/dashboard — live postings, applicant counts by stage, Post a job; employer sign-in via the same /login page", done: true },
       { id: "e2", title: "Post / edit / close a job", detail: "Edit page, Close, Mark filled, Reopen; signed-in employers post under their own organization", done: true },
       { id: "e3", title: "Applicant pipeline", detail: "Stage per applicant (New → In review → Interviewing → Offer made → Hired / Not selected), stage tabs, private notes; applicants page now visible only to the hiring organization; candidates see their stage on /dashboard", done: true },
-      { id: "e4", title: "Pricing plans + Stripe checkout", detail: "Match current plans before inventing new ones" },
+      { id: "e4", title: "Pricing plans + Stripe checkout", detail: "Built 10/04: tiers from the JFC rate card, Stripe Checkout + webhook. Waiting on Stripe keys to go live" },
       { id: "e5", title: "Featured-job upsell", detail: "Feature this job toggle on the employer dashboard; home page New This Week now reads featured jobs from the database (backfilled with newest); featured sorts first in search. Price to be set when Stripe (e4) lands", done: true },
-      { id: "e6", title: "Candidate search for employers" },
+      { id: "e6", title: "Candidate search for employers", detail: "Filters + rank by fit for one of your jobs; employer-only API", done: true },
     ],
   },
   {
