@@ -39,6 +39,15 @@ A proof-of-concept replacement for **jobsforcatholics.com** (currently hosted on
 | Content | `/blog` (50 articles incl. 10 "Catholic job" SEO pieces), `/about`, `/contact` (form→DB), `/pricing`, `/why-us`, `/register`, `/search-candidates` | Every nav/footer link resolves |
 | SEO | `sitemap.xml`, `robots.txt` | Jobs + articles indexed; admin/dashboard excluded |
 
+## Billing (Stripe, e4)
+
+- **Code is in; keys are not.** Without `STRIPE_SECRET_KEY` the pricing buttons read "Online checkout opens soon" and `POST /api/billing/checkout` returns 503.
+- Env vars to set (Vercel + `.env`): `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, optional `STRIPE_PRICE_<KEY>` per plan (`BASIC`, `FEATURED`, `FEATURED10`, `THERESE`, `JP2`, `JOSEPH`, `FREELANCE`). Without price IDs, checkout sends the catalog prices inline. No publishable key is needed (Stripe-hosted Checkout, server redirect).
+- Stripe webhook endpoint: `https://<host>/api/billing/webhook`, events `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `customer.subscription.created|updated|deleted`.
+- State lives on `Company` (plan, planStatus, planRenewsAt, listingCredits, featuredCredits, stripe ids) and `Freelancer` (visibilityStatus, visibilityRenewsAt, stripe ids). `StripeEvent` makes webhook delivery idempotent.
+- **Not enforced yet (on purpose, so demos keep working):** posting doesn't spend credits, plan entitlements (featured slots, candidate search) aren't gated by plan, and unpaid freelancers stay visible. Wire these when payments go live.
+- Never reuse another project's Stripe account keys here.
+
 ## Demo accounts
 
 - **Employer:** sign in at `/login` with **hiring@stclare.example.org** (Anne Whitaker, St. Clare of Assisi Catholic School). Lands on `/employer/dashboard`. St. Clare's "High School Theology Teacher" posting has 5 applicants including Maria — move her to Interviewing and her `/dashboard` shows it. Seed: `npx tsx prisma/seed-demo-employer.ts`.
@@ -51,8 +60,8 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 ## Business decisions (made by Dennis — don't relitigate)
 
-- **Freelancers pay $20/mo flat to be listed, 0% commission.** No featured tier. Early listings free until Stripe lands.
-- Employers: first listing free → $99/listing → $249/mo recruiter plan.
+- **Freelancers pay $25/mo flat ("Freelance Visibility"), 0% commission.** No featured tier. Early listings free until Stripe keys land.
+- Employers (10/04, built on jobsforcatholics.com's current rate card; catalog in `src/lib/plans.ts`): first listing free · Basic $39 · Featured $49 · Featured 10-Pack $349 · subscriptions **month to month, no 1-year commitment**: St. Thérèse $49/mo (3 featured live), St. John Paul the Great $120/mo (10 featured + candidate search), St. Joseph the Worker $240/mo (30 featured + priority support).
 - Fonts: Playfair Display headings (font-medium, never bold) + Outfit body; all-caps subtle nav. Never reuse a photo that's already on the site.
 
 ## Stakeholder demo assets
@@ -61,7 +70,7 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 - Freelance demo for Mark: `~/Desktop/jfc-freelance-demo.html` · artifact https://claude.ai/artifact/STh9U6bXyxjVdq6xg4pdd6
 - Relaunch plan + creative kit: `~/Downloads/jfc-relaunch-kit/` (jfc-relaunch-plan.html, .pdf, jfc-relaunch-art.zip, art/ with 31 PNGs, src/ with art.html + render.js to re-render) · Desktop copies of the HTML and PDF · artifact https://claude.ai/artifact/VsVAyAEzgTnA7faQkt67Sh (v4)
 - Social analysis add-on: `~/Downloads/jfc-relaunch-kit/jfc-social-analysis.html` + .pdf + jfc-social-art.zip (18 templates in art-social/; src/art-social.html + render-social.js, src/social.body.html + build-social.py) · Desktop copies · separate artifact. Recon 10/02: JFC FB 230 / IG 164 (8 posts) / LI 797; CatholicJobs.com FB 5.8K (dormant since Apr 2023) / X 1,489 automated / LI 2,602; Catholic Job Hub none found. New site footer has no social links yet; job page's fit-button sublabel names the AI vendor (change before recording video).
-- Known gaps the plan depends on: freelancer inquiries and contact-form messages are only stored in the DB (no email notification yet); /pricing still shows $99/$249 while CatholicJobs.com charges $33–$65 and Catholic Job Hub posts free
+- Known gaps the plan depends on: freelancer inquiries and contact-form messages are only stored in the DB (no email notification yet); /pricing now starts at $39/listing (CatholicJobs.com charges $33–$65; Catholic Job Hub posts free)
 - All artifacts are private until Dennis enables link sharing.
 
 ## Seeds & scripts
@@ -79,11 +88,11 @@ Sign in at `/login` with **maria.alvarez@example.org** — email-only (sets cook
 
 1. **Make the GitHub repo private** (Dennis's call — Settings → General → Danger Zone → Change visibility). This is the only fix that also covers the prospect data already in git history. Until then, put nothing with real people's details in this repo.
 2. **Gate `/admin/prospects` and `/punchlist`** — both are unauthenticated on prod; the prospects page shows 35 real contact emails to anyone.
-3. **Pricing decision (Dennis):** `/pricing` shows $99/listing and $249/mo; CatholicJobs.com charges $33–$65 and Catholic Job Hub is posting free. Confirm or change before Mark sees the plan.
+3. **Pricing review (Dennis):** `/pricing` now shows the new tiers ($39/$49 listings, $49/$120/$240 monthly subscriptions, $25 freelance). Confirm before Mark sees the plan.
 4. **Email notifications:** freelancer inquiries and contact-form messages are stored in the DB but email no one. Needed before the freelancer email in the plan goes out. (Resend or SES — also unblocks job alerts, s5.)
 5. **Social links + vendor wording on the site:** the new footer has no Facebook/Instagram/LinkedIn links; the fit-button sublabel on job pages names the AI vendor (change before recording the plan's videos).
 6. **Rewire remaining uploads onto S3** via `/api/upload`: apply-form resume, candidate headshot/portfolio/video, employer logos → unlocks instant video intros (s7).
-7. **Stripe** (e4): employer listings + the $20/mo freelancer subscription.
+7. **Stripe keys** (e4): code shipped 10/04 (checkout, webhook, pricing UI). Blocked on Dennis: test-mode secret key + webhook secret for Vercel, and whether to use dashboard Price IDs. Then enforce credits/entitlements.
 8. **Outreach batch** (g3): verify derived contact names first; needs a separate sending domain, mailing address and unsubscribe footer.
 9. **Before client handoff:** own Neon project for the DB; client's own Anthropic key; link GitHub→Vercel (f8); real auth (a1, magic links).
 
