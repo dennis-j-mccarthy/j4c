@@ -112,7 +112,7 @@ export default async function PricingPage({
               >
                 {p.popular && (
                   <span className="mb-3 w-fit rounded-full bg-brand px-3 py-1 text-xs font-bold text-white">
-                    Most chosen
+                    Recommended
                   </span>
                 )}
                 <h3 className="font-heading text-xl font-medium">{p.name}</h3>
