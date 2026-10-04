@@ -166,7 +166,7 @@ export default async function FreelancerProfilePage({
             <div className="rounded-2xl bg-ink p-6 text-white">
               <p className="font-heading text-lg font-medium">Have a craft of your own?</p>
               <p className="mt-1 text-sm text-white/70">
-                List it for $20/mo — 0% commission, cancel anytime.
+                List it for $25/mo — 0% commission, cancel anytime.
               </p>
               <Link
                 href="/freelance#join"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PlanButton from "@/components/PlanButton";
 
 const inputCls =
   "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-ink placeholder:text-muted/70 transition focus:border-brand focus:ring-2 focus:ring-brand/20 focus:outline-none";
@@ -18,7 +19,7 @@ const CATEGORIES = [
 
 type PortfolioDraft = { file: File; preview: string; caption: string };
 
-export default function FreelanceJoin() {
+export default function FreelanceJoin({ checkoutLive = false }: { checkoutLive?: boolean }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [craft, setCraft] = useState("");
@@ -33,6 +34,7 @@ export default function FreelanceJoin() {
   const [polished, setPolished] = useState(false);
   const [saving, setSaving] = useState(false);
   const [done, setDone] = useState(false);
+  const [freelancerId, setFreelancerId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const polish = async () => {
@@ -111,6 +113,7 @@ export default function FreelanceJoin() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      setFreelancerId(data.id ?? null);
       setDone(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
@@ -128,10 +131,19 @@ export default function FreelanceJoin() {
           Your craft is live on the marketplace. Refresh the page to see your
           card — inquiries land straight in your inbox.
         </p>
-        <p className="mx-auto mt-4 max-w-md text-sm text-muted">
-          Your $20/mo subscription starts when payments go live at launch —
-          until then, early listings ride free.
-        </p>
+        {checkoutLive && freelancerId ? (
+          <div className="mx-auto mt-4 max-w-xs">
+            <p className="text-sm text-muted">
+              Turn on Freelance Visibility — $25/mo, cancel anytime.
+            </p>
+            <PlanButton plan="freelance" live freelancerId={freelancerId} label="Start my $25/mo listing" dark />
+          </div>
+        ) : (
+          <p className="mx-auto mt-4 max-w-md text-sm text-muted">
+            Your $25/mo subscription starts when payments go live at launch —
+            until then, early listings ride free.
+          </p>
+        )}
       </div>
     );
   }
@@ -218,10 +230,10 @@ export default function FreelanceJoin() {
         disabled={saving}
         className="btn-shimmer mt-5 w-full rounded-full bg-gradient-to-r from-brand to-brand-dark px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 disabled:opacity-60"
       >
-        {uploading ? "Uploading your portfolio…" : saving ? "Listing your craft…" : "List my craft — $20/mo"}
+        {uploading ? "Uploading your portfolio…" : saving ? "Listing your craft…" : "List my craft — $25/mo"}
       </button>
       <p className="mt-3 text-center text-xs text-muted">
-        $20/month, cancel anytime. 0% commission — you keep everything you earn.
+        $25/month, cancel anytime. 0% commission — you keep everything you earn.
       </p>
     </form>
   );

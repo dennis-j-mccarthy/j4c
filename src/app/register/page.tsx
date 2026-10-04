@@ -35,7 +35,7 @@ const OPTIONS = [
   },
   {
     title: "I'm a freelancer",
-    copy: "List your craft — music, sacred art, grant writing, web design — and let parishes and apostolates come to you. $20/mo, 0% commission.",
+    copy: "List your craft — music, sacred art, grant writing, web design — and let parishes and apostolates come to you. $25/mo, 0% commission.",
     cta: "List my craft",
     href: "/freelance#join",
     accent: "from-emerald-500 to-teal-700",
@@ -60,7 +60,7 @@ export default function RegisterPage() {
             How will you build the Body of Christ?
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted">
-            Free for job seekers, first listing free for employers, $20/mo for
+            Free for job seekers, first listing free for employers, $25/mo for
             freelancers. Pick your lane — you&apos;ll be set up in about two
             minutes.
           </p>

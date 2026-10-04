@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import FreelanceBoard, { type FreelancerRow } from "@/components/FreelanceBoard";
 import FreelanceJoin from "@/components/FreelanceJoin";
 import { prisma } from "@/lib/prisma";
+import { stripeConfigured } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 const STEPS = [
   {
     n: "1",
-    title: "List your craft — $20/mo",
+    title: "List your craft — $25/mo",
     copy: "Two minutes to set up, cancel anytime. Our AI even polishes your pitch.",
   },
   {
@@ -94,7 +95,7 @@ export default async function FreelancePage() {
               href="#join"
               className="btn-shimmer rounded-full bg-gradient-to-r from-brand to-brand-dark px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand/40 transition hover:-translate-y-0.5"
             >
-              ✦ List your craft — $20/mo
+              ✦ List your craft — $25/mo
             </a>
             <a
               href="#browse"
@@ -113,7 +114,7 @@ export default async function FreelancePage() {
               <p className="text-xs tracking-wide text-white/60 uppercase">Commission</p>
             </div>
             <div>
-              <p className="font-heading text-3xl font-medium text-brand">$20</p>
+              <p className="font-heading text-3xl font-medium text-brand">$25</p>
               <p className="text-xs tracking-wide text-white/60 uppercase">Per month</p>
             </div>
           </div>
@@ -162,7 +163,7 @@ export default async function FreelancePage() {
             AI shape them. You can edit anything before it goes live.
           </p>
           <div className="mt-8">
-            <FreelanceJoin />
+            <FreelanceJoin checkoutLive={stripeConfigured()} />
           </div>
         </div>
       </section>
