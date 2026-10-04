@@ -130,6 +130,14 @@ model Company {
   orgType      String?
   size         String?
   planInterest String?
+  // billing: plan = key from src/lib/plans.ts; credits come from one-time purchases
+  plan                 String?
+  planStatus           String?
+  planRenewsAt         DateTime?
+  stripeCustomerId     String?  @unique
+  stripeSubscriptionId String?  @unique
+  listingCredits       Int      @default(0)
+  featuredCredits      Int      @default(0)
   galleryNames String[]
   videoName    String?
   members      User[]
@@ -264,6 +272,11 @@ model Freelancer {
   skills    String[]
   available Boolean             @default(true)
   featured  Boolean             @default(false)
+  // paid visibility ($25/mo)
+  visibilityStatus     String?
+  visibilityRenewsAt   DateTime?
+  stripeCustomerId     String?  @unique
+  stripeSubscriptionId String?  @unique
   inquiries FreelancerInquiry[]
   portfolio PortfolioItem[]
   createdAt DateTime            @default(now())
@@ -311,4 +324,11 @@ model SavedJob {
   createdAt DateTime @default(now())
 
   @@id([userId, jobId])
+}
+
+// Every processed Stripe webhook event, so a redelivered event is applied once.
+model StripeEvent {
+  id        String   @id
+  type      String
+  createdAt DateTime @default(now())
 }
